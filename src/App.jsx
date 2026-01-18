@@ -180,28 +180,6 @@ const ejercicios = {
       },
     },
 
-    8: {
-      titulo: "Funciones",
-      imagen: "/Users/gustavo/Desktop/cbc-matematica/Ejercicio_8_U1.png",
-      enunciado: "Dada la función f : (2, +∞) → R, f(x) = (x + 3)/(2x - 4) dar su dominio, codominio e  imagen",
-      ayuda: "Dominio: elementos del conjunto de partida (“x”) que se relacionan con un elemento del conjunto de llegada\nCodominio: elementos del conjunto de llegada (“y”)\nImagen: resultados de aplicar la fórmula a los elementos del dominio de f.",
-
-      resolucion: `
-      Para el dominio y codominio: 2x - 4 ≠ 0 → 2x ≠ 4 → x ≠ 2 pero recordemos que f : (2, +∞) → R
-      Para la imagen: f(x) ⇔ (x + 3)/(2x - 4) = y ⇔ (x + 3) = y(2x - 4) ⇔ ... ⇔ x = (-4y - 3)/(1 - 2y)
-      Debemos ver para que valores de y, el x que encontramos pertenece al intervalo (2, +∞):
-      (-4y - 3)/(1 - 2y) > 2 ⇔ (-4y - 3)/(1 - 2y) - 2 > 0 ⇔ ... ⇔ y  > 1/2
-      Solución: Dom(f) = (2, +∞), Codom(f) = R, Im(f) = (1/2, +∞)
-      `,
-      verificar: (r) => {
-        const s = r.replace(/\s/g, "").toLowerCase();
-        return (
-          s === "(2, +∞),R,(1/2, +∞)" ||
-          s === "(2, +∞)R(1/2, +∞)"
-        );
-      },
-    },
-
 
   },
 
