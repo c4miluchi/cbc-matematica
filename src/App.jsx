@@ -270,7 +270,7 @@ const ejercicios = {
 
       Notar que Dom(f(x)) = Im(f–1(x)) y Dom(f–1(x)) = Im(f(x))
       `,
-      resolucionImagen: "/imagenes/resolucion_funciones_2.png",
+      resolucionImagen: "/imagenes/funciones_2.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
