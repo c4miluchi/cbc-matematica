@@ -185,7 +185,7 @@ const ejercicios = {
 
     8: {
       titulo: "Funciones 2",
-      imagen: "/Users/gustavo/Desktop/cbc-matematica/public/imagenes/funciones_2.png"
+      imagen: "/Users/gustavo/Desktop/cbc-matematica/public/imagenes/funciones_2.png",
       enunciado: "Dada la imagen dar su dominio, imagen, conjunto de ceros/positividad/negatividad/crecimiento/decrecimiento, máximos locales, mínimo local, mínimo absoluto",
       ayuda: "Dominio: elementos del conjunto de partida (“x”) que se relacionan con un elemento del conjunto de llegada.\nImagen: resultados de aplicar la fórmula a los elementos del dominio de f.\nConjunto de ceros: todos los x ∈ Dom(f) tales que f(x) = 0\nConjunto de positividad: todos los x ∈ Dom(f) por arriba del eje x\nConjunto de negatividad: todos los x ∈ Dom(f) por debajo del eje x\nConjunto de crecimiento (en x): todos los x ∈ Dom(f) tales que la función aumenta su valor\nConjunto de decrecimiento (en x): todos los x ∈ Dom(f) tales que la función disminuye su valor\nMáximos locales (en x): intervalo I ⊆ Dom(f) con x₀ ∈ I que verifica f(x₀) ≥ f(x) para todo x ∈ I\nMáximos absolutos (en x): f(x₀) ≥ f(x) para todo x ∈ Dom(f)\nMínimo local (en x): intervalo I ⊆ Dom(f) con x₀ ∈ I que verifica f(x₀) ≤ f(x) para todo x ∈ I\nMínimo absoluto (en x): f(x₀) ≤ f(x) para todo x ∈ Dom(f)",
 
@@ -215,7 +215,7 @@ const ejercicios = {
 
     9: {
       titulo: "Funciones inyectivas, sobreyectivas y biyectivas",
-      imagen: "/Users/gustavo/Desktop/cbc-matematica/public/imagenes/inyectivas_sobreyectivas_biyectivas.png"
+      imagen: "/Users/gustavo/Desktop/cbc-matematica/public/imagenes/inyectivas_sobreyectivas_biyectivas.png",
       enunciado: "Dada la imagen (f : R → R, f(x) = x²) definir si es inyectiva, sobreyectiva y/o biyectiva (sí o no)",
       ayuda: "Inyectiva: ∀ a, b ∈ Dom(f), si f(a) = f(b) entonces a = b ⇒ si a ≠ b entonces f(a) ≠ f(b)\nSobreyectiva: ∀ c ∈ Cod(f), existe al menos un a ∈ Dom(f) / f(a) = c → Im(f) = Cod(f)\nBiyectiva: es inyectiva y sobreyectiva",
 
