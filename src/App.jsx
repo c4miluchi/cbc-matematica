@@ -261,16 +261,15 @@ const ejercicios = {
     11: {
       titulo: "Función inversa",
       enunciado: "Dada f(x) = 2x + 1, encontrar (si existe) su inversa",
-      ayuda: "Sea f(x) una función biyectiva, existe la posibilidad de definir una función f–1(x) que realiza el camino inverso → f : A → B y f–1 : B → A → a f–1 se la llama inversa",
+      ayuda: "Sea f(x) una función biyectiva, existe la posibilidad de definir una función f⁻¹(x) que realiza el camino inverso → f : A → B y f–1 : B → A → a f⁻¹ se la llama inversa",
 
       resolucion: `
-      f(x) = 2x + 1 ¿f–1(x)? → planteo f(f–1(x)) = x → 2 f–1(x) + 1 = x → despejando: 2 f–1(x) = x – 1 → f–1(x) = (x-1)/2
+      f(x) = 2x + 1 ¿f⁻¹(x)? → planteo f(f⁻¹(x)) = x → 2 f⁻¹(x) + 1 = x → despejando: 2 f⁻¹(x) = x – 1 → f⁻¹(x) = (x-1)/2
       Solución:
-      f–1(x) = (x-1)/2
+      ff⁻¹(x) = (x-1)/2
 
-      Notar que Dom(f(x)) = Im(f–1(x)) y Dom(f–1(x)) = Im(f(x))
+      Notar que Dom(f(x)) = Im(f⁻¹(x)) y Dom(f⁻¹(x)) = Im(f(x))
       `,
-      resolucionImagen: "/imagenes/funciones_2.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
@@ -280,24 +279,46 @@ const ejercicios = {
     },
 
     12: {
-      titulo: "Función inversa",
-      enunciado: "Dada f(x) = 2x + 1, encontrar (si existe) su inversa",
-      ayuda: "Sea f(x) una función biyectiva, existe la posibilidad de definir una función f–1(x) que realiza el camino inverso → f : A → B y f–1 : B → A → a f–1 se la llama inversa",
+      titulo: "Funciones lineales",
+      enunciado: "1) Hallar la función lineal que pasa por A = (2; –2) y tiene m = –1\n2)Hallar la función lineal que pasa por A = (2; –2) y B = (8; 0)\nGraficar f(x) = 2x – 4",
+      ayuda: "Forma: f : R → R, f(x) = mx + b → m = pendiente (dirección e inclinación de la recta), b = ordenada al origen\nDominio: R\nGráfica: línea recta\nPara cualquier x₁, x₂ ∈ Dom(f) con x₁ ≠ x₂ la pendiente se puede calcular como m = (y₂ – y₁) / (x₂ – x₁)",
 
       resolucion: `
-      f(x) = 2x + 1 ¿f–1(x)? → planteo f(f–1(x)) = x → 2 f–1(x) + 1 = x → despejando: 2 f–1(x) = x – 1 → f–1(x) = (x-1)/2
+      1) f(x) = mx + b → como m = -1 → f(x) = -x + b → pasa por (2, -2), entonces f(2) = -2 → b = 0
+      2) m = (y₂ – y₁) / (x₂ – x₁) → m = (0 – (–2)) / (8 – 2) → m = 1/3 → f(x) = (1/3)x + b → –2 = (1/3)·2 + b → b = -8/3
+      
       Solución:
-      f–1(x) = (x-1)/2
+      1) f(x) = –x
+      2) f(x) = (1/3)x – 8/3
 
-      Notar que Dom(f(x)) = Im(f–1(x)) y Dom(f–1(x)) = Im(f(x))
       `,
+      resolucionImagen: "/imagenes/funciones_lineales.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "(x-1)/2"
+          s === "f(x)=–x,f(x)=(1/3)x–8/3" ||
+          s === "f(x)=–xf(x)=(1/3)x–8/3" ||
+          s === "–x,(1/3)x–8/3" ||
+          s === "–x(1/3)x–8/3"
         );
       },
     },
+
+
+
+
+
+Funciones lineales – Introducción 
+  Forma: f : R → R, f(x) = mx + b → m = pendiente (dirección e inclinación de la recta), b = ordenada al origen
+  Dominio: R
+  Gráfica: línea recta
+  Para cualquier x1, x2 ∈ Dom(f) con x1 ≠ x2 la pendiente se puede calcular como m = (f(x_2 )  - f(x_1))/(x_2  -〖 x〗_1 ) = (∆f  (incremento f))/(∆x  (incremento x)) .
+También si la recta para por los puntos (x1, y1) y (x2, y2), la pendiente de la recta es m = (y_2  - y_1)/(x_2  -〖 x〗_1 ) = ∆y/∆x .
+  Si m > 0, la función es creciente → si ∆x = x2 – x1 > 0, entonces ∆y = y2 – y1 = f(x2) – f(x1) > 0 o sea f(x2) > f(x1) para x2 > x1.
+  Si m < 0, la función es decreciente → si ∆x = x2 – x1 > 0, entonces ∆y = y2 – y1 = f(x2) – f(x1) < 0 o sea f(x2) < f(x1) para x2 > x1.
+  Si m = 0, la función es constante ya que ∆y = y2 – y1 = f(x2) – f(x1) = 0 para todo x1, x2.
+
+
 
 
 
