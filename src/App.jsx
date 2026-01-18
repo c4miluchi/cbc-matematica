@@ -13,7 +13,7 @@ const ejercicios = {
     1: {
       titulo: "Sistemas numéricos",
       enunciado: "Decidir a qué sistema numérico pertenecen los siguientes números: √2, -2, π, 1/2",
-      ayuda: "Números Naturales: N = {1, 2, 3, 4, 5 …}\nNúmeros Enteros: naturales, sus inversos aditivos y el cero Z = {…, –3, –2, –1, 0, 1, 2, 3, …}\nNúmeros Racionales: enteros y fraccionarios Q = {x = a/b ∶ a ∈ Z, b ∈ N}\nNúmeros Irracionales: números reales que no son racionales (√2,e,π)\nNúmeros Reales (R): números racionales e irracionales.",
+      ayuda: "Números Naturales: N = {1, 2, 3, 4, 5 …}\nNúmeros Enteros: naturales, sus inversos aditivos y el cero Z = {…, –3, –2, –1, 0, 1, 2, 3, …}\nNúmeros Racionales: enteros y fraccionarios Q = {x = a/b ∶ a ∈ Z, b ∈ N}\nNúmeros Irracionales: números reales que no son racionales (√2, e, π)\nNúmeros Reales (R): números racionales e irracionales.",
 
       resolucion: `
       √2: número real que no es racional (parte decimal finita o periódica)
