@@ -305,24 +305,6 @@ const ejercicios = {
     },
 
 
-
-
-
-Funciones lineales – Introducción 
-  Forma: f : R → R, f(x) = mx + b → m = pendiente (dirección e inclinación de la recta), b = ordenada al origen
-  Dominio: R
-  Gráfica: línea recta
-  Para cualquier x1, x2 ∈ Dom(f) con x1 ≠ x2 la pendiente se puede calcular como m = (f(x_2 )  - f(x_1))/(x_2  -〖 x〗_1 ) = (∆f  (incremento f))/(∆x  (incremento x)) .
-También si la recta para por los puntos (x1, y1) y (x2, y2), la pendiente de la recta es m = (y_2  - y_1)/(x_2  -〖 x〗_1 ) = ∆y/∆x .
-  Si m > 0, la función es creciente → si ∆x = x2 – x1 > 0, entonces ∆y = y2 – y1 = f(x2) – f(x1) > 0 o sea f(x2) > f(x1) para x2 > x1.
-  Si m < 0, la función es decreciente → si ∆x = x2 – x1 > 0, entonces ∆y = y2 – y1 = f(x2) – f(x1) < 0 o sea f(x2) < f(x1) para x2 > x1.
-  Si m = 0, la función es constante ya que ∆y = y2 – y1 = f(x2) – f(x1) = 0 para todo x1, x2.
-
-
-
-
-
-
   },
 
   2: {},
