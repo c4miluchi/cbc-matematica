@@ -365,7 +365,6 @@ const ejercicios = {
       Raíces = 2 (doble)
       Forma canónica = (x – 4)²
       Forma factorizada = (x – 4)²
-
       `,
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -382,22 +381,42 @@ const ejercicios = {
     },
 
     16: {
-      titulo: "",
-      enunciado: "",
-      ayuda: "",
+      titulo: "Raíz cuadrada",
+      enunciado: "Hallar el dominio de: f(x) = √((4-2x)) – √(x+3)",
+      ayuda: "Vimos que f : R → R, f(x) = x² no es inyectiva ni sobreyectiva.\nSin embargo, si restringimos el dominio y tomamos el codominio igual a la imagen / g : [0, +∞) → [0, +∞), g(x) = x² → es biyectiva y existe su inversa llamada función raíz cuadrada:\ng⁻¹ : [0, +∞) → [0, +∞), g⁻¹(x) = √x (x ≥ 0) y su gráfico es simétrico al gráfico de g(x) = x² respecto a la recta y = x.",
 
       resolucion: `
-      
-      Solución:
+      4 – 2x ≥ 0 → –2x ≥ –4 → x ≤ 2
+      x + 3 ≥ 0 → x ≥ -3
+      Entonces: –3 ≤ x ≤ 2
+
+      Solución: Dom(f) = [-3, 2]
 
       `,
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
+          s === "[-3,2]"
+        );
+      },
+    },
+
+    17: {
+      titulo: "Funciones polinómicas",
+      enunciado: "graficar f(x) = (x – 3)³",
+      ayuda: "Forma: f : R → R, f(x) = aₙxⁿ + ... + a₁x + a₀  (aₙ = coeficiente principal; a₀ = coeficiente independiente)",
+
+      resolucion: `
+      Solución:
+      `,
+      resolucionImagen: "/imagenes/3.png",
+      /*verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
           s === "" ||
           s === ""
         );
-      },
+      },*/
     },
   },
 
