@@ -161,24 +161,63 @@ const ejercicios = {
 
     7: {
       titulo: "Funciones",
-      enunciado: "Dada la función f : (2, +∞) → R, f(x) = (x + 3)/(2x - 4) dar su dominio, codominio e  imagen",
-      ayuda: "Dominio: elementos del conjunto de partida (“x”) que se relacionan con un elemento del conjunto de llegada\nCodominio: elementos del conjunto de llegada (“y”)\nImagen: resultados de aplicar la fórmula a los elementos del dominio de f.",
+      enunciado: "Dada la función f : (2, +∞) → R, f(x) = (x + 3)/(2x - 4) dar su dominio, codominio, imagen y preimagen de 1",
+      ayuda: "Dominio: elementos del conjunto de partida (“x”) que se relacionan con un elemento del conjunto de llegada.\nCodominio: elementos del conjunto de llegada (“y”).\nImagen: resultados de aplicar la fórmula a los elementos del dominio de f.\nPreimagen: dado un valor y ∈ Im(f), es el conjunto de los valores de x ∈ Dom(f) tales que f(x) = y.",
 
       resolucion: `
       Para el dominio y codominio: 2x - 4 ≠ 0 → 2x ≠ 4 → x ≠ 2 pero recordemos que f : (2, +∞) → R
       Para la imagen: f(x) ⇔ (x + 3)/(2x - 4) = y ⇔ (x + 3) = y(2x - 4) ⇔ ... ⇔ x = (-4y - 3)/(1 - 2y)
       Debemos ver para que valores de y, el x que encontramos pertenece al intervalo (2, +∞):
       (-4y - 3)/(1 - 2y) > 2 ⇔ (-4y - 3)/(1 - 2y) - 2 > 0 ⇔ ... ⇔ y  > 1/2
-      Solución: Dom(f) = (2, +∞), Codom(f) = R, Im(f) = (1/2, +∞)
+      Para la preimagen de 1, hacemos (x + 3)/(2x - 4) = 1 → x = 7
+      Solución: Dom(f) = (2, +∞), Codom(f) = R, Im(f) = (1/2, +∞), Preimagen: x = 7
       `,
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "(2, +∞),R,(1/2, +∞)" ||
-          s === "(2, +∞)R(1/2, +∞)"
+          s === "(2, +∞),R,(1/2, +∞),7" ||
+          s === "(2, +∞)R(1/2, +∞)7"  ||
+          s === "dom=(2, +∞),cod=R,im=(1/2, +∞),x=7" ||
+          s === "dom=(2, +∞)cod=Rim=(1/2, +∞)x=7"
         );
       },
     },
+
+    8: {
+      titulo: "Funciones 2",
+      imagen: "/Users/gustavo/Desktop/cbc-matematica/public/imagenes/funciones_2.png"
+      enunciado: "Dada la imagen dar su dominio, imagen, conjunto de ceros/positividad/negatividad/crecimiento/decrecimiento, máximos locales, mínimo local, mínimo absoluto",
+      ayuda: "Dominio: elementos del conjunto de partida (“x”) que se relacionan con un elemento del conjunto de llegada.\nImagen: resultados de aplicar la fórmula a los elementos del dominio de f.\nConjunto de ceros: todos los x ∈ Dom(f) tales que f(x) = 0\nConjunto de positividad: todos los x ∈ Dom(f) por arriba del eje x\nConjunto de negatividad: todos los x ∈ Dom(f) por debajo del eje x\nConjunto de crecimiento (en x): todos los x ∈ Dom(f) tales que la función aumenta su valor\nConjunto de decrecimiento (en x): todos los x ∈ Dom(f) tales que la función disminuye su valor\nMáximos locales (en x): intervalo I ⊆ Dom(f) con x₀ ∈ I que verifica f(x₀) ≥ f(x) para todo x ∈ I\nMáximos absolutos (en x): f(x₀) ≥ f(x) para todo x ∈ Dom(f)\nMínimo local (en x): intervalo I ⊆ Dom(f) con x₀ ∈ I que verifica f(x₀) ≤ f(x) para todo x ∈ I\nMínimo absoluto (en x): f(x₀) ≤ f(x) para todo x ∈ Dom(f)",
+
+      resolucion: `
+      Solución:
+      Dom f(x) = [–4; +∞)
+      Im f(x) = [–2; +∞)
+      C⁰ f(x) = {–2; 1; 4}
+      C⁺ f(x) = [–4; –2) ∪ (4; +∞)
+      C⁻ f(x) = (–2; 1) ∪ (1; 4)
+      I↗ f(x) = (–1; 1) y (3; +∞)
+      I↘ f(x) = (–4; –1) y (1; 3)
+      MÁX f(x) = {–4; 1}
+      MÍN f(x) = {3}
+      MÍN f(x) = {–1}
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "[–4; +∞),[–2; +∞),{–2; 1; 4},[–4; –2)∪(4; +∞),(–2; 1)∪(1; 4),(–1; 1)y(3; +∞),(–4; –1)y(1; 3),{–4; 1},{3},{–1}" ||
+          s === "[–4; +∞)[–2; +∞){–2; 1; 4}[–4; –2)∪(4; +∞)(–2; 1)∪(1; 4)(–1; 1)y(3; +∞)(–4; –1)y(1; 3){–4; 1}{3}{–1}" ||
+          s === "dom=[–4; +∞),im=[–2; +∞),ceros={–2; 1; 4},positividad=[–4; –2)∪(4; +∞),negatividad=(–2; 1)∪(1; 4),crecimiento=(–1; 1)y(3; +∞),decrecimiento=(–4; –1)y(1; 3),maximolocal={–4; 1},minimolocal={3},minimoabsoluto={–1}" ||
+          s === "dom=[–4; +∞)im=[–2; +∞)ceros={–2; 1; 4}positividad=[–4; –2)∪(4; +∞)negatividad=(–2; 1)∪(1; 4)crecimiento=(–1; 1)y(3; +∞)decrecimiento=(–4; –1)y(1; 3)maximolocal={–4; 1}minimolocal={3}minimoabsoluto={–1}"
+        );
+      },
+    },
+
+
+
+
+
+
 
 
   },
