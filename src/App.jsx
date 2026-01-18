@@ -185,7 +185,7 @@ const ejercicios = {
 
     8: {
       titulo: "Funciones 2",
-      imagen: "/Users/gustavo/Desktop/cbc-matematica/public/imagenes/funciones_2.png",
+      imagen: "/imagenes/funciones_2.png",
       enunciado: "Dada la imagen dar su dominio, imagen, conjunto de ceros/positividad/negatividad/crecimiento/decrecimiento, máximos locales, mínimo local, mínimo absoluto",
       ayuda: "Dominio: elementos del conjunto de partida (“x”) que se relacionan con un elemento del conjunto de llegada.\nImagen: resultados de aplicar la fórmula a los elementos del dominio de f.\nConjunto de ceros: todos los x ∈ Dom(f) tales que f(x) = 0\nConjunto de positividad: todos los x ∈ Dom(f) por arriba del eje x\nConjunto de negatividad: todos los x ∈ Dom(f) por debajo del eje x\nConjunto de crecimiento (en x): todos los x ∈ Dom(f) tales que la función aumenta su valor\nConjunto de decrecimiento (en x): todos los x ∈ Dom(f) tales que la función disminuye su valor\nMáximos locales (en x): intervalo I ⊆ Dom(f) con x₀ ∈ I que verifica f(x₀) ≥ f(x) para todo x ∈ I\nMáximos absolutos (en x): f(x₀) ≥ f(x) para todo x ∈ Dom(f)\nMínimo local (en x): intervalo I ⊆ Dom(f) con x₀ ∈ I que verifica f(x₀) ≤ f(x) para todo x ∈ I\nMínimo absoluto (en x): f(x₀) ≤ f(x) para todo x ∈ Dom(f)",
 
@@ -215,7 +215,7 @@ const ejercicios = {
 
     9: {
       titulo: "Funciones inyectivas, sobreyectivas y biyectivas",
-      imagen: "/Users/gustavo/Desktop/cbc-matematica/public/imagenes/inyectivas_sobreyectivas_biyectivas.png",
+      imagen: "/imagenes/inyectivas_sobreyectivas_biyectivas.png",
       enunciado: "Dada la imagen (f : R → R, f(x) = x²) definir si es inyectiva, sobreyectiva y/o biyectiva (sí o no)",
       ayuda: "Inyectiva: ∀ a, b ∈ Dom(f), si f(a) = f(b) entonces a = b ⇒ si a ≠ b entonces f(a) ≠ f(b)\nSobreyectiva: ∀ c ∈ Cod(f), existe al menos un a ∈ Dom(f) / f(a) = c → Im(f) = Cod(f)\nBiyectiva: es inyectiva y sobreyectiva",
 
@@ -235,9 +235,68 @@ const ejercicios = {
       },
     },
 
+    10: {
+      titulo: "Composición",
+      enunciado: "Dadas f(x) = 2x + 1 y g(x) = x², encontrar (g o f)(x) y (f o g)(x)",
+      ayuda: "Sean f : A → B y g : B → C dos funciones, la composición de g y f, que notamos g o f y se lee “g compuesta con f” es la función h = g o f : A → C definida como: (g o f)(x) = g(f(x)) → Im(f(x)) ⊆ Dom(g(x)).\nTambién (f o g)(x) = f(g(x)) → Im(g(x)) ⊆ Dom(f(x)).",
 
+      resolucion: `
+      (g o f)(x) = g(f(x)) = (f(x))² = (2x + 1)²
+      (f o g)(x) = f(g(x)) = 2(g(x)) + 1 = 2x² + 1
+      Solución:
+      (g o f)(x) = (2x + 1)²
+      (f o g)(x) = 2x² + 1
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "(2x+1)²,2x²+1" ||
+          s === "(2x+1)²2x²+1" ||
+          s === "(gof)(x)=(2x+1)²,(fog)(x)=2x²+1" ||
+          s === "(gof)(x)=(2x+1)²(fog)(x)=2x²+1"
+        );
+      },
+    },
 
+    11: {
+      titulo: "Función inversa",
+      enunciado: "Dada f(x) = 2x + 1, encontrar (si existe) su inversa",
+      ayuda: "Sea f(x) una función biyectiva, existe la posibilidad de definir una función f–1(x) que realiza el camino inverso → f : A → B y f–1 : B → A → a f–1 se la llama inversa",
 
+      resolucion: `
+      f(x) = 2x + 1 ¿f–1(x)? → planteo f(f–1(x)) = x → 2 f–1(x) + 1 = x → despejando: 2 f–1(x) = x – 1 → f–1(x) = (x-1)/2
+      Solución:
+      f–1(x) = (x-1)/2
+
+      Notar que Dom(f(x)) = Im(f–1(x)) y Dom(f–1(x)) = Im(f(x))
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "(x-1)/2"
+        );
+      },
+    },
+
+    12: {
+      titulo: "Función inversa",
+      enunciado: "Dada f(x) = 2x + 1, encontrar (si existe) su inversa",
+      ayuda: "Sea f(x) una función biyectiva, existe la posibilidad de definir una función f–1(x) que realiza el camino inverso → f : A → B y f–1 : B → A → a f–1 se la llama inversa",
+
+      resolucion: `
+      f(x) = 2x + 1 ¿f–1(x)? → planteo f(f–1(x)) = x → 2 f–1(x) + 1 = x → despejando: 2 f–1(x) = x – 1 → f–1(x) = (x-1)/2
+      Solución:
+      f–1(x) = (x-1)/2
+
+      Notar que Dom(f(x)) = Im(f–1(x)) y Dom(f–1(x)) = Im(f(x))
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "(x-1)/2"
+        );
+      },
+    },
 
 
 
@@ -521,6 +580,22 @@ function App() {
       <h3>{ej.titulo}</h3>
 
       <p>{ej.enunciado}</p>
+
+      {/* 🖼️ MOSTRAR IMAGEN SI EXISTE */}
+      {ej.imagen && (
+        <img
+          src={ej.imagen}
+          alt="Imagen del ejercicio"
+          style={{
+            maxWidth: "100%",
+            margin: "20px 0",
+            borderRadius: 10,
+            border: "1px solid #ccc"
+          }}
+        />
+      )}
+
+
 
       <input
         value={respuesta}
