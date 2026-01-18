@@ -182,7 +182,7 @@ const ejercicios = {
 
     8: {
       titulo: "Funciones",
-      imagen: "/Users/gustavo/Desktop/cbc-matematica"
+      imagen: "/Users/gustavo/Desktop/cbc-matematica",
       enunciado: "Dada la función f : (2, +∞) → R, f(x) = (x + 3)/(2x - 4) dar su dominio, codominio e  imagen",
       ayuda: "Dominio: elementos del conjunto de partida (“x”) que se relacionan con un elemento del conjunto de llegada\nCodominio: elementos del conjunto de llegada (“y”)\nImagen: resultados de aplicar la fórmula a los elementos del dominio de f.",
 
