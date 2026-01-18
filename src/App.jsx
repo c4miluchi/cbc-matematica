@@ -304,6 +304,31 @@ const ejercicios = {
       },
     },
 
+    13: {
+      titulo: "Función módulo",
+      enunciado: "¿Cómo será el grafico de x? ¿Y el de | x | + 1?",
+      ayuda: "Módulo: valor absoluto de un número.\nQueda definido por la regla | x | = x si x ≥ 0 y | x | = -x si x < 0\nEl módulo nos indica la distancia de 0 a x, o sea, d(0, x) = | x |",
+
+      resolucion: `
+      | x + 1 | → correr al gráfico de | x | una unidad hacia la izquierda
+      | x | + 1 → correr al gráfico de | x | 1 unidad hacia arriba
+      Solución:
+      `,
+      resolucionImagen: "/imagenes/1.png",
+      resolucionImagen: "/imagenes/2.png",
+      /*verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "f(x)=–x,f(x)=(1/3)x–8/3" ||
+          s === "f(x)=–xf(x)=(1/3)x–8/3" ||
+          s === "–x,(1/3)x–8/3" ||
+          s === "–x(1/3)x–8/3"
+        );
+      },*/
+    },
+
+
+
 
   },
 
