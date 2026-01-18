@@ -984,18 +984,32 @@ function App() {
   }
 
   return (
-    <div style={pageStyle}>
-      <TopBar />
-      <div style={contentStyle}>
-        {pantalla === "inicio" && <Inicio />}
-        {pantalla === "analisis" && <Analisis />}
-        {pantalla === "unidad" && <Unidad />}
-        {pantalla === "ejercicios" && <Ejercicios />}
-        {pantalla === "ejercicio" && <Ejercicio />}
-        {pantalla === "algebra" && <Algebra />}
-      </div>
+  <div style={pageStyle}>
+    <TopBar />
+
+    <div style={contentStyle}>
+      {pantalla === "inicio" && <Inicio />}
+      {pantalla === "analisis" && <Analisis />}
+      {pantalla === "unidad" && <Unidad />}
+      {pantalla === "ejercicios" && <Ejercicios />}
+      {pantalla === "ejercicio" && <Ejercicio />}
+      {pantalla === "algebra" && <Algebra />}
     </div>
-  );
+
+    {/* 👇 FIRMA AL PIE */}
+    <div
+      style={{
+        textAlign: "center",
+        fontSize: 12,
+        color: "#888",
+        padding: "10px 0",
+      }}
+    >
+      Desarrollo y contenidos: Camila Aleksandra Kotelchuk — CBC Matemática
+    </div>
+  </div>
+);
+
 }
 
 /* =========================
