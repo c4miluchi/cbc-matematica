@@ -104,7 +104,7 @@ const ejercicios = {
       },
     },
 
-    4: {
+    5: {
       titulo: "Inecuaciones",
       enunciado: "Resolver la siguiente inecuación: 4 + 6x < 12 - 2x",
       ayuda: "Aplicar propiedades para intentar 'despejar' la variable x.",
@@ -126,6 +126,56 @@ const ejercicios = {
           s === "x<1" ||
           s === "(-infinito,1)" ||
           s === "(–∞,1)"
+        );
+      },
+    },
+
+    6: {
+      titulo: "Regla de los signos",
+      enunciado: "Escribir al conjunto A = {x ∈ R : (2x + 1)(3 − x) ≤ 0} como un intervalo o unión de intervalos.",
+      ayuda: "Para que el producto sea menor o igual a 0, uno de los factores debe ser mayor o igual a 0 y el otro factor menor o igual a 0.",
+
+      resolucion: `
+      Primer caso: 2x + 1 ≥ 0 y 3 − x ≤ 0
+      a) 2x + 1 ≥ 0 ⇔ 2x ≥ −1 ⇔ x ≥ −1/2 ⇔ x ∈ [−1/2, +∞)
+      b) 3 − x ≤ 0 ⇔ 3 ≤ x ⇔ x ∈ [3, +∞)
+      Intersección entre ambas: x ∈ [-1/2, +∞) ∩ [3, +∞) = [3, +∞)
+
+      Segundo caso: 2x + 1 ≤ 0 y 3 − x ≥ 0
+      a) 2x + 1 ≤ 0 ⇔ 2x ≤ −1 ⇔ x ≤ −1/2 ⇔ x ∈ (−∞, −1/2].
+      b) 3 − x ≥ 0 ⇔ 3 ≥ x ⇔ x ∈ (−∞, 3]
+      Intersección entre ambas: x ∈ (−∞, −1/2] ∩ (−∞, 3] = (−∞, −1/2]
+
+      Unión de los dos casos: A = (−∞, −1/2] ∪ [3, +∞)
+
+      Solución: A = (−∞, −1/2] ∪ [3, +∞)
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "a=(−∞,−1/2]∪[3, +∞)" ||
+          s === "(−∞, −1/2]u[3, +∞)" 
+        );
+      },
+    },
+
+    7: {
+      titulo: "Funciones",
+      enunciado: "Dada la función f : (2, +∞) → R, f(x) = (x + 3)/(2x - 4) dar su dominio, codominio e  imagen",
+      ayuda: "Dominio: elementos del conjunto de partida (“x”) que se relacionan con un elemento del conjunto de llegada\nCodominio: elementos del conjunto de llegada (“y”)\nImagen: resultados de aplicar la fórmula a los elementos del dominio de f.",
+
+      resolucion: `
+      Para el dominio y codominio: 2x - 4 ≠ 0 → 2x ≠ 4 → x ≠ 2 pero recordemos que f : (2, +∞) → R
+      Para la imagen: f(x) ⇔ (x + 3)/(2x - 4) = y ⇔ (x + 3) = y(2x - 4) ⇔ ... ⇔ x = (-4y - 3)/(1 - 2y)
+      Debemos ver para que valores de y, el x que encontramos pertenece al intervalo (2, +∞):
+      (-4y - 3)/(1 - 2y) > 2 ⇔ (-4y - 3)/(1 - 2y) - 2 > 0 ⇔ ... ⇔ y  > 1/2
+      Solución: Dom(f) = (2, +∞), Codom(f) = R, Im(f) = (1/2, +∞)
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "(2, +∞),R,(1/2, +∞)" ||
+          s === "(2, +∞)R(1/2, +∞)"
         );
       },
     },
