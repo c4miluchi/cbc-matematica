@@ -213,6 +213,28 @@ const ejercicios = {
       },
     },
 
+    9: {
+      titulo: "Funciones inyectivas, sobreyectivas y biyectivas",
+      imagen: "/Users/gustavo/Desktop/cbc-matematica/public/imagenes/inyectivas_sobreyectivas_biyectivas.png"
+      enunciado: "Dada la imagen (f : R → R, f(x) = x²) definir si es inyectiva, sobreyectiva y/o biyectiva (sí o no)",
+      ayuda: "Inyectiva: ∀ a, b ∈ Dom(f), si f(a) = f(b) entonces a = b ⇒ si a ≠ b entonces f(a) ≠ f(b)\nSobreyectiva: ∀ c ∈ Cod(f), existe al menos un a ∈ Dom(f) / f(a) = c → Im(f) = Cod(f)\nBiyectiva: es inyectiva y sobreyectiva",
+
+      resolucion: `
+      La función es f(x) = x²
+      No es inyectiva porque a ≠ b y f(a) = f(b).
+      No es sobreyectiva porque d ∈ Codom(f) no tiene preimagen (∄ a ∈ Dom(f) / f(a) = d).
+      No es biyectiva porque no es inyectiva ni sobreyectiva.
+      Solución: no, no, no
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "no,no,no" ||
+          s === "nonono"
+        );
+      },
+    },
+
 
 
 
