@@ -215,7 +215,7 @@ const ejercicios = {
 
     9: {
       titulo: "Funciones inyectivas, sobreyectivas y biyectivas",
-      imagen: "/Users/gustavo/Desktop/cbc-matematica/public/imagenes/inyectivas_sobreyectivas_biyectivas.png",
+      imagen: "public/imagenes/inyectivas_sobreyectivas_biyectivas.png",
       enunciado: "Dada la imagen (f : R → R, f(x) = x²) definir si es inyectiva, sobreyectiva y/o biyectiva (sí o no)",
       ayuda: "Inyectiva: ∀ a, b ∈ Dom(f), si f(a) = f(b) entonces a = b ⇒ si a ≠ b entonces f(a) ≠ f(b)\nSobreyectiva: ∀ c ∈ Cod(f), existe al menos un a ∈ Dom(f) / f(a) = c → Im(f) = Cod(f)\nBiyectiva: es inyectiva y sobreyectiva",
 
