@@ -270,6 +270,7 @@ const ejercicios = {
 
       Notar que Dom(f(x)) = Im(f–1(x)) y Dom(f–1(x)) = Im(f(x))
       `,
+      resolucionImagen: "/imagenes/resolucion_funciones_2.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
@@ -579,9 +580,7 @@ function App() {
 
       <h3>{ej.titulo}</h3>
 
-      <p>{ej.enunciado}</p>
-
-      {/* 🖼️ MOSTRAR IMAGEN SI EXISTE */}
+      {/* si existe, se  muestra la imagen */}
       {ej.imagen && (
         <img
           src={ej.imagen}
@@ -595,6 +594,7 @@ function App() {
         />
       )}
 
+      <p>{ej.enunciado}</p>
 
 
       <input
@@ -632,7 +632,29 @@ function App() {
         🧩 Ver resolución
       </button>
 
-      {mostrarResolucion && <pre>{ej.resolucion}</pre>}
+      {/*mostrarResolucion && <pre>{ej.resolucion}</pre>*/}
+      {mostrarResolucion && (
+      <>
+        <pre style={{ textAlign: "left", whiteSpace: "pre-wrap" }}>
+          {ej.resolucion}
+        </pre>
+
+        {/* si existe, muestra la imagen de la resolución */}
+        {ej.resolucionImagen && (
+          <img
+            src={ej.resolucionImagen}
+            alt="Resolución gráfica"
+            style={{
+              maxWidth: "100%",
+              marginTop: 20,
+              borderRadius: 10,
+              border: "1px solid #ccc"
+            }}
+          />
+        )}
+      </>
+    )}
+
 
       <button style={backStyle} onClick={() => setPantalla("ejercicios")}>
         ⬅ Volver
