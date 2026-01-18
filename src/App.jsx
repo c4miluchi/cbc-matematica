@@ -327,19 +327,266 @@ const ejercicios = {
       },*/
     },
 
+    14: {
+      titulo: "Valor absoluto como distancia",
+      enunciado: "Resolver la inecuación |x − 4| ≤ 5",
+      ayuda: "Pensar al valor absoluto como distancia",
 
+      resolucion: `
+      x − 4| ≤ 5 ⇐⇒ d(x, 4) ≤ 5 → podemos marcarlo en la recta (nos paramos en 4 y nos movemos 5 unidades a la derecha y 5 a la izquierda.)
+      
+      Analíticamente:
+      |x − 4| ≤ 5 ⇔ − 5 ≤ x − 4 ≤ 5 ⇔ − 5 + 4 ≤ x − 4 + 4 ≤ 5 + 4 ⇔ − 1 ≤ x ≤ 9
 
+      Solución:
+      I = [-1, 9]
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "[-1,9]"
+        );
+      },
+    },
 
+    15: {
+      titulo: "Funciones cuadráticas",
+      enunciado: "Dada la siguiente función: f(x) = x² – 8x + 16, hallar vértice, raíces (si las tuviera), forma canónica y factorizada (si se pudiera).",
+      ayuda: "Forma:\nPolinómica: f : R → R, f(x) = ax² + bx + c con a, b, c ∈ R, a ≠ 0\nCanónica: f : R → R, f(x) = a . (x – xᵥ)² + yᵥ donde V = (xᵥ, yᵥ) es el vértice de la parábola.\nLa forma canónica puede obtenerse a partir de la polinómica completando cuadrados ((α + β)² = α² + 2αβ + β²).\nFactorizada: f : R → R, f(x) = a . (x – x₁) . (x – x₂)\nLa recta x = xᵥ se llama eje de simetría de la parábola → xᵥ = (-b)/2a",
+
+      resolucion: `
+      Forma factorizada: buscamos dos números que multiplicados den 16 y sumen -8 → -4 y -4 → f(x) = (x – 4)(x – 4) = (x – 4)²
+      Raíces: resolvemos (x – 4)² = 0 → x = 4 (es doble)
+      Forma canónica: ya la tenemos, (x – 4)² → xᵥ = 4 yᵥ = 0
+      Vértice: (4, 0)
+
+      Solución:
+      Vértice = (4, 0)
+      Raíces = 2 (doble)
+      Forma canónica = (x – 4)²
+      Forma factorizada = (x – 4)²
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "vertice=(4, 0),raices=2,formacanonica=(x – 4)^2,formafactorizada=(x – 4)^2" ||
+          s === "vertice=(4, 0)raices=2,2formacanonica=(x – 4)^2formafactorizada=(x – 4)^2" ||
+          s === "vertice=(4, 0)raices=22formacanonica=(x – 4)^2formafactorizada=(x – 4)^2" ||
+          s === "(4, 0),2,(x – 4)^2,(x – 4)^2" ||
+          s === "(4, 0),2,2,(x – 4)^2,(x – 4)^2" ||
+          s === "(4, 0)2(x – 4)^2(x – 4)^2" ||
+          s === "(4, 0)22(x – 4)^2(x – 4)^2"
+        );
+      },
+    },
+
+    16: {
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
   },
 
-  2: {},
-  3: {},
-  4: {},
-  5: {},
-  6: {},
-  7: {},
-  8: {},
-  9: {},
+  2: {
+    1: {
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+
+    2: {
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+  },
+
+  3: {
+    1: {
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+  },
+
+  4: {
+    1: {
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+  },
+
+  5: {
+    1: {
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+  },
+
+  6: {
+    1: {
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+  },
+
+  7: {
+    1: {
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+  },
+
+  8: {
+    1: {
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+  },
+
+  9: {
+    1: {
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+  },
 };
 
 
