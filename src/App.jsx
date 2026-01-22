@@ -768,7 +768,7 @@ function App() {
 
         <button
           style={bigButtonStyle}
-          onClick={() => setPantalla("unidad")}
+          onClick={() => setPantalla("analisis_unidades")}
         >
           📘 Teoría y ejercicios
         </button>
@@ -784,6 +784,31 @@ function App() {
         </button>
 
         <button style={backStyle} onClick={() => setPantalla("inicio")}>
+          ⬅ Volver
+        </button>
+      </div>
+    );
+  }
+
+  function AnalisisUnidades() {
+    return (
+      <div style={innerStyle}>
+        <h1>📘 Análisis Matemático</h1>
+
+        {analisisUnits.map((u, i) => (
+          <button
+            key={i}
+            style={buttonStyle}
+            onClick={() => {
+              setUnidadActual(i + 1);
+              setPantalla("unidad");
+            }}
+          >
+            {u}
+          </button>
+        ))}
+
+        <button style={backStyle} onClick={() => setPantalla("analisis")}>
           ⬅ Volver
         </button>
       </div>
@@ -1105,6 +1130,7 @@ function MenuParciales() {
     {pantalla === "ejercicio" && <Ejercicio />}
     {pantalla === "algebra" && <Algebra />}
     {pantalla === "parciales_menu" && <MenuParciales />}
+    {pantalla === "analisis_unidades" && <AnalisisUnidades />}
   </div>
 
 
