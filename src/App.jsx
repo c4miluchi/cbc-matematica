@@ -1004,6 +1004,108 @@ export default function App() {
     );
   }
 
+  function Ejercicio() {
+  const [respuesta, setRespuesta] = useState("");
+  const [resultado, setResultado] = useState(null);
+  const [mostrarAyuda, setMostrarAyuda] = useState(false);
+  const [mostrarResolucion, setMostrarResolucion] = useState(false);
+
+  const base = materia === "analisis" ? ejerciciosAnalisis : ejerciciosAlgebra;
+  const ej = base[unidadActual]?.[ejercicioActual];
+
+  if (!ej) {
+    return (
+      <div style={innerStyle}>
+        <p>Ejercicio no encontrado</p>
+        <button style={buttonStyle} onClick={() => setPantalla("ejercicios")}>
+          ⬅ Volver
+        </button>
+      </div>
+    );
+  }
+
+  function verificar() {
+    const ok = ej.verificar ? ej.verificar(respuesta) : false;
+    setResultado(ok);
+  }
+
+  return (
+    <div style={innerStyle}>
+      <h1>
+        ✏️ Ejercicio {ejercicioActual} - Unidad {unidadActual}
+      </h1>
+
+      <h3>{ej.titulo}</h3>
+
+      {ej.imagen && (
+        <img
+          src={ej.imagen}
+          alt="Imagen del ejercicio"
+          style={{ maxWidth: "100%", margin: "20px 0", borderRadius: 10 }}
+        />
+      )}
+
+      <p>{ej.enunciado}</p>
+
+      <input
+        value={respuesta}
+        onChange={(e) => setRespuesta(e.target.value)}
+        placeholder="Escribí tu respuesta"
+        style={{ padding: 10, fontSize: 16, width: "80%" }}
+      />
+
+      <div style={{ marginTop: 10 }}>
+        <button style={buttonStyle} onClick={verificar}>
+          Verificar
+        </button>
+      </div>
+
+      {resultado !== null && (
+        <p style={{ fontSize: 18 }}>
+          {resultado ? "✅ Correcto" : "❌ Incorrecto"}
+        </p>
+      )}
+
+      <button
+        style={buttonStyle}
+        onClick={() => setMostrarAyuda(!mostrarAyuda)}
+      >
+        📘 Ayuda teórica
+      </button>
+
+      {mostrarAyuda && <pre style={{ textAlign: "left", whiteSpace: "pre-wrap" }}>{ej.ayuda}</pre>}
+
+      <button
+        style={buttonStyle}
+        onClick={() => setMostrarResolucion(!mostrarResolucion)}
+      >
+        🧩 Ver resolución
+      </button>
+
+      {mostrarResolucion && (
+        <>
+          <pre style={{ textAlign: "left", whiteSpace: "pre-wrap" }}>
+            {ej.resolucion}
+          </pre>
+
+          {ej.resolucionImagen && (
+            <img
+              src={ej.resolucionImagen}
+              alt="Resolución gráfica"
+              style={{ maxWidth: "100%", marginTop: 20, borderRadius: 10 }}
+            />
+          )}
+        </>
+      )}
+
+      <button style={buttonStyle} onClick={() => setPantalla("ejercicios")}>
+        ⬅ Volver
+      </button>
+    </div>
+  );
+}
+
+
   function ParcialesMenu() {
     const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
 
@@ -1047,7 +1149,7 @@ export default function App() {
       {pantalla === "unidades" && <Unidades />}
       {pantalla === "unidad" && <Unidad />}
       {pantalla === "ejercicios" && <Ejercicios />}
-      {pantalla === "ejercicio" && <div style={innerStyle}>ACÁ VA TU COMPONENTE EJERCICIO COMPLETO</div>}
+      {pantalla === "ejercicio" && <Ejercicio />}
       {pantalla === "parciales_menu" && <ParcialesMenu />}
       {pantalla === "parcial" && <Parcial />}
     </div>
