@@ -8,6 +8,18 @@ import { useState } from "react";
    BASE DE DATOS DE EJERCICIOS
    ========================================================== */
 
+const parcialesAnalisis = {
+  1: { titulo: "Primer Parcial de Análisis" },
+  2: { titulo: "Segundo Parcial de Análisis" },
+  3: { titulo: "Tercer Parcial de Análisis" },
+};
+
+const parcialesAlgebra = {
+  1: { titulo: "Primer Parcial de Álgebra" },
+  2: { titulo: "Segundo Parcial de Álgebra" },
+  3: { titulo: "Tercer Parcial de Álgebra" },
+};
+
 const ejercicios = {
   1: {
     1: {
@@ -608,29 +620,6 @@ const ejercicios = {
   },
 };
 
-const parciales = {
-  1: {
-    1: {
-      titulo: "Parcial 1 - Unidad 1",
-      enunciado: "Este es un ejercicio de parcial de ejemplo.",
-      ayuda: "Usar todo lo visto en la unidad.",
-      resolucion: `
-Resolución del parcial de ejemplo.
-`,
-      verificar: (r) => true, // por ahora siempre correcto
-    },
-  },
-  2: {},
-  3: {},
-  4: {},
-  5: {},
-  6: {},
-  7: {},
-  8: {},
-  9: {},
-};
-
-
 
 const linksAnalisis = {
   1: "https://drive.google.com/file/d/1k-WiyFo8ST4boAFPnyjUZ7yMQPeIhZoG/view?usp=sharing",
@@ -654,6 +643,8 @@ const linksAlgebra = {
 };
 
 function App() {
+  const [materiaActual, setMateriaActual] = useState(null); // "analisis" | "algebra"
+  const [parcialActual, setParcialActual] = useState(1);
   const [pantalla, setPantalla] = useState("inicio");
   const [tema, setTema] = useState("claro");
   const [unidadActual, setUnidadActual] = useState(1);
@@ -775,18 +766,22 @@ function App() {
       <div style={innerStyle}>
         <h1>📘 Análisis Matemático</h1>
 
-        {analisisUnits.map((u, i) => (
-          <button
-            key={i}
-            style={buttonStyle}
-            onClick={() => {
-              setUnidadActual(i + 1);
-              setPantalla("unidad");
-            }}
-          >
-            {u}
-          </button>
-        ))}
+        <button
+          style={bigButtonStyle}
+          onClick={() => setPantalla("unidades")}
+        >
+          📘 Teoría y ejercicios
+        </button>
+
+        <button
+          style={bigButtonStyle}
+          onClick={() => {
+            setMateriaActual("analisis");
+            setPantalla("parciales_menu");
+          }}
+        >
+          📝 Parciales
+        </button>
 
         <button style={backStyle} onClick={() => setPantalla("inicio")}>
           ⬅ Volver
@@ -794,6 +789,7 @@ function App() {
       </div>
     );
   }
+
 
   function Unidad() {
     return (
@@ -862,7 +858,6 @@ function App() {
 }
 
 function Parciales() {
-  const lista = parciales[unidadActual] || {};
 
   return (
     <div style={innerStyle}>
@@ -898,8 +893,6 @@ function Parcial() {
   const [resultado, setResultado] = useState(null);
   const [mostrarAyuda, setMostrarAyuda] = useState(false);
   const [mostrarResolucion, setMostrarResolucion] = useState(false);
-
-  const ej = parciales[unidadActual]?.[ejercicioActual];
 
   if (!ej) {
     return (
@@ -1096,18 +1089,22 @@ function Parcial() {
       <div style={innerStyle}>
         <h1>📗 Álgebra</h1>
 
-        {algebraUnits.map((u, i) => (
-          <button
-            key={i}
-            style={buttonStyle}
-            onClick={() => {
-              setUnidadActual(i + 1);
-              window.open(linksAlgebra[i + 1], "_blank");
-            }}
-          >
-            {u}
-          </button>
-        ))}
+        <button
+          style={bigButtonStyle}
+          onClick={() => window.open(linksAlgebra[1], "_blank")}
+        >
+          📘 Teoría
+        </button>
+
+        <button
+          style={bigButtonStyle}
+          onClick={() => {
+            setMateriaActual("algebra");
+            setPantalla("parciales_menu");
+          }}
+        >
+          📝 Parciales
+        </button>
 
         <button style={backStyle} onClick={() => setPantalla("inicio")}>
           ⬅ Volver
@@ -1116,20 +1113,55 @@ function Parcial() {
     );
   }
 
+
+function MenuParciales() {
+  const lista =
+    materiaActual === "analisis" ? parcialesAnalisis : parcialesAlgebra;
+
+  return (
+    <div style={innerStyle}>
+      <h1>📝 Parciales de {materiaActual === "analisis" ? "Análisis" : "Álgebra"}</h1>
+
+      {Object.keys(lista).map((n) => (
+        <button
+          key={n}
+          style={bigButtonStyle}
+          onClick={() => {
+            setParcialActual(Number(n));
+            setPantalla("parcial");
+          }}
+        >
+          {lista[n].titulo}
+        </button>
+      ))}
+
+      <button
+        style={backStyle}
+        onClick={() => setPantalla(materiaActual)}
+      >
+        ⬅ Volver
+      </button>
+    </div>
+  );
+}
+
+
   return (
   <div style={pageStyle}>
     <TopBar />
 
     <div style={contentStyle}>
-      {pantalla === "inicio" && <Inicio />}
-      {pantalla === "analisis" && <Analisis />}
-      {pantalla === "unidad" && <Unidad />}
-      {pantalla === "ejercicios" && <Ejercicios />}
-      {pantalla === "ejercicio" && <Ejercicio />}
-      {pantalla === "algebra" && <Algebra />}
-      {pantalla === "parciales" && <Parciales />}
-      {pantalla === "parcial" && <Parcial />}
-    </div>
+    {pantalla === "inicio" && <Inicio />}
+    {pantalla === "analisis" && <Analisis />}
+    {pantalla === "unidad" && <Unidad />}
+    {pantalla === "ejercicios" && <Ejercicios />}
+    {pantalla === "ejercicio" && <Ejercicio />}
+    {pantalla === "algebra" && <Algebra />}
+    {pantalla === "parciales" && <Parciales />}
+    {pantalla === "parcial" && <Parcial />}
+    {pantalla === "parciales_menu" && <MenuParciales />}   {/* 👈 ESTA */}
+  </div>
+
 
     {/* 👇 FIRMA AL PIE */}
     <div
