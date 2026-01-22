@@ -703,7 +703,7 @@ function App() {
 
   const innerStyle = {
     width: "100%",
-    maxWidth: 900,
+    minHeight: "100vh",
     padding: 24,
     textAlign: "center",
   };
