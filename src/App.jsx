@@ -870,86 +870,35 @@ function App() {
 
 
   function Ejercicios() {
-  const lista = ejercicios[unidadActual] || {};
+    const lista = ejercicios[unidadActual] || {};
 
-  return (
-    <div style={innerStyle}>
-      <h1>✏️ Ejercicios - Unidad {unidadActual}</h1>
+    return (
+      <div style={innerStyle}>
+        <h1>✏️ Ejercicios - Unidad {unidadActual}</h1>
 
-      {Object.keys(lista).length === 0 && (
-        <p>Todavía no hay ejercicios cargados para esta unidad.</p>
-      )}
+        {Object.keys(lista).length === 0 && (
+          <p>Todavía no hay ejercicios cargados para esta unidad.</p>
+        )}
 
-      {Object.keys(lista).map((n) => (
-        <button
-          key={n}
-          style={buttonStyle}
-          onClick={() => {
-            setEjercicioActual(Number(n));
-            setPantalla("ejercicio");
-          }}
-        >
-          Ejercicio {n} - {lista[n].titulo}
-        </button>
-      ))}
+        {Object.keys(lista).map((n) => (
+          <button
+            key={n}
+            style={buttonStyle}
+            onClick={() => {
+              setEjercicioActual(Number(n));
+              setPantalla("ejercicio");
+            }}
+          >
+            Ejercicio {n} - {lista[n].titulo}
+          </button>
+        ))}
 
-      <button style={backStyle} onClick={() => setPantalla("unidad")}>
-        ⬅ Volver
-      </button>
-    </div>
-  );
-}
-
-  return (
-    <div style={innerStyle}>
-      <h1>📝 Parcial {ejercicioActual} - Unidad {unidadActual}</h1>
-
-      <h3>{ej.titulo}</h3>
-
-      <p>{ej.enunciado}</p>
-
-      <input
-        value={respuesta}
-        onChange={(e) => setRespuesta(e.target.value)}
-        placeholder="Escribí tu respuesta"
-        style={{ padding: 10, fontSize: 16, width: "80%" }}
-      />
-
-      <div style={{ marginTop: 10 }}>
-        <button style={buttonStyle} onClick={verificar}>
-          Verificar
+        <button style={backStyle} onClick={() => setPantalla("unidad")}>
+          ⬅ Volver
         </button>
       </div>
-
-      {resultado !== null && (
-        <p style={{ fontSize: 18 }}>
-          {resultado ? "✅ Correcto" : "❌ Incorrecto"}
-        </p>
-      )}
-
-      <button
-        style={buttonStyle}
-        onClick={() => setMostrarAyuda(!mostrarAyuda)}
-      >
-        📘 Ayuda teórica
-      </button>
-
-      {mostrarAyuda && <pre>{ej.ayuda}</pre>}
-
-      <button
-        style={buttonStyle}
-        onClick={() => setMostrarResolucion(!mostrarResolucion)}
-      >
-        🧩 Ver resolución
-      </button>
-
-      {mostrarResolucion && <pre>{ej.resolucion}</pre>}
-
-      <button style={backStyle} onClick={() => setPantalla("parciales")}>
-        ⬅ Volver
-      </button>
-    </div>
-  );
+    );
+  }
 }
 
 
