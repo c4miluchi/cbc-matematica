@@ -8,6 +8,31 @@ import { useState } from "react";
    BASE DE DATOS DE EJERCICIOS
    ========================================================== */
 
+/* =========================
+   LISTAS DE UNIDADES
+   ========================= */
+
+const analisisUnits = [
+  "Unidad 1 - La recta real y las funciones elementales",
+  "Unidad 2 - Sucesiones",
+  "Unidad 3 - Límites y continuidad",
+  "Unidad 4 - Funciones (parte II)",
+  "Unidad 5 - Derivadas",
+  "Unidad 6 - Aplicaciones de la derivada",
+  "Unidad 7 - Aproximación polinomial",
+  "Unidad 8 - Integrales",
+  "Unidad 9 - Series",
+];
+
+const algebraUnits = [
+  "Unidad 1 - Matrices, sistemas de ecuaciones lineales y determinantes",
+  "Unidad 2 - Números complejos y polinomios",
+  "Unidad 3 - Geometría en R²",
+  "Unidad 4 - Transformaciones del plano",
+  "Unidad 5 - Geometría en R³",
+  "Unidad 6 - Transformaciones del espacio",
+];
+
 const parcialesAnalisis = {
   1: { titulo: "Primer Parcial de Análisis" },
   2: { titulo: "Segundo Parcial de Análisis" },
@@ -1142,31 +1167,6 @@ function MenuParciales() {
 );
 
 }
-
-/* =========================
-   LISTAS DE UNIDADES
-   ========================= */
-
-const analisisUnits = [
-  "Unidad 1 - La recta real y las funciones elementales",
-  "Unidad 2 - Sucesiones",
-  "Unidad 3 - Límites y continuidad",
-  "Unidad 4 - Funciones (parte II)",
-  "Unidad 5 - Derivadas",
-  "Unidad 6 - Aplicaciones de la derivada",
-  "Unidad 7 - Aproximación polinomial",
-  "Unidad 8 - Integrales",
-  "Unidad 9 - Series",
-];
-
-const algebraUnits = [
-  "Unidad 1 - Matrices, sistemas de ecuaciones lineales y determinantes",
-  "Unidad 2 - Números complejos y polinomios",
-  "Unidad 3 - Geometría en R²",
-  "Unidad 4 - Transformaciones del plano",
-  "Unidad 5 - Geometría en R³",
-  "Unidad 6 - Transformaciones del espacio",
-];
 
 const themes = {
   claro: {
