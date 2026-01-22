@@ -890,7 +890,7 @@ export default function App() {
     flexDirection: "column",
   };
 
-  const innerStyle = { maxWidth: 900, margin: "0 auto", padding: 24 };
+  const innerStyle = { width: "100%", minHeight: "100vh", padding: 24 };
   const buttonStyle = {
     width: "100%",
     padding: 14,
