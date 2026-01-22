@@ -768,7 +768,7 @@ function App() {
 
         <button
           style={bigButtonStyle}
-          onClick={() => setPantalla("unidades")}
+          onClick={() => setPantalla("unidad")}
         >
           📘 Teoría y ejercicios
         </button>
@@ -856,59 +856,6 @@ function App() {
     </div>
   );
 }
-
-function Parciales() {
-
-  return (
-    <div style={innerStyle}>
-      <h1>📝 Parciales - Unidad {unidadActual}</h1>
-
-      {Object.keys(lista).length === 0 && (
-        <p>Todavía no hay parciales cargados para esta unidad.</p>
-      )}
-
-      {Object.keys(lista).map((n) => (
-        <button
-          key={n}
-          style={buttonStyle}
-          onClick={() => {
-            setEjercicioActual(Number(n));
-            setPantalla("parcial");
-          }}
-        >
-          Parcial {n} - {lista[n].titulo}
-        </button>
-      ))}
-
-      <button style={backStyle} onClick={() => setPantalla("unidad")}>
-        ⬅ Volver
-      </button>
-    </div>
-  );
-}
-
-
-function Parcial() {
-  const [respuesta, setRespuesta] = useState("");
-  const [resultado, setResultado] = useState(null);
-  const [mostrarAyuda, setMostrarAyuda] = useState(false);
-  const [mostrarResolucion, setMostrarResolucion] = useState(false);
-
-  if (!ej) {
-    return (
-      <div style={innerStyle}>
-        <p>Parcial no encontrado</p>
-        <button style={backStyle} onClick={() => setPantalla("parciales")}>
-          ⬅ Volver
-        </button>
-      </div>
-    );
-  }
-
-  function verificar() {
-    const ok = ej.verificar(respuesta);
-    setResultado(ok);
-  }
 
   return (
     <div style={innerStyle}>
@@ -1157,9 +1104,7 @@ function MenuParciales() {
     {pantalla === "ejercicios" && <Ejercicios />}
     {pantalla === "ejercicio" && <Ejercicio />}
     {pantalla === "algebra" && <Algebra />}
-    {pantalla === "parciales" && <Parciales />}
-    {pantalla === "parcial" && <Parcial />}
-    {pantalla === "parciales_menu" && <MenuParciales />}   {/* 👈 ESTA */}
+    {pantalla === "parciales_menu" && <MenuParciales />}
   </div>
 
 
