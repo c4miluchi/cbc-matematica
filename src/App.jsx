@@ -836,20 +836,13 @@ function App() {
           ✏️ Ejercicios
         </button>
 
-        <button
-          style={bigButtonStyle}
-          onClick={() => setPantalla("parciales")}
-        >
-          📝 Parciales
-        </button>
-
-
-        <button style={backStyle} onClick={() => setPantalla("analisis")}>
-          ⬅ Volver
+        <button style={backStyle} onClick={() => setPantalla("analisis_unidades")}>
+          ⬅ Volver a unidades
         </button>
       </div>
     );
   }
+
 
   function Ejercicios() {
   const lista = ejercicios[unidadActual] || {};
