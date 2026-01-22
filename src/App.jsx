@@ -608,6 +608,29 @@ const ejercicios = {
   },
 };
 
+const parciales = {
+  1: {
+    1: {
+      titulo: "Parcial 1 - Unidad 1",
+      enunciado: "Este es un ejercicio de parcial de ejemplo.",
+      ayuda: "Usar todo lo visto en la unidad.",
+      resolucion: `
+Resolución del parcial de ejemplo.
+`,
+      verificar: (r) => true, // por ahora siempre correcto
+    },
+  },
+  2: {},
+  3: {},
+  4: {},
+  5: {},
+  6: {},
+  7: {},
+  8: {},
+  9: {},
+};
+
+
 
 const linksAnalisis = {
   1: "https://drive.google.com/file/d/1k-WiyFo8ST4boAFPnyjUZ7yMQPeIhZoG/view?usp=sharing",
@@ -794,10 +817,11 @@ function App() {
 
         <button
           style={bigButtonStyle}
-          onClick={() => alert("Parcial: después")}
+          onClick={() => setPantalla("parciales")}
         >
-          📝 Parcial
+          📝 Parciales
         </button>
+
 
         <button style={backStyle} onClick={() => setPantalla("analisis")}>
           ⬅ Volver
@@ -836,6 +860,115 @@ function App() {
     </div>
   );
 }
+
+function Parciales() {
+  const lista = parciales[unidadActual] || {};
+
+  return (
+    <div style={innerStyle}>
+      <h1>📝 Parciales - Unidad {unidadActual}</h1>
+
+      {Object.keys(lista).length === 0 && (
+        <p>Todavía no hay parciales cargados para esta unidad.</p>
+      )}
+
+      {Object.keys(lista).map((n) => (
+        <button
+          key={n}
+          style={buttonStyle}
+          onClick={() => {
+            setEjercicioActual(Number(n));
+            setPantalla("parcial");
+          }}
+        >
+          Parcial {n} - {lista[n].titulo}
+        </button>
+      ))}
+
+      <button style={backStyle} onClick={() => setPantalla("unidad")}>
+        ⬅ Volver
+      </button>
+    </div>
+  );
+}
+
+
+function Parcial() {
+  const [respuesta, setRespuesta] = useState("");
+  const [resultado, setResultado] = useState(null);
+  const [mostrarAyuda, setMostrarAyuda] = useState(false);
+  const [mostrarResolucion, setMostrarResolucion] = useState(false);
+
+  const ej = parciales[unidadActual]?.[ejercicioActual];
+
+  if (!ej) {
+    return (
+      <div style={innerStyle}>
+        <p>Parcial no encontrado</p>
+        <button style={backStyle} onClick={() => setPantalla("parciales")}>
+          ⬅ Volver
+        </button>
+      </div>
+    );
+  }
+
+  function verificar() {
+    const ok = ej.verificar(respuesta);
+    setResultado(ok);
+  }
+
+  return (
+    <div style={innerStyle}>
+      <h1>📝 Parcial {ejercicioActual} - Unidad {unidadActual}</h1>
+
+      <h3>{ej.titulo}</h3>
+
+      <p>{ej.enunciado}</p>
+
+      <input
+        value={respuesta}
+        onChange={(e) => setRespuesta(e.target.value)}
+        placeholder="Escribí tu respuesta"
+        style={{ padding: 10, fontSize: 16, width: "80%" }}
+      />
+
+      <div style={{ marginTop: 10 }}>
+        <button style={buttonStyle} onClick={verificar}>
+          Verificar
+        </button>
+      </div>
+
+      {resultado !== null && (
+        <p style={{ fontSize: 18 }}>
+          {resultado ? "✅ Correcto" : "❌ Incorrecto"}
+        </p>
+      )}
+
+      <button
+        style={buttonStyle}
+        onClick={() => setMostrarAyuda(!mostrarAyuda)}
+      >
+        📘 Ayuda teórica
+      </button>
+
+      {mostrarAyuda && <pre>{ej.ayuda}</pre>}
+
+      <button
+        style={buttonStyle}
+        onClick={() => setMostrarResolucion(!mostrarResolucion)}
+      >
+        🧩 Ver resolución
+      </button>
+
+      {mostrarResolucion && <pre>{ej.resolucion}</pre>}
+
+      <button style={backStyle} onClick={() => setPantalla("parciales")}>
+        ⬅ Volver
+      </button>
+    </div>
+  );
+}
+
 
 
   /* ==========================================================
@@ -994,6 +1127,8 @@ function App() {
       {pantalla === "ejercicios" && <Ejercicios />}
       {pantalla === "ejercicio" && <Ejercicio />}
       {pantalla === "algebra" && <Algebra />}
+      {pantalla === "parciales" && <Parciales />}
+      {pantalla === "parcial" && <Parcial />}
     </div>
 
     {/* 👇 FIRMA AL PIE */}
