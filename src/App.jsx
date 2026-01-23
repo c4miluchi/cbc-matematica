@@ -923,21 +923,56 @@ export default function App() {
      ========================= */
 
   function Inicio() {
-    return (
-      <>
-        <h1>📚 CBC</h1>
-        <p>¿Qué querés estudiar?</p>
+  return (
+    <>
+      <h1 style={{ fontSize: 48, marginBottom: 10 }}>📚 CBC</h1>
+      <p style={{ fontSize: 20, opacity: 0.8 }}>¿Qué querés estudiar?</p>
 
-        <button className="app-button" onClick={() => { setMateria("analisis"); setPantalla("menu_materia"); }}>
-          📘 Análisis Matemático
+      <div style={{ display: "flex", gap: 20, marginTop: 40 }}>
+        <button
+          onClick={() => {
+            setMateria("analisis");
+            setPantalla("menu_materia");
+          }}
+          style={{
+            flex: 1,
+            padding: 28,
+            borderRadius: 20,
+            fontSize: 20,
+            fontWeight: 600,
+            background: theme.accent,
+            color: theme.text,
+            boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+          }}
+        >
+          📘 <br />
+          Análisis Matemático
         </button>
 
-        <button className="app-button" onClick={() => { setMateria("algebra"); setPantalla("menu_materia"); }}>
-          📗 Álgebra
+        <button
+          onClick={() => {
+            setMateria("algebra");
+            setPantalla("menu_materia");
+          }}
+          style={{
+            flex: 1,
+            padding: 28,
+            borderRadius: 20,
+            fontSize: 20,
+            fontWeight: 600,
+            background: theme.accent,
+            color: theme.text,
+            boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+          }}
+        >
+          📗 <br />
+          Álgebra
         </button>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
+}
+
 
 
   function MenuMateria() {
