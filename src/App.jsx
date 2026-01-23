@@ -658,48 +658,39 @@ const ejerciciosAnalisis = {
 const ejerciciosAlgebra = {
   1: {
     1: {
-      titulo: "Sistemas numéricos",
-      enunciado: "Decidir a qué sistema numérico pertenecen los siguientes números: √2, -2, π, 1/2",
-      ayuda: "Números Naturales: N = {1, 2, 3, 4, 5 …}\nNúmeros Enteros: naturales, sus inversos aditivos y el cero Z = {…, –3, –2, –1, 0, 1, 2, 3, …}\nNúmeros Racionales: enteros y fraccionarios Q = {x = a/b ∶ a ∈ Z, b ∈ N}\nNúmeros Irracionales: números reales que no son racionales (√2, e, π)\nNúmeros Reales (R): números racionales e irracionales.",
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
 
       resolucion: `
-      √2: número real que no es racional (parte decimal finita o periódica)
-      -2: número natural negativo
-      π: número real que no es racional (parte decimal finita o periódica)
-      1/2: número fraccionario de la forma x = a/b
 
-      Solución: Irracionales, Enteros, Irracionales, Racionales
+      Solución:
       `,
 
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "irracionales,enteros,irracionales,racionales" ||
-          s === "irracional,entero,irracional,racional"
+          s === "" ||
+          s === ""
         );
       },
     },
 
     2: {
-      titulo: "Conjuntos",
-      enunciado: "Dado el conjunto A = {x ∈ R / x² = 4}, ¿cuáles son los elementos que pertenecen a A?",
-      ayuda: "Los elementos que pertenecen a un conjunto son los x pertenecientes a R (o los x reales) tales que x se cumple cierta condición",
+      titulo: "",
+      enunciado: "",
+      ayuda: "",
 
       resolucion: `
-      x² = 4
-      √x² = √4
-      |x| = 2
-      x = -2 & x = 2
 
-      Solución: A = {-2, 2}
+      Solución:
       `,
 
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "a={-2,2}" ||
-          s === "-2,2" ||
-          s === "2,-2"
+          s === "" ||
+          s === ""
         );
       },
     },
@@ -1252,37 +1243,6 @@ function Ejercicio() {
     );
   }
 
-
-{/*
-  function Parcial() {
-    const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
-    const lista = base[parcialActual] || {};
-
-    return (
-      <div style={innerStyle}>
-        <h1>📝 Parcial {parcialActual}</h1>
-
-        {Object.keys(lista).map((n) => (
-          <button
-            key={n}
-            style={buttonStyle}
-            onClick={() => {
-              setEjercicioActual(Number(n));
-              setPantalla("parcial_ejercicio");
-            }}
-          >
-            Ejercicio {n} - {lista[n].titulo}
-          </button>
-        ))}
-
-        <button style={buttonStyle} onClick={() => setPantalla("parciales_menu")}>
-          ⬅ Volver
-        </button>
-      </div>
-    );
-  }
-*/}
-
 function Parcial() {
   const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
   const modelos = base[parcialActual] || {};
@@ -1347,7 +1307,7 @@ function Parcial() {
     );
   }
 
-
+{/*
   function ParcialModelos() {
   const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
   const modelos = base[parcialActual] || {};
@@ -1379,10 +1339,10 @@ function Parcial() {
     </div>
   );
 }
+*/}
 
 
-
-
+{/*
   function ParcialEjercicio() {
     const [respuesta, setRespuesta] = useState("");
     const [resultado, setResultado] = useState(null);
@@ -1461,7 +1421,7 @@ function Parcial() {
       </div>
     );
   }
-
+*/}
 
   return (
     <div
@@ -1509,8 +1469,8 @@ function Parcial() {
         {pantalla === "ejercicio" && <Ejercicio />}
         {pantalla === "parciales_menu" && <ParcialesMenu />}
         {pantalla === "parcial" && <Parcial />}
-        {pantalla === "parcial_ejercicio" && <Ejercicio />}
         {pantalla === "parcial_modelo" && <ParcialModelo />}
+        {pantalla === "parcial_ejercicio" && <Ejercicio />}
       </div>
     </div>
   );
