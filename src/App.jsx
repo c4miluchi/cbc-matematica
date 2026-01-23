@@ -1157,7 +1157,8 @@ export default function App() {
   }
 
   return (
-    <div style={pageStyle}>
+  <div className="app-background">
+    <div className="app-card">
       {pantalla === "inicio" && <Inicio />}
       {pantalla === "menu_materia" && <MenuMateria />}
       {pantalla === "unidades" && <Unidades />}
@@ -1167,6 +1168,8 @@ export default function App() {
       {pantalla === "parciales_menu" && <ParcialesMenu />}
       {pantalla === "parcial" && <Parcial />}
     </div>
-  );
+  </div>
+);
+
 }
 

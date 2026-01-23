@@ -1,42 +1,72 @@
+/* Fondo general */
 body {
+  margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Títulos */
-h1, h2, h3 {
-  margin-bottom: 20px;
+/* Contenedor principal con fondo lindo */
+.app-background {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at top, #0b1a33, #050505 60%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Botones estilo moderno */
-button {
-  font-family: inherit;
-  font-size: 18px;
+/* Card central */
+.app-card {
+  width: 100%;
+  max-width: 520px;
+  padding: 40px 32px;
+  border-radius: 28px;
+  background: rgba(20, 20, 20, 0.85);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+/* Título */
+.app-card h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+/* Subtítulo */
+.app-card p {
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+/* Botones grandes */
+.app-button {
+  width: 100%;
+  padding: 18px 20px;
+  margin: 14px 0;
+  font-size: 20px;
   border-radius: 16px;
   border: none;
-  padding: 16px 20px;
   cursor: pointer;
+  background: #2a2a2a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   transition: all 0.2s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05),
+              0 10px 30px rgba(0,0,0,0.5);
 }
 
-button:hover {
+.app-button:hover {
   transform: translateY(-2px);
-  filter: brightness(1.1);
+  background: #333;
 }
 
-button:active {
+.app-button:active {
   transform: translateY(0);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* Inputs */
-input {
-  font-family: inherit;
-  font-size: 18px;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
 }
