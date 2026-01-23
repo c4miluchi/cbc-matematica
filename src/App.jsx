@@ -845,29 +845,29 @@ const parcialesAlgebra = {
   3: { titulo: "Parcial 3" },
 };
 
-const parcialesEjerciciosAnalisis = {
+const parcialesAnalisis = {
   1: {
     1: {
       titulo: "Límites",
-      enunciado: "Calcular el límite ...",
-      ayuda: "Recordar definición...",
-      resolucion: "La resolución es...",
-      verificar: (r) => r.trim() === "5",
+      enunciado: "Calcular ...",
+      ayuda: "...",
+      resolucion: "...",
+      verificar: (r) => true,
     },
     2: {
       titulo: "Derivadas",
-      enunciado: "Derivar f(x) = ...",
-      ayuda: "Usar reglas de derivación",
-      resolucion: "f'(x) = ...",
-      verificar: (r) => r.includes("2x"),
+      enunciado: "...",
+      ayuda: "...",
+      resolucion: "...",
+      verificar: (r) => true,
     },
   },
 
   2: {
     1: {
       titulo: "Integrales",
-      enunciado: "Integrar ...",
-      ayuda: "Regla básica...",
+      enunciado: "...",
+      ayuda: "...",
       resolucion: "...",
       verificar: (r) => true,
     },
@@ -876,7 +876,7 @@ const parcialesEjerciciosAnalisis = {
   3: {
     1: {
       titulo: "Final",
-      enunciado: "Ejercicio final ...",
+      enunciado: "...",
       ayuda: "...",
       resolucion: "...",
       verificar: (r) => true,
@@ -884,6 +884,44 @@ const parcialesEjerciciosAnalisis = {
   },
 };
 
+const parcialesAlgebra = {
+  1: {
+    1: {
+      titulo: "Límites",
+      enunciado: "Calcular ...",
+      ayuda: "...",
+      resolucion: "...",
+      verificar: (r) => true,
+    },
+    2: {
+      titulo: "Derivadas",
+      enunciado: "...",
+      ayuda: "...",
+      resolucion: "...",
+      verificar: (r) => true,
+    },
+  },
+
+  2: {
+    1: {
+      titulo: "Integrales",
+      enunciado: "...",
+      ayuda: "...",
+      resolucion: "...",
+      verificar: (r) => true,
+    },
+  },
+
+  3: {
+    1: {
+      titulo: "Final",
+      enunciado: "...",
+      ayuda: "...",
+      resolucion: "...",
+      verificar: (r) => true,
+    },
+  },
+};
 
 
 /* =========================
@@ -1115,20 +1153,34 @@ export default function App() {
     );
   }
 
-  function Ejercicio() {
+function Ejercicio() {
   const [respuesta, setRespuesta] = useState("");
   const [resultado, setResultado] = useState(null);
   const [mostrarAyuda, setMostrarAyuda] = useState(false);
   const [mostrarResolucion, setMostrarResolucion] = useState(false);
 
-  const base = materia === "analisis" ? ejerciciosAnalisis : ejerciciosAlgebra;
-  const ej = base[unidadActual]?.[ejercicioActual];
+  const esParcial = pantalla === "parcial_ejercicio";
+
+  let base;
+
+  if (esParcial) {
+    base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
+  } else {
+    base = materia === "analisis" ? ejerciciosAnalisis : ejerciciosAlgebra;
+  }
+
+  const ej = esParcial
+    ? base[parcialActual]?.[ejercicioActual]
+    : base[unidadActual]?.[ejercicioActual];
 
   if (!ej) {
     return (
       <div style={innerStyle}>
         <p>Ejercicio no encontrado</p>
-        <button style={buttonStyle} onClick={() => setPantalla("ejercicios")}>
+        <button
+          style={buttonStyle}
+          onClick={() => setPantalla(esParcial ? "parcial" : "ejercicios")}
+        >
           ⬅ Volver
         </button>
       </div>
@@ -1143,7 +1195,9 @@ export default function App() {
   return (
     <div style={innerStyle}>
       <h1>
-        ✏️ Ejercicio {ejercicioActual} - Unidad {unidadActual}
+        ✏️ {esParcial ? "Parcial" : "Unidad"}{" "}
+        {esParcial ? parcialActual : unidadActual} - Ejercicio{" "}
+        {ejercicioActual}
       </h1>
 
       <h3>{ej.titulo}</h3>
@@ -1184,7 +1238,11 @@ export default function App() {
         📘 Ayuda teórica
       </button>
 
-      {mostrarAyuda && <pre style={{ textAlign: "left", whiteSpace: "pre-wrap" }}>{ej.ayuda}</pre>}
+      {mostrarAyuda && (
+        <pre style={{ textAlign: "left", whiteSpace: "pre-wrap" }}>
+          {ej.ayuda}
+        </pre>
+      )}
 
       <button
         style={buttonStyle}
@@ -1209,19 +1267,23 @@ export default function App() {
         </>
       )}
 
-      <button style={buttonStyle} onClick={() => setPantalla("ejercicios")}>
+      <button
+        style={buttonStyle}
+        onClick={() => setPantalla(esParcial ? "parcial" : "ejercicios")}
+      >
         ⬅ Volver
       </button>
     </div>
   );
 }
 
+
   function ParcialesMenu() {
     const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
 
     return (
       <div style={innerStyle}>
-        <h1>Exámenes</h1>
+        <h1>📝 Exámenes</h1>
 
         {Object.keys(base).map((n) => (
           <button
@@ -1232,34 +1294,21 @@ export default function App() {
               setPantalla("parcial");
             }}
           >
-            {base[n].titulo}
+            Parcial {n}
           </button>
         ))}
 
-        <button style={buttonStyle} onClick={() => setPantalla("menu_materia")}>⬅ Volver</button>
+        <button style={buttonStyle} onClick={() => setPantalla("menu_materia")}>
+          ⬅ Volver
+        </button>
       </div>
     );
   }
+
 
 {/*
   function Parcial() {
-    return (
-      <div style={innerStyle}>
-        <h1>📝 Parcial {parcialActual}</h1>
-        <p>(Acá va la mecánica igual que ejercicios)</p>
-
-        <button style={buttonStyle} onClick={() => setPantalla("parciales_menu")}>⬅ Volver</button>
-      </div>
-    );
-  }
-*/}
-
-  function Parcial() {
-    const base =
-      materia === "analisis"
-        ? parcialesEjerciciosAnalisis
-        : {}; // después hacemos álgebra
-
+    const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
     const lista = base[parcialActual] || {};
 
     return (
@@ -1279,15 +1328,46 @@ export default function App() {
           </button>
         ))}
 
-        <button
-          style={buttonStyle}
-          onClick={() => setPantalla("parciales_menu")}
-        >
+        <button style={buttonStyle} onClick={() => setPantalla("parciales_menu")}>
           ⬅ Volver
         </button>
       </div>
     );
   }
+*/}
+
+  function Parcial() {
+  const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
+  const lista = base[parcialActual] || {};
+
+  return (
+    <div style={innerStyle}>
+      <h1>📝 Parcial {parcialActual}</h1>
+
+      {Object.keys(lista).map((n) => (
+        <button
+          key={n}
+          style={buttonStyle}
+          onClick={() => {
+            setEjercicioActual(Number(n));
+            setPantalla("parcial_ejercicio");
+          }}
+        >
+          Ejercicio {n} - {lista[n].titulo}
+        </button>
+      ))}
+
+      <button
+        style={buttonStyle}
+        onClick={() => setPantalla("parciales_menu")}
+      >
+        ⬅ Volver
+      </button>
+    </div>
+  );
+}
+
+
 
   function ParcialEjercicio() {
     const [respuesta, setRespuesta] = useState("");
@@ -1415,7 +1495,7 @@ export default function App() {
         {pantalla === "ejercicio" && <Ejercicio />}
         {pantalla === "parciales_menu" && <ParcialesMenu />}
         {pantalla === "parcial" && <Parcial />}
-        {pantalla === "parcial_ejercicio" && <ParcialEjercicio />}
+        {pantalla === "parcial_ejercicio" && <Ejercicio />}
       </div>
     </div>
   );
