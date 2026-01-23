@@ -995,7 +995,7 @@ export default function App() {
               setPantalla("ejercicio");
             }}
           >
-            Ejercicio {n}
+            Ejercicio {n} - {lista[n].titulo}
           </button>
         ))}
 
