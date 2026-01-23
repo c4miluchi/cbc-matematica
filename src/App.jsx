@@ -901,27 +901,26 @@ export default function App() {
     cursor: "pointer",
   };
 
-
   /* =========================
      PANTALLAS
      ========================= */
 
   function Inicio() {
-  return (
-    <>
-      <h1>📚 CBC</h1>
-      <p>¿Qué querés estudiar?</p>
+    return (
+      <>
+        <h1>📚 CBC</h1>
+        <p>¿Qué querés estudiar?</p>
 
-      <button className="app-button" onClick={() => { setMateria("analisis"); setPantalla("menu_materia"); }}>
-        📘 Análisis Matemático
-      </button>
+        <button className="app-button" onClick={() => { setMateria("analisis"); setPantalla("menu_materia"); }}>
+          📘 Análisis Matemático
+        </button>
 
-      <button className="app-button" onClick={() => { setMateria("algebra"); setPantalla("menu_materia"); }}>
-        📗 Álgebra
-      </button>
-    </>
-  );
-}
+        <button className="app-button" onClick={() => { setMateria("algebra"); setPantalla("menu_materia"); }}>
+          📗 Álgebra
+        </button>
+      </>
+    );
+  }
 
 
   function MenuMateria() {
@@ -1165,6 +1164,7 @@ export default function App() {
     </div>
   </div>
 );
+
 
 }
 

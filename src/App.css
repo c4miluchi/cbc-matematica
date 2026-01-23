@@ -1,4 +1,4 @@
-/* Fondo general */
+/* RESET */
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Contenedor principal con fondo lindo */
+/* Fondo */
 .app-background {
   min-height: 100vh;
   width: 100%;
@@ -42,7 +42,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* Botones grandes */
+/* Botones */
 .app-button {
   width: 100%;
   padding: 18px 20px;
