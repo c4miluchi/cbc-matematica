@@ -903,14 +903,19 @@ export default function App() {
   };
 
   const buttonStyle = {
-    width: "100%",
-    padding: 14,
-    margin: "10px 0",
-    fontSize: 18,
-    borderRadius: 10,
-    border: "none",
-    cursor: "pointer",
-  };
+  width: "100%",
+  padding: "14px 18px",
+  margin: "10px 0",
+  fontSize: 17,
+  borderRadius: 14,
+  border: "none",
+  cursor: "pointer",
+  background: theme.secondaryButton,
+  color: theme.text,
+  fontWeight: 500,
+  transition: "all 0.2s ease",
+};
+
 
   /* =========================
      PANTALLAS
@@ -1162,8 +1167,43 @@ export default function App() {
   }
 
   return (
-  <div className="app-background">
-    <div className="app-card">
+  <div
+    style={{
+      minHeight: "100vh",
+      background: theme.background,
+      color: theme.text,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      transition: "all 0.3s ease"
+    }}
+  >
+    <div
+      style={{
+        width: "100%",
+        maxWidth: 700,
+        padding: 32,
+        borderRadius: 24,
+        background: theme.button,
+        boxShadow: "0 10px 40px rgba(0,0,0,0.25)"
+      }}
+    >
+      {/* BOTÓN CAMBIO DE TEMA */}
+      <div style={{ textAlign: "right", marginBottom: 10 }}>
+        <button
+          onClick={() => setTema(tema === "claro" ? "oscuro" : "claro")}
+          style={{
+            borderRadius: 999,
+            padding: "6px 12px",
+            fontSize: 18,
+            background: theme.secondaryButton,
+            color: theme.text
+          }}
+        >
+          {theme.name}
+        </button>
+      </div>
+
       {pantalla === "inicio" && <Inicio />}
       {pantalla === "menu_materia" && <MenuMateria />}
       {pantalla === "unidades" && <Unidades />}
@@ -1175,6 +1215,7 @@ export default function App() {
     </div>
   </div>
 );
+
 
 
 }
