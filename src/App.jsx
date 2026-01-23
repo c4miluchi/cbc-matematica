@@ -845,6 +845,47 @@ const parcialesAlgebra = {
   3: { titulo: "Parcial 3" },
 };
 
+const parcialesEjerciciosAnalisis = {
+  1: {
+    1: {
+      titulo: "Límites",
+      enunciado: "Calcular el límite ...",
+      ayuda: "Recordar definición...",
+      resolucion: "La resolución es...",
+      verificar: (r) => r.trim() === "5",
+    },
+    2: {
+      titulo: "Derivadas",
+      enunciado: "Derivar f(x) = ...",
+      ayuda: "Usar reglas de derivación",
+      resolucion: "f'(x) = ...",
+      verificar: (r) => r.includes("2x"),
+    },
+  },
+
+  2: {
+    1: {
+      titulo: "Integrales",
+      enunciado: "Integrar ...",
+      ayuda: "Regla básica...",
+      resolucion: "...",
+      verificar: (r) => true,
+    },
+  },
+
+  3: {
+    1: {
+      titulo: "Final",
+      enunciado: "Ejercicio final ...",
+      ayuda: "...",
+      resolucion: "...",
+      verificar: (r) => true,
+    },
+  },
+};
+
+
+
 /* =========================
    THEMES
    ========================= */
@@ -1200,6 +1241,7 @@ export default function App() {
     );
   }
 
+{/*
   function Parcial() {
     return (
       <div style={innerStyle}>
@@ -1210,6 +1252,122 @@ export default function App() {
       </div>
     );
   }
+*/}
+
+  function Parcial() {
+    const base =
+      materia === "analisis"
+        ? parcialesEjerciciosAnalisis
+        : {}; // después hacemos álgebra
+
+    const lista = base[parcialActual] || {};
+
+    return (
+      <div style={innerStyle}>
+        <h1>📝 Parcial {parcialActual}</h1>
+
+        {Object.keys(lista).map((n) => (
+          <button
+            key={n}
+            style={buttonStyle}
+            onClick={() => {
+              setEjercicioActual(Number(n));
+              setPantalla("parcial_ejercicio");
+            }}
+          >
+            Ejercicio {n} - {lista[n].titulo}
+          </button>
+        ))}
+
+        <button
+          style={buttonStyle}
+          onClick={() => setPantalla("parciales_menu")}
+        >
+          ⬅ Volver
+        </button>
+      </div>
+    );
+  }
+
+  function ParcialEjercicio() {
+    const [respuesta, setRespuesta] = useState("");
+    const [resultado, setResultado] = useState(null);
+    const [mostrarAyuda, setMostrarAyuda] = useState(false);
+    const [mostrarResolucion, setMostrarResolucion] = useState(false);
+
+    const base =
+      materia === "analisis"
+        ? parcialesEjerciciosAnalisis
+        : {};
+
+    const ej = base[parcialActual]?.[ejercicioActual];
+
+    if (!ej) {
+      return (
+        <div style={innerStyle}>
+          <p>Ejercicio no encontrado</p>
+          <button style={buttonStyle} onClick={() => setPantalla("parcial")}>
+            ⬅ Volver
+          </button>
+        </div>
+      );
+    }
+
+    function verificar() {
+      const ok = ej.verificar ? ej.verificar(respuesta) : false;
+      setResultado(ok);
+    }
+
+    return (
+      <div style={innerStyle}>
+        <h1>
+          📝 Parcial {parcialActual} - Ejercicio {ejercicioActual}
+        </h1>
+
+        <h3>{ej.titulo}</h3>
+
+        <p>{ej.enunciado}</p>
+
+        <input
+          value={respuesta}
+          onChange={(e) => setRespuesta(e.target.value)}
+          placeholder="Escribí tu respuesta"
+          style={{ padding: 10, fontSize: 16, width: "80%" }}
+        />
+
+        <button style={buttonStyle} onClick={verificar}>
+          Verificar
+        </button>
+
+        {resultado !== null && (
+          <p>{resultado ? "✅ Correcto" : "❌ Incorrecto"}</p>
+        )}
+
+        <button
+          style={buttonStyle}
+          onClick={() => setMostrarAyuda(!mostrarAyuda)}
+        >
+          📘 Ayuda
+        </button>
+
+        {mostrarAyuda && <pre>{ej.ayuda}</pre>}
+
+        <button
+          style={buttonStyle}
+          onClick={() => setMostrarResolucion(!mostrarResolucion)}
+        >
+          🧩 Resolución
+        </button>
+
+        {mostrarResolucion && <pre>{ej.resolucion}</pre>}
+
+        <button style={buttonStyle} onClick={() => setPantalla("parcial")}>
+          ⬅ Volver
+        </button>
+      </div>
+    );
+  }
+
 
   return (
     <div
@@ -1257,6 +1415,7 @@ export default function App() {
         {pantalla === "ejercicio" && <Ejercicio />}
         {pantalla === "parciales_menu" && <ParcialesMenu />}
         {pantalla === "parcial" && <Parcial />}
+        {pantalla === "parcial_ejercicio" && <ParcialEjercicio />}
       </div>
     </div>
   );
