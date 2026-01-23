@@ -832,105 +832,42 @@ const ejerciciosAlgebra = {
 
 };
 
-// 👉 BASE DE PARCIALES
-const parcialesAnalisis = {
-  1: { titulo: "Parcial 1" },
-  2: { titulo: "Parcial 2" },
-  3: { titulo: "Parcial 3" },
-};
-
-const parcialesAlgebra = {
-  1: { titulo: "Parcial 1" },
-  2: { titulo: "Parcial 2" },
-  3: { titulo: "Parcial 3" },
-};
 
 const parcialesAnalisis = {
-  1: { // Parcial 1
-    1: { // Modelo 1
-      1: {
-        titulo: "Límites",
-        enunciado: "Calcular ...",
-        ayuda: "...",
-        resolucion: "...",
-        verificar: (r) => true,
-      },
-      2: {
-        titulo: "Derivadas",
-        enunciado: "...",
-        ayuda: "...",
-        resolucion: "...",
-        verificar: (r) => true,
-      },
+  1: {
+    1: {
+      1: { titulo: "Ej 1", enunciado: "Ej modelo 1", ayuda: "", resolucion: "", verificar: () => true },
+      2: { titulo: "Ej 2", enunciado: "Ej modelo 1", ayuda: "", resolucion: "", verificar: () => true },
     },
-
-    2: { // Modelo 2
-      1: {
-        titulo: "Otro ejercicio",
-        enunciado: "...",
-        ayuda: "...",
-        resolucion: "...",
-        verificar: (r) => true,
-      },
+    2: {
+      1: { titulo: "Ej 1", enunciado: "Ej modelo 2", ayuda: "", resolucion: "", verificar: () => true },
     },
   },
 
-  2: { // Parcial 2
+  2: {
     1: {
-      1: {
-        titulo: "Integrales",
-        enunciado: "...",
-        ayuda: "...",
-        resolucion: "...",
-        verificar: (r) => true,
-      },
+      1: { titulo: "Ej 1", enunciado: "Parcial 2 modelo 1", ayuda: "", resolucion: "", verificar: () => true },
     },
   },
 };
 
 const parcialesAlgebra = {
-  1: { // Parcial 1
-    1: { // Modelo 1
-      1: {
-        titulo: "Límites",
-        enunciado: "Calcular ...",
-        ayuda: "...",
-        resolucion: "...",
-        verificar: (r) => true,
-      },
-      2: {
-        titulo: "Derivadas",
-        enunciado: "...",
-        ayuda: "...",
-        resolucion: "...",
-        verificar: (r) => true,
-      },
+  1: {
+    1: {
+      1: { titulo: "Ej 1", enunciado: "Ej modelo 1", ayuda: "", resolucion: "", verificar: () => true },
+      2: { titulo: "Ej 2", enunciado: "Ej modelo 1", ayuda: "", resolucion: "", verificar: () => true },
     },
-
-    2: { // Modelo 2
-      1: {
-        titulo: "Otro ejercicio",
-        enunciado: "...",
-        ayuda: "...",
-        resolucion: "...",
-        verificar: (r) => true,
-      },
+    2: {
+      1: { titulo: "Ej 1", enunciado: "Ej modelo 2", ayuda: "", resolucion: "", verificar: () => true },
     },
   },
 
-  2: { // Parcial 2
+  2: {
     1: {
-      1: {
-        titulo: "Integrales",
-        enunciado: "...",
-        ayuda: "...",
-        resolucion: "...",
-        verificar: (r) => true,
-      },
+      1: { titulo: "Ej 1", enunciado: "Parcial 2 modelo 1", ayuda: "", resolucion: "", verificar: () => true },
     },
   },
 };
-
 
 /* =========================
    THEMES
@@ -1179,8 +1116,9 @@ function Ejercicio() {
   }
 
   const ej = esParcial
-    ? base[parcialActual]?.[ejercicioActual]
+    ? base[parcialActual]?.[modeloActual]?.[ejercicioActual]
     : base[unidadActual]?.[ejercicioActual];
+
 
   if (!ej) {
     return (
@@ -1345,13 +1283,14 @@ function Ejercicio() {
   }
 */}
 
-  function Parcial() {
+function Parcial() {
   const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
   const modelos = base[parcialActual] || {};
 
   return (
     <div style={innerStyle}>
       <h1>📝 Parcial {parcialActual}</h1>
+      <h3>Elegí un modelo</h3>
 
       {Object.keys(modelos).map((m) => (
         <button
@@ -1376,30 +1315,37 @@ function Ejercicio() {
   );
 }
 
-function ParcialModelo() {
-  const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
-  const lista = base[parcialActual]?.[modeloActual] || {};
 
-  return (
-    <div style={innerStyle}>
-      <h1>📝 Parcial {parcialActual} - Modelo {modeloActual}</h1>
+  function ParcialModelo() {
+    const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
+    const lista = base[parcialActual]?.[modeloActual] || {};
 
-      {Object.keys(lista).map((n) => (
+    return (
+      <div style={innerStyle}>
+        <h1>📝 Parcial {parcialActual} - Modelo {modeloActual}</h1>
+
+        {Object.keys(lista).map((n) => (
+          <button
+            key={n}
+            style={buttonStyle}
+            onClick={() => {
+              setEjercicioActual(Number(n));
+              setPantalla("parcial_ejercicio");
+            }}
+          >
+            Ejercicio {n} - {lista[n].titulo}
+          </button>
+        ))}
+
         <button
-          key={n}
           style={buttonStyle}
-          onClick={() => {
-            setEjercicioActual(Number(n));
-            setPantalla("parcial_ejercicio");
-          }}
+          onClick={() => setPantalla("parcial")}
         >
-          Ejercicio {n} - {lista[n].titulo}
+          ⬅ Volver
         </button>
-      ))}
-
-      <button
-        style={buttonStyle}
-
+      </div>
+    );
+  }
 
 
   function ParcialModelos() {
@@ -1564,6 +1510,7 @@ function ParcialModelo() {
         {pantalla === "parciales_menu" && <ParcialesMenu />}
         {pantalla === "parcial" && <Parcial />}
         {pantalla === "parcial_ejercicio" && <Ejercicio />}
+        {pantalla === "parcial_modelo" && <ParcialModelo />}
       </div>
     </div>
   );
