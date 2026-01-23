@@ -924,29 +924,38 @@ export default function App() {
 
   function Inicio() {
   return (
-    <>
-      <h1 style={{ fontSize: 48, marginBottom: 10 }}>📚 CBC</h1>
-      <p style={{ fontSize: 20, opacity: 0.8 }}>¿Qué querés estudiar?</p>
+    <div style={{ textAlign: "center" }}>
+      <h1 style={{ fontSize: 64, marginBottom: 10 }}>📚 CBC</h1>
 
-      <div style={{ display: "flex", gap: 20, marginTop: 40 }}>
+      <p style={{ fontSize: 26, marginTop: 10, marginBottom: 50, opacity: 0.8 }}>
+        ¿Qué querés estudiar?
+      </p>
+
+      <div
+        style={{
+          display: "flex",
+          gap: 40,
+          justifyContent: "center",
+        }}
+      >
         <button
           onClick={() => {
             setMateria("analisis");
             setPantalla("menu_materia");
           }}
           style={{
-            flex: 1,
-            padding: 28,
-            borderRadius: 20,
-            fontSize: 20,
+            width: 280,
+            height: 200,
+            borderRadius: 28,
+            fontSize: 24,
             fontWeight: 600,
             background: theme.accent,
             color: theme.text,
-            boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+            boxShadow: "0 15px 40px rgba(0,0,0,0.2)",
           }}
         >
-          📘 <br />
-          Análisis Matemático
+          📘
+          <div style={{ marginTop: 15 }}>Análisis Matemático</div>
         </button>
 
         <button
@@ -955,23 +964,24 @@ export default function App() {
             setPantalla("menu_materia");
           }}
           style={{
-            flex: 1,
-            padding: 28,
-            borderRadius: 20,
-            fontSize: 20,
+            width: 280,
+            height: 200,
+            borderRadius: 28,
+            fontSize: 24,
             fontWeight: 600,
             background: theme.accent,
             color: theme.text,
-            boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+            boxShadow: "0 15px 40px rgba(0,0,0,0.2)",
           }}
         >
-          📗 <br />
-          Álgebra
+          📗
+          <div style={{ marginTop: 15 }}>Álgebra</div>
         </button>
       </div>
-    </>
+    </div>
   );
 }
+
 
 
 
@@ -1217,8 +1227,8 @@ export default function App() {
     <div
       style={{
         width: "100%",
-        maxWidth: 700,
-        padding: 32,
+        maxWidth: 900,
+        padding: 60,
         borderRadius: 24,
         background: theme.button,
         boxShadow: "0 10px 40px rgba(0,0,0,0.25)"
