@@ -846,79 +846,87 @@ const parcialesAlgebra = {
 };
 
 const parcialesAnalisis = {
-  1: {
-    1: {
-      titulo: "Límites",
-      enunciado: "Calcular ...",
-      ayuda: "...",
-      resolucion: "...",
-      verificar: (r) => true,
+  1: { // Parcial 1
+    1: { // Modelo 1
+      1: {
+        titulo: "Límites",
+        enunciado: "Calcular ...",
+        ayuda: "...",
+        resolucion: "...",
+        verificar: (r) => true,
+      },
+      2: {
+        titulo: "Derivadas",
+        enunciado: "...",
+        ayuda: "...",
+        resolucion: "...",
+        verificar: (r) => true,
+      },
     },
-    2: {
-      titulo: "Derivadas",
-      enunciado: "...",
-      ayuda: "...",
-      resolucion: "...",
-      verificar: (r) => true,
+
+    2: { // Modelo 2
+      1: {
+        titulo: "Otro ejercicio",
+        enunciado: "...",
+        ayuda: "...",
+        resolucion: "...",
+        verificar: (r) => true,
+      },
     },
   },
 
-  2: {
+  2: { // Parcial 2
     1: {
-      titulo: "Integrales",
-      enunciado: "...",
-      ayuda: "...",
-      resolucion: "...",
-      verificar: (r) => true,
-    },
-  },
-
-  3: {
-    1: {
-      titulo: "Final",
-      enunciado: "...",
-      ayuda: "...",
-      resolucion: "...",
-      verificar: (r) => true,
+      1: {
+        titulo: "Integrales",
+        enunciado: "...",
+        ayuda: "...",
+        resolucion: "...",
+        verificar: (r) => true,
+      },
     },
   },
 };
 
 const parcialesAlgebra = {
-  1: {
-    1: {
-      titulo: "Límites",
-      enunciado: "Calcular ...",
-      ayuda: "...",
-      resolucion: "...",
-      verificar: (r) => true,
+  1: { // Parcial 1
+    1: { // Modelo 1
+      1: {
+        titulo: "Límites",
+        enunciado: "Calcular ...",
+        ayuda: "...",
+        resolucion: "...",
+        verificar: (r) => true,
+      },
+      2: {
+        titulo: "Derivadas",
+        enunciado: "...",
+        ayuda: "...",
+        resolucion: "...",
+        verificar: (r) => true,
+      },
     },
-    2: {
-      titulo: "Derivadas",
-      enunciado: "...",
-      ayuda: "...",
-      resolucion: "...",
-      verificar: (r) => true,
+
+    2: { // Modelo 2
+      1: {
+        titulo: "Otro ejercicio",
+        enunciado: "...",
+        ayuda: "...",
+        resolucion: "...",
+        verificar: (r) => true,
+      },
     },
   },
 
-  2: {
+  2: { // Parcial 2
     1: {
-      titulo: "Integrales",
-      enunciado: "...",
-      ayuda: "...",
-      resolucion: "...",
-      verificar: (r) => true,
-    },
-  },
-
-  3: {
-    1: {
-      titulo: "Final",
-      enunciado: "...",
-      ayuda: "...",
-      resolucion: "...",
-      verificar: (r) => true,
+      1: {
+        titulo: "Integrales",
+        enunciado: "...",
+        ayuda: "...",
+        resolucion: "...",
+        verificar: (r) => true,
+      },
     },
   },
 };
@@ -962,6 +970,7 @@ export default function App() {
   const [unidadActual, setUnidadActual] = useState(1);
   const [ejercicioActual, setEjercicioActual] = useState(1);
   const [parcialActual, setParcialActual] = useState(1);
+  const [modeloActual, setModeloActual] = useState(1);
 
   const theme = themes[tema];
 
@@ -1338,11 +1347,42 @@ function Ejercicio() {
 
   function Parcial() {
   const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
-  const lista = base[parcialActual] || {};
+  const modelos = base[parcialActual] || {};
 
   return (
     <div style={innerStyle}>
       <h1>📝 Parcial {parcialActual}</h1>
+
+      {Object.keys(modelos).map((m) => (
+        <button
+          key={m}
+          style={buttonStyle}
+          onClick={() => {
+            setModeloActual(Number(m));
+            setPantalla("parcial_modelo");
+          }}
+        >
+          Modelo {m}
+        </button>
+      ))}
+
+      <button
+        style={buttonStyle}
+        onClick={() => setPantalla("parciales_menu")}
+      >
+        ⬅ Volver
+      </button>
+    </div>
+  );
+}
+
+function ParcialModelo() {
+  const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
+  const lista = base[parcialActual]?.[modeloActual] || {};
+
+  return (
+    <div style={innerStyle}>
+      <h1>📝 Parcial {parcialActual} - Modelo {modeloActual}</h1>
 
       {Object.keys(lista).map((n) => (
         <button
@@ -1359,6 +1399,33 @@ function Ejercicio() {
 
       <button
         style={buttonStyle}
+
+
+
+  function ParcialModelos() {
+  const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
+  const modelos = base[parcialActual] || {};
+
+  return (
+    <div style={innerStyle}>
+      <h1>📝 Parcial {parcialActual}</h1>
+      <h3>Elegí un modelo</h3>
+
+      {Object.keys(modelos).map((m) => (
+        <button
+          key={m}
+          style={buttonStyle}
+          onClick={() => {
+            setModeloActual(Number(m));
+            setPantalla("parcial_modelo");
+          }}
+        >
+          Modelo {m}
+        </button>
+      ))}
+
+      <button
+        style={buttonStyle}
         onClick={() => setPantalla("parciales_menu")}
       >
         ⬅ Volver
@@ -1366,6 +1433,7 @@ function Ejercicio() {
     </div>
   );
 }
+
 
 
 
