@@ -906,28 +906,22 @@ export default function App() {
      ========================= */
 
   function Inicio() {
-    return (
-    <div style={innerStyle}>
-      <button
-        style={{
-          position: "fixed",
-          top: 20,
-          right: 20,
-          padding: "10px 14px",
-          borderRadius: 20,
-          fontSize: 20
-        }}
-        onClick={() => setTema(tema === "claro" ? "oscuro" : "claro")}
-      >
-        {theme.name}
+  return (
+    <>
+      <h1>📚 CBC</h1>
+      <p>¿Qué querés estudiar?</p>
+
+      <button className="app-button" onClick={() => { setMateria("analisis"); setPantalla("menu_materia"); }}>
+        📘 Análisis Matemático
       </button>
 
-      <h1>📚 CBC</h1>
-        <button style={buttonStyle} onClick={() => { setMateria("analisis"); setPantalla("menu_materia"); }}>📘 Análisis</button>
-        <button style={buttonStyle} onClick={() => { setMateria("algebra"); setPantalla("menu_materia"); }}>📗 Álgebra</button>
-      </div>
-    );
-  }
+      <button className="app-button" onClick={() => { setMateria("algebra"); setPantalla("menu_materia"); }}>
+        📗 Álgebra
+      </button>
+    </>
+  );
+}
+
 
   function MenuMateria() {
     return (
