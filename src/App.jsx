@@ -836,10 +836,13 @@ const ejerciciosAlgebra = {
 const parcialesAnalisis = {
   1: { titulo: "Parcial 1" },
   2: { titulo: "Parcial 2" },
+  3: { titulo: "Parcial 3" },
 };
 
 const parcialesAlgebra = {
   1: { titulo: "Parcial 1" },
+  2: { titulo: "Parcial 2" },
+  3: { titulo: "Parcial 3" },
 };
 
 /* =========================
@@ -981,9 +984,6 @@ export default function App() {
     </div>
   );
 }
-
-
-
 
   function MenuMateria() {
     return (
@@ -1175,7 +1175,6 @@ export default function App() {
   );
 }
 
-
   function ParcialesMenu() {
     const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
 
@@ -1213,56 +1212,53 @@ export default function App() {
   }
 
   return (
-  <div
-    style={{
-      minHeight: "100vh",
-      background: theme.background,
-      color: theme.text,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      transition: "all 0.3s ease"
-    }}
-  >
     <div
       style={{
-        width: "100%",
-        maxWidth: 900,
-        padding: 60,
-        borderRadius: 24,
-        background: theme.button,
-        boxShadow: "0 10px 40px rgba(0,0,0,0.25)"
+        minHeight: "100vh",
+        background: theme.background,
+        color: theme.text,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        transition: "all 0.3s ease"
       }}
     >
-      {/* BOTÓN CAMBIO DE TEMA */}
-      <div style={{ textAlign: "right", marginBottom: 10 }}>
-        <button
-          onClick={() => setTema(tema === "claro" ? "oscuro" : "claro")}
-          style={{
-            borderRadius: 999,
-            padding: "6px 12px",
-            fontSize: 18,
-            background: theme.secondaryButton,
-            color: theme.text
-          }}
-        >
-          {theme.name}
-        </button>
+      <div
+        style={{
+          width: "100%",
+          maxWidth: 900,
+          padding: 60,
+          borderRadius: 24,
+          background: theme.button,
+          boxShadow: "0 10px 40px rgba(0,0,0,0.25)"
+        }}
+      >
+        {/* BOTÓN CAMBIO DE TEMA */}
+        <div style={{ textAlign: "right", marginBottom: 10 }}>
+          <button
+            onClick={() => setTema(tema === "claro" ? "oscuro" : "claro")}
+            style={{
+              borderRadius: 999,
+              padding: "6px 12px",
+              fontSize: 18,
+              background: theme.secondaryButton,
+              color: theme.text
+            }}
+          >
+            {theme.name}
+          </button>
+        </div>
+
+        {pantalla === "inicio" && <Inicio />}
+        {pantalla === "menu_materia" && <MenuMateria />}
+        {pantalla === "unidades" && <Unidades />}
+        {pantalla === "unidad" && <Unidad />}
+        {pantalla === "ejercicios" && <Ejercicios />}
+        {pantalla === "ejercicio" && <Ejercicio />}
+        {pantalla === "parciales_menu" && <ParcialesMenu />}
+        {pantalla === "parcial" && <Parcial />}
       </div>
-
-      {pantalla === "inicio" && <Inicio />}
-      {pantalla === "menu_materia" && <MenuMateria />}
-      {pantalla === "unidades" && <Unidades />}
-      {pantalla === "unidad" && <Unidad />}
-      {pantalla === "ejercicios" && <Ejercicios />}
-      {pantalla === "ejercicio" && <Ejercicio />}
-      {pantalla === "parciales_menu" && <ParcialesMenu />}
-      {pantalla === "parcial" && <Parcial />}
     </div>
-  </div>
-);
-
-
-
+  );
 }
 
