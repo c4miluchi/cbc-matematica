@@ -887,10 +887,21 @@ export default function App() {
     background: theme.background,
     color: theme.text,
     display: "flex",
-    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
   };
 
-  const innerStyle = { width: "100%", minHeight: "100vh", padding: 24 };
+
+  const innerStyle = {
+    width: "100%",
+    maxWidth: 600,
+    padding: 32,
+    textAlign: "center",
+    background: theme.button,
+    borderRadius: 24,
+    boxShadow: "0 10px 40px rgba(0,0,0,0.4)",
+  };
+
   const buttonStyle = {
     width: "100%",
     padding: 14,
