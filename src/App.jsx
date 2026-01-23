@@ -927,7 +927,7 @@ export default function App() {
     <div style={{ textAlign: "center" }}>
       <h1 style={{ fontSize: 64, marginBottom: 10 }}>📚 CBC</h1>
 
-      <p style={{ fontSize: 30, marginTop: 10, marginBottom: 50, opacity: 1.0 }}>
+      <p style={{ fontSize: 30, marginTop: 10, marginBottom: 50, opacity: 2.0 }}>
         ¿Qué querés estudiar?
       </p>
 
