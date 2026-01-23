@@ -901,6 +901,7 @@ export default function App() {
     cursor: "pointer",
   };
 
+
   /* =========================
      PANTALLAS
      ========================= */
