@@ -54,7 +54,9 @@ const linksAlgebra = {
 const linksParcialesAnalisis = {
   1: {
     1: "https://drive.google.com/file/d/1ucNeTddfM0CASUhScKFMiF7bI8hvocp1/view?usp=share_link",
-    2: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO2",
+    2: "https://drive.google.com/file/d/1GpIoKBXVhKDvHXVpF61U3HnBDYr4gZkb/view?usp=share_link",
+    3: "https://drive.google.com/file/d/1m5iwr2VwTPQ4VPnWsZKkYqxZ6yDX2mU0/view?usp=share_link",
+    4: "https://drive.google.com/file/d/1Qhn-F1J94LJpL3zGysOGZ1BdWNlVGH9h/view?usp=share_link",
   },
   2: {
     1: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO1",
