@@ -51,6 +51,36 @@ const linksAlgebra = {
   6: "https://drive.google.com/file/d/19V5CPkCKPkOKKINyGyfZK-folACXopsB/view?usp=sharing",
 };
 
+const linksParcialesAnalisis = {
+  1: {
+    1: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO1",
+    2: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO2",
+  },
+  2: {
+    1: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO1",
+    2: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO2",
+  },
+  3: {
+    1: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO1",
+    2: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO2",
+  },
+};
+
+const linksParcialesAlgebra = {
+  1: {
+    1: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO1",
+    2: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO2",
+  },
+  2: {
+    1: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO1",
+    2: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO2",
+  },
+  3: {
+    1: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO1",
+    2: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO2",
+  },
+};
+
 /* =========================
    BASES DE DATOS
    ========================= */
@@ -827,17 +857,47 @@ const ejerciciosAlgebra = {
 const parcialesAnalisis = {
   1: {
     1: {
-      1: { titulo: "Ej 1", enunciado: "Ej modelo 1", ayuda: "", resolucion: "", verificar: () => true },
-      2: { titulo: "Ej 2", enunciado: "Ej modelo 1", ayuda: "", resolucion: "", verificar: () => true },
+      1: {
+      titulo: "Regla de los signos",
+      enunciado: "Escribir al conjunto A = {x ∈ R : (2x + 1)(3 − x) ≤ 0} como un intervalo o unión de intervalos.",
+      ayuda: "Para que el producto sea menor o igual a 0, uno de los factores debe ser mayor o igual a 0 y el otro factor menor o igual a 0.",
+
+      resolucion: `
+      Primer caso: 2x + 1 ≥ 0 y 3 − x ≤ 0
+      a) 2x + 1 ≥ 0 ⇔ 2x ≥ −1 ⇔ x ≥ −1/2 ⇔ x ∈ [−1/2, +∞)
+      b) 3 − x ≤ 0 ⇔ 3 ≤ x ⇔ x ∈ [3, +∞)
+      Intersección entre ambas: x ∈ [-1/2, +∞) ∩ [3, +∞) = [3, +∞)
+
+      Segundo caso: 2x + 1 ≤ 0 y 3 − x ≥ 0
+      a) 2x + 1 ≤ 0 ⇔ 2x ≤ −1 ⇔ x ≤ −1/2 ⇔ x ∈ (−∞, −1/2].
+      b) 3 − x ≥ 0 ⇔ 3 ≥ x ⇔ x ∈ (−∞, 3]
+      Intersección entre ambas: x ∈ (−∞, −1/2] ∩ (−∞, 3] = (−∞, −1/2]
+
+      Unión de los dos casos: A = (−∞, −1/2] ∪ [3, +∞)
+
+      Solución: A = (−∞, −1/2] ∪ [3, +∞)
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "a=(−∞,−1/2]∪[3, +∞)" ||
+          s === "(−∞, −1/2]u[3, +∞)" 
+        );
+      },
     },
-    2: {
-      1: { titulo: "Ej 1", enunciado: "Ej modelo 2", ayuda: "", resolucion: "", verificar: () => true },
+      2: { ... },
+      3: { ... },
+      4: { ... },
+      5: { ... },
     },
   },
-
-  2: {
+  : {
     1: {
-      1: { titulo: "Ej 1", enunciado: "Parcial 2 modelo 1", ayuda: "", resolucion: "", verificar: () => true },
+      1: { ... },
+      2: { ... },
+      3: { ... },
+      4: { ... },
+      5: { ... },
     },
   },
 };
@@ -1258,7 +1318,7 @@ function Parcial() {
           style={buttonStyle}
           onClick={() => {
             setModeloActual(Number(m));
-            setPantalla("parcial_modelo");
+            setPantalla("parcial_modelo_detalle");
           }}
         >
           Modelo {m}
@@ -1268,6 +1328,46 @@ function Parcial() {
       <button
         style={buttonStyle}
         onClick={() => setPantalla("parciales_menu")}
+      >
+        ⬅ Volver
+      </button>
+    </div>
+  );
+}
+
+function ParcialEjercicios() {
+  const base =
+    materia === "analisis"
+      ? parcialesAnalisis
+      : parcialesAlgebra;
+
+  const lista =
+    base[parcialActual]?.[modeloActual] || {};
+
+  return (
+    <div style={innerStyle}>
+      <h1>
+        📝 Parcial {parcialActual} - Modelo {modeloActual}
+      </h1>
+
+      {Object.keys(lista).map((n) => (
+        <button
+          key={n}
+          style={buttonStyle}
+          onClick={() => {
+            setEjercicioActual(Number(n));
+            setPantalla("parcial_ejercicio");
+          }}
+        >
+          Ejercicio {n} - {lista[n].titulo}
+        </button>
+      ))}
+
+      <button
+        style={buttonStyle}
+        onClick={() =>
+          setPantalla("parcial_modelo_detalle")
+        }
       >
         ⬅ Volver
       </button>
@@ -1306,6 +1406,44 @@ function Parcial() {
       </div>
     );
   }
+
+  function ParcialModeloDetalle() {
+  const links =
+    materia === "analisis"
+      ? linksParcialesAnalisis
+      : linksParcialesAlgebra;
+
+  return (
+    <div style={innerStyle}>
+      <h1>
+        📝 Parcial {parcialActual} - Modelo {modeloActual}
+      </h1>
+
+      <button
+        style={buttonStyle}
+        onClick={() =>
+          window.open(links[parcialActual]?.[modeloActual])
+        }
+      >
+        📘 Ver examen (PDF)
+      </button>
+
+      <button
+        style={buttonStyle}
+        onClick={() => setPantalla("parcial_ejercicios")}
+      >
+        ✏️ Ver ejercicios
+      </button>
+
+      <button
+        style={buttonStyle}
+        onClick={() => setPantalla("parcial")}
+      >
+        ⬅ Volver
+      </button>
+    </div>
+  );
+}
 
 {/*
   function ParcialModelos() {
@@ -1471,6 +1609,8 @@ function Parcial() {
         {pantalla === "parcial" && <Parcial />}
         {pantalla === "parcial_modelo" && <ParcialModelo />}
         {pantalla === "parcial_ejercicio" && <Ejercicio />}
+        {pantalla === "parcial_modelo_detalle" && <ParcialModeloDetalle />}
+        {pantalla === "parcial_ejercicios" && <ParcialEjercicios />}
       </div>
     </div>
   );
