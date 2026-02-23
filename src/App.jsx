@@ -860,8 +860,7 @@ const parcialesAnalisis = {
     1: {
       1: {
         titulo: "Intervalos",
-        enunciado:
-          "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
 
         ayuda: `
@@ -906,11 +905,48 @@ const parcialesAnalisis = {
       },
 
       2: {
-        titulo: "Ejercicio 2",
-        enunciado: "Completar...",
-        ayuda: "",
-        resolucion: "",
-        verificar: () => true,
+        titulo: "Monotonía",
+        enunciado: "Decida si es monótona la sucesión",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_2.png",
+
+        ayuda: `
+          Para estudiar si una sucesión es monótona:
+
+          1) Definición:
+          Una sucesión {aₙ} es:
+
+          - Creciente si: aₙ₊₁ ≥ aₙ
+          - Decreciente si: aₙ₊₁ ≤ aₙ
+          - Monótona si cumple una de las dos.
+
+          2) Método habitual:
+          Se compara aₙ₊₁ − aₙ o el cociente aₙ₊₁ / aₙ.
+
+          3) Atención al término (−1)ⁿ:
+          Este factor alterna signo:
+
+          - si n es par → (−1)ⁿ = 1  
+          - si n es impar → (−1)ⁿ = −1  
+
+          Por lo tanto puede generar oscilaciones en la sucesión.
+
+          4) Idea clave:
+          Si la sucesión cambia de comportamiento entre n par e impar,
+          probablemente no sea monótona.
+
+          Sugerencia:
+          Calcular algunos primeros términos para observar el comportamiento.
+          `
+
+        resolucion: "Solución final: La sucesión no es monótona",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_2_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "No" ||
+          );
+        },
       },
 
       3: {
