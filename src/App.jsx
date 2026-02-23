@@ -859,19 +859,39 @@ const parcialesAnalisis = {
   1: {
     1: {
       1: {
-        /*titulo: "Ejercicio 1",*/
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        titulo: "Ejercicio 1 - Intervalos",
+        enunciado:
+          "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
-        ayuda: "1) Valor absoluto:\nRecordar que |x - a| ≥ k significa que la distancia entre x y a es mayor o igual que k.\nEquivale a:\n|x - a| ≥ k ⇔ x - a ≥ k  ó  x - a ≤ -k.\n2) Inecuaciones racionales:\nCuando aparece una fracción: f(x) / g(x) < 0  ó  < 1 se debe:\n- Llevar todo a un mismo miembro.\n- Unificar en una sola fracción.\n- Analizar el signo del numerador y del denominador.\n- Tener en cuenta que el denominador no puede ser cero.\n3) Conjunto intersección:\nA ∩ B significa:\nLos valores de x que pertenecen a A y también pertenecen a B.\nGráficamente es la parte común en la recta real.\n4) Para graficar intervalos:\n- Paréntesis → extremo no incluido.\n- Corchetes → extremo incluido.\n- Punto abierto/cerrado según corresponda.",
 
-        resolucion:,
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+        ayuda: `1) Valor absoluto:
+      Recordar que |x - a| ≥ k significa que la distancia entre x y a es mayor o igual que k.
+      Equivale a:
+      |x - a| ≥ k ⇔ x - a ≥ k  ó  x - a ≤ -k.
+
+      2) Inecuaciones racionales:
+      Cuando aparece una fracción:
+      f(x) / g(x) < 0  ó  < 1 se debe:
+      - Llevar todo a un mismo miembro.
+      - Unificar en una sola fracción.
+      - Analizar signos.
+      - El denominador no puede ser cero.
+
+      3) Intersección:
+      A ∩ B = valores que pertenecen a ambos conjuntos.
+      `,
+
+        resolucion: `
+      Solución final:
+      (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)
+      `,
+
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "(-inf,-5)u(-3,-1]u(3,+inf)",
-            s === "(-infinito,-5)u(-3,-1]u(3,+infinito)",
-            s === "(-∞,-5)u(-3,-1]u(3,+∞)",
+            s === "(-inf,-5)u(-3,-1]u(3,+inf)" ||
+            s === "(-infinito,-5)u(-3,-1]u(3,+infinito)" ||
+            s === "(-∞,-5)u(-3,-1]u(3,+∞)"
           );
         },
       },
