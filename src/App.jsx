@@ -391,8 +391,7 @@ const ejerciciosAnalisis = {
       | x | + 1 → correr al gráfico de | x | 1 unidad hacia arriba
       Solución:
       `,
-      resolucionImagen: "/imagenes/1.png",
-      resolucionImagen: "/imagenes/2.png",
+      resolucionImagen: ["/imagenes/1.png", "/imagenes/2.png"],
       /*verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
@@ -858,46 +857,49 @@ const parcialesAnalisis = {
   1: {
     1: {
       1: {
-      titulo: "Regla de los signos",
-      enunciado: "Escribir al conjunto A = {x ∈ R : (2x + 1)(3 − x) ≤ 0} como un intervalo o unión de intervalos.",
-      ayuda: "Para que el producto sea menor o igual a 0, uno de los factores debe ser mayor o igual a 0 y el otro factor menor o igual a 0.",
-
-      resolucion: `
-      Primer caso: 2x + 1 ≥ 0 y 3 − x ≤ 0
-      a) 2x + 1 ≥ 0 ⇔ 2x ≥ −1 ⇔ x ≥ −1/2 ⇔ x ∈ [−1/2, +∞)
-      b) 3 − x ≤ 0 ⇔ 3 ≤ x ⇔ x ∈ [3, +∞)
-      Intersección entre ambas: x ∈ [-1/2, +∞) ∩ [3, +∞) = [3, +∞)
-
-      Segundo caso: 2x + 1 ≤ 0 y 3 − x ≥ 0
-      a) 2x + 1 ≤ 0 ⇔ 2x ≤ −1 ⇔ x ≤ −1/2 ⇔ x ∈ (−∞, −1/2].
-      b) 3 − x ≥ 0 ⇔ 3 ≥ x ⇔ x ∈ (−∞, 3]
-      Intersección entre ambas: x ∈ (−∞, −1/2] ∩ (−∞, 3] = (−∞, −1/2]
-
-      Unión de los dos casos: A = (−∞, −1/2] ∪ [3, +∞)
-
-      Solución: A = (−∞, −1/2] ∪ [3, +∞)
-      `,
-      verificar: (r) => {
-        const s = r.replace(/\s/g, "").toLowerCase();
-        return (
-          s === "a=(−∞,−1/2]∪[3, +∞)" ||
-          s === "(−∞, −1/2]u[3, +∞)" 
-        );
+        titulo: "Regla de los signos",
+        enunciado:
+          "Escribir al conjunto A = {x ∈ R : (2x + 1)(3 − x) ≤ 0} como un intervalo o unión de intervalos.",
+        ayuda:
+          "Para que el producto sea menor o igual a 0, uno de los factores debe ser ≥ 0 y el otro ≤ 0.",
+        resolucion: `
+Primer caso...
+Solución: A = (−∞, −1/2] ∪ [3, +∞)
+        `,
+        verificar: () => true,
       },
-    },
-      2: { ... },
-      3: { ... },
-      4: { ... },
-      5: { ... },
-    },
-  },
-  : {
-    1: {
-      1: { ... },
-      2: { ... },
-      3: { ... },
-      4: { ... },
-      5: { ... },
+
+      2: {
+        titulo: "Ejercicio 2",
+        enunciado: "Completar...",
+        ayuda: "",
+        resolucion: "",
+        verificar: () => true,
+      },
+
+      3: {
+        titulo: "Ejercicio 3",
+        enunciado: "Completar...",
+        ayuda: "",
+        resolucion: "",
+        verificar: () => true,
+      },
+
+      4: {
+        titulo: "Ejercicio 4",
+        enunciado: "Completar...",
+        ayuda: "",
+        resolucion: "",
+        verificar: () => true,
+      },
+
+      5: {
+        titulo: "Ejercicio 5",
+        enunciado: "Completar...",
+        ayuda: "",
+        resolucion: "",
+        verificar: () => true,
+      },
     },
   },
 };
@@ -905,17 +907,50 @@ const parcialesAnalisis = {
 const parcialesAlgebra = {
   1: {
     1: {
-      1: { titulo: "Ej 1", enunciado: "Ej modelo 1", ayuda: "", resolucion: "", verificar: () => true },
-      2: { titulo: "Ej 2", enunciado: "Ej modelo 1", ayuda: "", resolucion: "", verificar: () => true },
-    },
-    2: {
-      1: { titulo: "Ej 1", enunciado: "Ej modelo 2", ayuda: "", resolucion: "", verificar: () => true },
-    },
-  },
+      1: {
+        titulo: "Regla de los signos",
+        enunciado:
+          "Escribir al conjunto A = {x ∈ R : (2x + 1)(3 − x) ≤ 0} como un intervalo o unión de intervalos.",
+        ayuda:
+          "Para que el producto sea menor o igual a 0, uno de los factores debe ser ≥ 0 y el otro ≤ 0.",
+        resolucion: `
+Primer caso...
+Solución: A = (−∞, −1/2] ∪ [3, +∞)
+        `,
+        verificar: () => true,
+      },
 
-  2: {
-    1: {
-      1: { titulo: "Ej 1", enunciado: "Parcial 2 modelo 1", ayuda: "", resolucion: "", verificar: () => true },
+      2: {
+        titulo: "Ejercicio 2",
+        enunciado: "Completar...",
+        ayuda: "",
+        resolucion: "",
+        verificar: () => true,
+      },
+
+      3: {
+        titulo: "Ejercicio 3",
+        enunciado: "Completar...",
+        ayuda: "",
+        resolucion: "",
+        verificar: () => true,
+      },
+
+      4: {
+        titulo: "Ejercicio 4",
+        enunciado: "Completar...",
+        ayuda: "",
+        resolucion: "",
+        verificar: () => true,
+      },
+
+      5: {
+        titulo: "Ejercicio 5",
+        enunciado: "Completar...",
+        ayuda: "",
+        resolucion: "",
+        verificar: () => true,
+      },
     },
   },
 };
@@ -1177,7 +1212,8 @@ function Ejercicio() {
         <p>Ejercicio no encontrado</p>
         <button
           style={buttonStyle}
-          onClick={() => setPantalla(esParcial ? "parcial" : "ejercicios")}
+          onClick={() => setPantalla(esParcial ? "parcial_ejercicios" : "ejercicios")
+          }
         >
           ⬅ Volver
         </button>
@@ -1444,122 +1480,6 @@ function ParcialEjercicios() {
     </div>
   );
 }
-
-{/*
-  function ParcialModelos() {
-  const base = materia === "analisis" ? parcialesAnalisis : parcialesAlgebra;
-  const modelos = base[parcialActual] || {};
-
-  return (
-    <div style={innerStyle}>
-      <h1>📝 Parcial {parcialActual}</h1>
-      <h3>Elegí un modelo</h3>
-
-      {Object.keys(modelos).map((m) => (
-        <button
-          key={m}
-          style={buttonStyle}
-          onClick={() => {
-            setModeloActual(Number(m));
-            setPantalla("parcial_modelo");
-          }}
-        >
-          Modelo {m}
-        </button>
-      ))}
-
-      <button
-        style={buttonStyle}
-        onClick={() => setPantalla("parciales_menu")}
-      >
-        ⬅ Volver
-      </button>
-    </div>
-  );
-}
-*/}
-
-
-{/*
-  function ParcialEjercicio() {
-    const [respuesta, setRespuesta] = useState("");
-    const [resultado, setResultado] = useState(null);
-    const [mostrarAyuda, setMostrarAyuda] = useState(false);
-    const [mostrarResolucion, setMostrarResolucion] = useState(false);
-
-    const base =
-      materia === "analisis"
-        ? parcialesEjerciciosAnalisis
-        : {};
-
-    const ej = base[parcialActual]?.[ejercicioActual];
-
-    if (!ej) {
-      return (
-        <div style={innerStyle}>
-          <p>Ejercicio no encontrado</p>
-          <button style={buttonStyle} onClick={() => setPantalla("parcial")}>
-            ⬅ Volver
-          </button>
-        </div>
-      );
-    }
-
-    function verificar() {
-      const ok = ej.verificar ? ej.verificar(respuesta) : false;
-      setResultado(ok);
-    }
-
-    return (
-      <div style={innerStyle}>
-        <h1>
-          📝 Parcial {parcialActual} - Ejercicio {ejercicioActual}
-        </h1>
-
-        <h3>{ej.titulo}</h3>
-
-        <p>{ej.enunciado}</p>
-
-        <input
-          value={respuesta}
-          onChange={(e) => setRespuesta(e.target.value)}
-          placeholder="Escribí tu respuesta"
-          style={{ padding: 10, fontSize: 16, width: "80%" }}
-        />
-
-        <button style={buttonStyle} onClick={verificar}>
-          Verificar
-        </button>
-
-        {resultado !== null && (
-          <p>{resultado ? "✅ Correcto" : "❌ Incorrecto"}</p>
-        )}
-
-        <button
-          style={buttonStyle}
-          onClick={() => setMostrarAyuda(!mostrarAyuda)}
-        >
-          📘 Ayuda
-        </button>
-
-        {mostrarAyuda && <pre>{ej.ayuda}</pre>}
-
-        <button
-          style={buttonStyle}
-          onClick={() => setMostrarResolucion(!mostrarResolucion)}
-        >
-          🧩 Resolución
-        </button>
-
-        {mostrarResolucion && <pre>{ej.resolucion}</pre>}
-
-        <button style={buttonStyle} onClick={() => setPantalla("parcial")}>
-          ⬅ Volver
-        </button>
-      </div>
-    );
-  }
-*/}
 
   return (
     <div
