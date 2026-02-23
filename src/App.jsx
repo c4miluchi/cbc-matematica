@@ -53,7 +53,7 @@ const linksAlgebra = {
 
 const linksParcialesAnalisis = {
   1: {
-    1: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO1",
+    1: "https://drive.google.com/file/d/1ucNeTddfM0CASUhScKFMiF7bI8hvocp1/view?usp=share_link",
     2: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO2",
   },
   2: {
