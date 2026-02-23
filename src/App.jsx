@@ -890,7 +890,7 @@ const parcialesAnalisis = {
           - Punto abierto/cerrado según corresponda.`,
 
         resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
@@ -1272,13 +1272,6 @@ function Ejercicio() {
 
       <h3>{ej.titulo}</h3>
 
-      {ej.imagen && (
-        <img
-          src={ej.imagen}
-          alt="Imagen del ejercicio"
-          style={{ maxWidth: "100%", margin: "20px 0", borderRadius: 10 }}
-        />
-      )}
 
       <p>{ej.enunciado}</p>
 
@@ -1294,6 +1287,14 @@ function Ejercicio() {
           Verificar
         </button>
       </div>
+
+      {ej.imagen && (
+        <img
+          src={ej.imagen}
+          alt="Imagen del ejercicio"
+          style={{ maxWidth: "100%", margin: "20px 0", borderRadius: 10 }}
+        />
+      )}
 
       {resultado !== null && (
         <p style={{ fontSize: 18 }}>
