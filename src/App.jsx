@@ -857,16 +857,24 @@ const parcialesAnalisis = {
   1: {
     1: {
       1: {
-        titulo: "Regla de los signos",
-        enunciado:
-          "Escribir al conjunto A = {x ∈ R : (2x + 1)(3 − x) ≤ 0} como un intervalo o unión de intervalos.",
-        ayuda:
-          "Para que el producto sea menor o igual a 0, uno de los factores debe ser ≥ 0 y el otro ≤ 0.",
+        titulo: "Intervalos",
+        enunciado: "Decidir si los siguientes intervalos son abiertos, semiabiertos o cerrados:\n(1, 2); [1, 5); [8, 7]; (8, 9]",
+        ayuda: "Abiertos: no contienen al extremo (con paréntesis) → (a, b) = (a, +∞) ∩ (–∞, b) = {x ∈ R : a < x < b}\nCerrados: contienen al extremo (con corchetes) → [a, b] = [a, +∞) ∩ (–∞, b] ={x ∈ R : a ≤ x ≤ b}\nSemiabiertos → [a, b) = [a, +∞) ∩ (–∞, b) = {x ∈ R : a ≤ x < b}",
+
         resolucion: `
-Primer caso...
-Solución: A = (−∞, −1/2] ∪ [3, +∞)
+        (1, 2): no contiene a ninguno de los extremos
+        [1, 5): contienen a alguno de los extremos
+        [8, 7]: contiene ambos extremos
+        (8, 9]: contienen a alguno de los extremos
+
+        Solución: Abierto, Semiabierto, Cerrado, Semiabierto
         `,
-        verificar: () => true,
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "abierto,semiabierto,cerrado,semiabierto"
+          );
+        },
       },
 
       2: {
