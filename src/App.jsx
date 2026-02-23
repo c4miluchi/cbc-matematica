@@ -859,39 +859,48 @@ const parcialesAnalisis = {
   1: {
     1: {
       1: {
-        titulo: "Ejercicio 1 - Intervalos",
+        titulo: "Intervalos",
         enunciado:
           "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
 
-        ayuda: `1) Valor absoluto:
-      Recordar que |x - a| ≥ k significa que la distancia entre x y a es mayor o igual que k.
-      Equivale a:
-      |x - a| ≥ k ⇔ x - a ≥ k  ó  x - a ≤ -k.
+        ayuda: `
+          1) Valor absoluto:
+          Recordar que |x - a| ≥ k significa que la distancia entre x y a es mayor o igual que k.
+          Equivale a:
+          |x - a| ≥ k ⇔ x - a ≥ k  ó  x - a ≤ -k.
 
-      2) Inecuaciones racionales:
-      Cuando aparece una fracción:
-      f(x) / g(x) < 0  ó  < 1 se debe:
-      - Llevar todo a un mismo miembro.
-      - Unificar en una sola fracción.
-      - Analizar signos.
-      - El denominador no puede ser cero.
+          2) Inecuaciones racionales:
+          Cuando aparece una fracción:
+            f(x) / g(x) < 0  ó  < 1
+          se debe:
+          - Llevar todo a un mismo miembro.
+          - Unificar en una sola fracción.
+          - Analizar el signo del numerador y del denominador.
+          - Tener en cuenta que el denominador no puede ser cero.
 
-      3) Intersección:
-      A ∩ B = valores que pertenecen a ambos conjuntos.
-      `,
+          3) Conjunto intersección:
+          A ∩ B significa:
+          Los valores de x que pertenecen a A y también pertenecen a B.
+          Gráficamente es la parte común en la recta real.
 
-        resolucion: `
-      Solución final:
-      (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)
-      `,
+          4) Para graficar intervalos:
+          - Paréntesis → extremo no incluido.
+          - Corchetes → extremo incluido.
+          - Punto abierto/cerrado según corresponda.`,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
             s === "(-inf,-5)u(-3,-1]u(3,+inf)" ||
+            s === "(-inf,-5)∪(-3,-1]∪(3,+inf)" ||
             s === "(-infinito,-5)u(-3,-1]u(3,+infinito)" ||
-            s === "(-∞,-5)u(-3,-1]u(3,+∞)"
+            s === "(-infinito,-5)∪(-3,-1]∪(3,+infinito)" ||
+            s === "(-∞,-5)u(-3,-1]u(3,+∞)" ||
+            s === "(-∞,-5)∪(-3,-1]∪(3,+∞)" ||
           );
         },
       },
