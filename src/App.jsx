@@ -1330,7 +1330,9 @@ function Ejercicio() {
 
       <button
         style={buttonStyle}
-        onClick={() => setPantalla(esParcial ? "parcial" : "ejercicios")}
+        onClick={() =>
+          setPantalla(esParcial ? "parcial_ejercicios" : "ejercicios")
+        }
       >
         ⬅ Volver
       </button>
