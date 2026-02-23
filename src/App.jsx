@@ -859,7 +859,7 @@ const parcialesAnalisis = {
   1: {
     1: {
       1: {
-        titulo: "Ejercicio 1",
+        /*titulo: "Ejercicio 1",*/
         enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
         ayuda: "1) Valor absoluto:\nRecordar que |x - a| ≥ k significa que la distancia entre x y a es mayor o igual que k.\nEquivale a:\n|x - a| ≥ k ⇔ x - a ≥ k  ó  x - a ≤ -k.\n2) Inecuaciones racionales:\nCuando aparece una fracción: f(x) / g(x) < 0  ó  < 1 se debe:\n- Llevar todo a un mismo miembro.\n- Unificar en una sola fracción.\n- Analizar el signo del numerador y del denominador.\n- Tener en cuenta que el denominador no puede ser cero.\n3) Conjunto intersección:\nA ∩ B significa:\nLos valores de x que pertenecen a A y también pertenecen a B.\nGráficamente es la parte común en la recta real.\n4) Para graficar intervalos:\n- Paréntesis → extremo no incluido.\n- Corchetes → extremo incluido.\n- Punto abierto/cerrado según corresponda.",
