@@ -514,7 +514,7 @@ const parcialesAnalisis = {
             s === "(-infinito,-5)u(-3,-1]u(3,+infinito)" ||
             s === "(-infinito,-5)∪(-3,-1]∪(3,+infinito)" ||
             s === "(-∞,-5)u(-3,-1]u(3,+∞)" ||
-            s === "(-∞,-5)∪(-3,-1]∪(3,+∞)" ||
+            s === "(-∞,-5)∪(-3,-1]∪(3,+∞)"
           );
         },
       },
@@ -559,7 +559,7 @@ const parcialesAnalisis = {
           return (
             s === "no" ||
             s === "noesmonotona" ||
-            s === "noesmonótona" ||
+            s === "noesmonótona"
           );
         },
       },
