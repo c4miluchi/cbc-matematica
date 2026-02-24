@@ -59,7 +59,7 @@ const linksParcialesAnalisis = {
     4: "https://drive.google.com/file/d/17xQG2Vy3pDD4oBlvWi9qFRWGA3QfgpI2/view?usp=share_link",
   },
   2: {
-    1: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO1",
+    1: "PEGÁ_A==",
     2: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO2",
   },
   3: {
@@ -529,7 +529,6 @@ const parcialesAnalisis = {
 
           1) Definición:
           Una sucesión {aₙ} es:
-
           - Creciente si: aₙ₊₁ ≥ aₙ
           - Decreciente si: aₙ₊₁ ≤ aₙ
           - Monótona si cumple una de las dos.
@@ -539,7 +538,6 @@ const parcialesAnalisis = {
 
           3) Atención al término (−1)ⁿ:
           Este factor alterna signo:
-
           - si n es par → (−1)ⁿ = 1  
           - si n es impar → (−1)ⁿ = −1  
 
