@@ -549,7 +549,7 @@ const parcialesAnalisis = {
 
           Sugerencia:
           Calcular algunos primeros términos para observar el comportamiento.
-          `
+          `,
 
         resolucion: "Solución final: La sucesión no es monótona",
         resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_2_solucion.png",
