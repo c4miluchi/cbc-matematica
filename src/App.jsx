@@ -965,23 +965,67 @@ const parcialesAnalisis = {
           4) Sugerencia para este ejercicio:
           Evaluar f(0) y f(π/2) y verificar que tengan signos opuestos.
           `,
-        resolucion: "",
-        verificar: () => true,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_3_solucion.png",
       },
 
       4: {
-        titulo: "Ejercicio 4",
-        enunciado: "Completar...",
+        titulo: "Trigonometría",
+        enunciado: "El ojo humano puede distinguir entre dos puntos distantes P y Q siempre que el\nángulo de resolución θ no sea muy pequeño.\nSuponga que P y Q están a x unidades entre sí\ny a d unidades del ojo, como se ilustra en la figura.\nExprese x en términos de θ y d y decida para qué valores de d será distinguinble\nuna pluma de 6 pulgadas de alto vista desde d pies si el\nángulo de resolución es de θ = 0,0005 radianes.",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_4.png",
         resolucion: "",
-        verificar: () => true,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_4_solucion.png",
       },
 
       5: {
-        titulo: "Ejercicio 5",
-        enunciado: "Completar...",
-        ayuda: "",
+        titulo: "Dominio y asíntotas",
+        enunciado: "Calcule dominio y asíntotas de f(x) = ln(2x − 4) − ln(x − 1)\ny encuentre la cantidad de soluciones de la ecuación f(x) = k para todo k ∈ R.",
+        ayuda: `
+          1) Dominio de funciones logarítmicas:
+          ln(u) está definido ⇔ u > 0, por lo tanto, para hallar el dominio se debe exigir:
+          - 2x − 4 > 0
+          - x − 1 > 0
+          El dominio será la intersección de ambas condiciones.
+
+          2) Propiedad de logaritmos:
+          Si u > 0 y v > 0:
+          ln(u) − ln(v) = ln(u/v)
+
+          3) Asíntotas verticales:
+          Una recta x = a es asíntota vertical si: lim (x → a⁺ o a⁻) f(x) = ±∞.
+
+          En funciones logarítmicas, las asíntotas verticales aparecen
+          cuando el argumento del logaritmo tiende a 0⁺.
+
+          Sugerencia:
+          Buscar los puntos donde:
+
+          - 2x − 4 = 0
+          - x − 1 = 0
+
+          y verificar si pertenecen al borde del dominio.
+
+          4) Asíntota horizontal (idea general):
+          Se estudia calculando: lim (x → +∞) f(x)
+
+          Si el límite es un número real L,
+          entonces y = L es asíntota horizontal.
+
+          Sugerencia:
+          Usar la propiedad del logaritmo para simplificar antes de hacer el límite.
+          `,
         resolucion: "",
-        verificar: () => true,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_5_solucion.png",
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "dominio=(2; +inf)ah:y=ln(2)av:x=2" ||
+            s === "dom=(2; +inf)ah:y=ln(2)av:x=2" ||
+            s === "dominio=(2; +infinito)ah:y=ln(2)av:x=2" ||
+            s === "dom=(2; +infinito)ah:y=ln(2)av:x=2" ||
+            s === "dominio=(2; +∞)ah:y=ln(2)av:x=2" ||
+            s === "dom=(2; +∞)ah:y=ln(2)av:x=2" ||
+          );
+        },
       },
     },
   },
