@@ -534,7 +534,7 @@ const ejerciciosAnalisis = {
         return (
           s === "+inf" ||
           s === "+infinito" ||
-          s === "+" ||
+          s === "+∞"
         );
       },
     },
