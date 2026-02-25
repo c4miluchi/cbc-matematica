@@ -937,6 +937,7 @@ const parcialesAnalisis = {
       3: {
         titulo: "Bolzano",
         enunciado: "Explicar por qué la función f es continua en R y probar utilizando el teorema de Bolzano que existe c ∈ [0, π/2] tal que f(c) = 0.",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_3.png",
         ayuda: `
           Para estudiar si una sucesión es monótona:
 
@@ -1023,7 +1024,7 @@ const parcialesAnalisis = {
             s === "dominio=(2; +infinito)ah:y=ln(2)av:x=2" ||
             s === "dom=(2; +infinito)ah:y=ln(2)av:x=2" ||
             s === "dominio=(2; +∞)ah:y=ln(2)av:x=2" ||
-            s === "dom=(2; +∞)ah:y=ln(2)av:x=2" ||
+            s === "dom=(2; +∞)ah:y=ln(2)av:x=2"
           );
         },
       },
