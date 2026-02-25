@@ -474,10 +474,6 @@ const ejerciciosAnalisis = {
       titulo: "Funciones polinómicas",
       enunciado: "graficar f(x) = (x – 3)³",
       ayuda: "Forma: f : R → R, f(x) = aₙxⁿ + ... + a₁x + a₀  (aₙ = coeficiente principal; a₀ = coeficiente independiente)",
-
-      resolucion: `
-      Solución:
-      `,
       resolucionImagen: "/imagenes/3.png",
       
     },
@@ -485,42 +481,64 @@ const ejerciciosAnalisis = {
 
   2: {
     1: {
-      titulo: "",
-      enunciado: "",
-      ayuda: "",
+      titulo: "Sucesiones",
+      enunciado: "escribir los primeros 5 termino de an = n^2",
+      ayuda: "Una sucesión es un conjunto ordenado de infinitos elementos (números) que se pueden “etiquetar” con n ∈ N.\nEjemplo: an = 1/n → a1 = 1/1 = 1; a2 = 1/2; a3 = 1/3; ...\nEntonces an = 1/n (término general) quiere decir {1; 1/2; ...; 1/n; ...}.",
 
       resolucion: `
       
       Solución:
+      an = n^2 → b1 = 1; b2 = 4; b3 = 8; b4 = 16; b5 = 32; ...
 
       `,
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "" ||
-          s === ""
+          s === "1,4,8,16,32" ||
+          s === "1481632"
         );
       },
     },
 
     2: {
-      titulo: "",
-      enunciado: "",
-      ayuda: "",
-
-      resolucion: `
-      
-      Solución:
-
-      `,
+      titulo: "Límites",
+      enunciado: "calcular el límite de an = (4 – 3/n) . (2 + 5/n^2)",
+      ayuda: "sea an una sucesión real, diremos que un número real L es su límite si para todo ε > 0, existe\nun número natural n0 a partir del cual los valores de la sucesion distan de L en menos de ε.",
+      resolucionImagen: "/imagenes/4.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "" ||
-          s === ""
+          s === "8"
         );
       },
     },
+    3: {
+      titulo: "Límites 2",
+      enunciado: "calcular el límite de bn = (3n^2 - n) / (5 + n + n^2)",
+      ayuda: "sea an una sucesión real, diremos que un número real L es su límite si para todo ε > 0, existe\nun número natural n0 a partir del cual los valores de la sucesion distan de L en menos de ε.",
+      resolucionImagen: "/imagenes/5.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "3"
+        );
+      },
+    },
+    4: {
+      titulo: "Límites e Indeterminaciones",
+      enunciado: "calcular el límite de la sucesión cn = (4n^3 + n^2) / (5n^2 + 3n)",
+      ayuda: "sea an una sucesión real, diremos que un número real L es su límite si para todo ε > 0, existe\nun número natural n0 a partir del cual los valores de la sucesion distan de L en menos de ε.",
+      resolucionImagen: "/imagenes/6.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "+inf" ||
+          s === "+infinito" ||
+          s === "+" ||
+        );
+      },
+    },
+
   },
 
   3: {
