@@ -550,7 +550,18 @@ const ejerciciosAnalisis = {
         );
       },
     },
-
+    6: {
+      titulo: "Cero por acotado",
+      imagen: "/imagenes/cero_por_acotado.png",
+      ayuda: "si an = bn . cn con lim bn = 0 y cn acotada, entonces lim an = 0",
+      resolucionImagen: "/imagenes/8.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "0"
+        );
+      },
+    },
   },
 
   3: {
