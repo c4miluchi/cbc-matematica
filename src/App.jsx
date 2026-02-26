@@ -472,7 +472,7 @@ const ejerciciosAnalisis = {
 
     17: {
       titulo: "Funciones polinómicas",
-      enunciado: "graficar f(x) = (x – 3)³",
+      enunciado: "Graficar f(x) = (x – 3)³",
       ayuda: "Forma: f : R → R, f(x) = aₙxⁿ + ... + a₁x + a₀  (aₙ = coeficiente principal; a₀ = coeficiente independiente)",
       resolucionImagen: "/imagenes/3.png",
       
@@ -482,7 +482,7 @@ const ejerciciosAnalisis = {
   2: {
     1: {
       titulo: "Sucesiones",
-      enunciado: "escribir los primeros 5 termino de an = n^2",
+      enunciado: "Escribir los primeros 5 termino de an = n^2",
       ayuda: "Una sucesión es un conjunto ordenado de infinitos elementos (números) que se pueden “etiquetar” con n ∈ N.\nEjemplo: an = 1/n → a1 = 1/1 = 1; a2 = 1/2; a3 = 1/3; ...\nEntonces an = 1/n (término general) quiere decir {1; 1/2; ...; 1/n; ...}.",
 
       resolucion: `
@@ -503,7 +503,7 @@ const ejerciciosAnalisis = {
     2: {
       titulo: "Límites",
       enunciado: "calcular el límite de an = (4 – 3/n) . (2 + 5/n^2)",
-      ayuda: "sea an una sucesión real, diremos que un número real L es su límite si para todo ε > 0, existe\nun número natural n0 a partir del cual los valores de la sucesion distan de L en menos de ε.",
+      ayuda: "Sea an una sucesión real, diremos que un número real L es su límite si para todo ε > 0, existe\nun número natural n0 a partir del cual los valores de la sucesion distan de L en menos de ε.",
       resolucionImagen: "/imagenes/4.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -515,7 +515,7 @@ const ejerciciosAnalisis = {
     3: {
       titulo: "Límites 2",
       enunciado: "calcular el límite de bn = (3n^2 - n) / (5 + n + n^2)",
-      ayuda: "sea an una sucesión real, diremos que un número real L es su límite si para todo ε > 0, existe\nun número natural n0 a partir del cual los valores de la sucesion distan de L en menos de ε.",
+      ayuda: "Sea an una sucesión real, diremos que un número real L es su límite si para todo ε > 0, existe\nun número natural n0 a partir del cual los valores de la sucesion distan de L en menos de ε.",
       resolucionImagen: "/imagenes/5.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -527,7 +527,7 @@ const ejerciciosAnalisis = {
     4: {
       titulo: "Límites e Indeterminaciones",
       enunciado: "calcular el límite de la sucesión cn = (4n^3 + n^2) / (5n^2 + 3n)",
-      ayuda: "sea an una sucesión real, diremos que un número real L es su límite si para todo ε > 0, existe\nun número natural n0 a partir del cual los valores de la sucesion distan de L en menos de ε.",
+      ayuda: "Sea an una sucesión real, diremos que un número real L es su límite si para todo ε > 0, existe\nun número natural n0 a partir del cual los valores de la sucesion distan de L en menos de ε.",
       resolucionImagen: "/imagenes/6.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -541,7 +541,7 @@ const ejerciciosAnalisis = {
     5: {
       titulo: "Teorema del Sándwich",
       imagen: "/imagenes/teorema_sandwich.png",
-      ayuda: "si las sucesiones an , bn y cn verifican an ≤ bn ≤ cn ∀ n > n0 y además lim an = lim cn = L → lim bn = L",
+      ayuda: "Si las sucesiones an , bn y cn verifican an ≤ bn ≤ cn ∀ n > n0 y además lim an = lim cn = L → lim bn = L",
       resolucionImagen: "/imagenes/7.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -553,7 +553,7 @@ const ejerciciosAnalisis = {
     6: {
       titulo: "Cero por acotado",
       imagen: "/imagenes/cero_por_acotado.png",
-      ayuda: "si an = bn . cn con lim bn = 0 y cn acotada, entonces lim an = 0",
+      ayuda: "Si an = bn . cn con lim bn = 0 y cn acotada, entonces lim an = 0",
       resolucionImagen: "/imagenes/8.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -593,9 +593,9 @@ const ejerciciosAnalisis = {
   3: {
     1: {
       titulo: "Límites",
-      imagen: "",
-      ayudaImagen: "",
-      resolucionImagen: "",
+      imagen: "/imagenes/limites_3.png",
+      ayudaImagen: "/imagenes/limites_3_ayuda.png",
+      resolucionImagen: "/imagenes/11.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
@@ -604,20 +604,119 @@ const ejerciciosAnalisis = {
       },
     },
     2: {
-      titulo: "Asíntotas (AH y AO)",
-      imagen: "",
-      ayudaImagen: "",
-      resolucionImagen: "",
+      titulo: "Asíntotas horizontales y oblicuas",
+      imagen: "/imagenes/ah_ao.png",
+      ayuda: "Se dice que y = L es A.H. de f(x) si lim(x→+∞)f(x) = L y/o lim(x→-∞)f(x) = L\nse dice que y = mx + b es A.O. de f(x) si lim(x→∞) (f(x))/x) = m ≠ 0 y b = lim(x→∞)(f(x)-mx)",
+      resolucionImagen: "/imagenes/12.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "+inf" ||
-          s === "+infinito" ||
-          s === "+∞"
+          s === "y=0y=-2x" ||
+          s === "ah:y=0ao:y=-2x" ||
+          s === "asintotahorizontal:y=0asintotaoblicua:y=-2x" ||
+          s === "asíntotahorizontal:y=0asíntotaoblicua:y=-2x"
+          );
+        },
+      },
+      3: {
+      titulo: "Asíntotas verticales",
+      imagen: "/imagenes/av.png",
+      ayuda: "Sea f una función definida en algún intervalo abierto alrededor de x0,\nexcepto posiblemente en x0. Si alguno de los límites laterales\nlim(x→x0+) f(x) o lim(x→x0-) f(x) da +∞ o −∞\ndecimos que la recta vertical de ecuación x = x0 es una asíntota vertical para f.",
+      resolucionImagen: "/imagenes/13.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "x=-3" ||
+          s === "av:x=-3" ||
+          s === "asintotavertical:x=-3" ||
+          s === "asíntotavertical:x=-3"
+          );
+        },
+      },
+      4: {
+      titulo: "Teorema del Sándwich",
+      imagen: "/imagenes/teorema_sandwich_2.png",
+      ayuda: "Sean f, g, h funciones definidas en un entorno de a tales que en ese entorno vale\nf(x) ≤ g(x) ≤ h(x)\nsi lim(x→a) f(x) = lim(x→a) h(x) = L, entonces lim(x→a) g(x) = L",
+      resolucionImagen: "/imagenes/14.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "0"
+        );
+      },
+    },
+    5: {
+      titulo: "Continuidad",
+      imagen: "/imagenes/continuidad.png",
+      ayuda: "Sea f : D ⊂ R → R una función. Diremos que f es continua en x0 si:\ni) x0 ∈ Dom(f) ii) existe lim(x→x0) f(x) iii) f(x0) = lim(x→x0) f(x)\nCuando f es continua en todo punto de su dominio, diremos que f es continua en D.",
+      resolucionImagen: "/imagenes/15.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "no,no" ||
+          s === "nono"
+        );
+      },
+    },
+    6: {
+      titulo: "Bolzano",
+      enunciado: "Decidir si el polinomio f(x) = x^6 − 4x^4 − 12x^2 + 1 posee al menos una raíz en el intervalo [0, 2/5].",
+      imagen: "/imagenes/bolzano.png",
+      ayuda: "Sea f : [a, b] → R una función continua tal que f(a) y f(b) tienen distinto signo, entonces existe c ∈ (a, b) tal que f(c) = 0.",
+      resolucion: `
+      Vamos a aplicar directamente el teorema de Bolzano.
+      Podemos hacerlo pues f es continua en ese intervalo al tratarse de un polinomio.
+      Investigamos signos en los extremos:
+      f(0) = 1, f(2/5) ≈ −1,018 ⇒ f tiene una raíz en [0, 2/5]
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "si" ||
+          s === "sí"
+        );
+      },
+    },
+    7: {
+      titulo: "Valor Medio",
+      enunciado: "Decidir si dada la función f(x) = x^3 − 8x + 10 existe un valor c tal que f(c) = π",
+      ayuda: "Sea f : [a, b] → R una función continua. Entonces para todo k ∈ (f(a), f(b)) o k ∈ (f(b), f(a))\nexiste c ∈ (a, b) tal que f(c) = k",
+      resolucion: `
+      La función f es continua en R ya que es polinómica.
+      Vamos a justificar la existencia del valor de c utilizando el teorema de los valores intermedios.
+
+      Observemos que f(0) = 10 y f(1) = 3.
+      Como f es continua en [0, 1] (ya que es continua en R) y f(1) < π < f(0), existe c ∈ (0, 1) tal que f(c) = π.
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "si" ||
+          s === "sí"
+        );
+      },
+    },
+    8: {
+      titulo: "Weierstrass",
+      imagen: "/imagenes/weierstrass.png",
+      ayuda: "Sea f : [a, b] → R una función continua, entonces existen xm, xM ∈ [a, b] tales que f(xm) ≤ f(x) ≤ f(xM) ∀ x ∈ [a, b]",
+      resolucionImagen: "/imagenes/16.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "max:x=0,min:x=3" ||
+          s === "máx:x=0,mín:x=3" ||
+          s === "maximo:x=0,minimo:x=3" ||
+          s === "máximo:x=0,mínimo:x=3" ||
+          s === "maximox=0,minimox=3" ||
+          s === "maximox=0minimox=3" ||
+          s === "x=0,x=3" ||
+          s === "x=0x=3"
         );
       },
     },
   },
+
 
   4: {
     1: {
