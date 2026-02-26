@@ -565,7 +565,7 @@ const ejerciciosAnalisis = {
     7: {
       titulo: "Criterio de D'Alembert",
       imagen: "/imagenes/d_alembert.png",
-      ayudaImagen: "/imagenes/d_alembert_ayuda.png"
+      ayudaImagen: "/imagenes/d_alembert_ayuda.png",
       resolucionImagen: "/imagenes/9.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -577,7 +577,7 @@ const ejerciciosAnalisis = {
     8: {
       titulo: "Criterio de Cauchy",
       imagen: "/imagenes/cauchy.png",
-      ayudaImagen: "/imagenes/cauchy_ayuda.png"
+      ayudaImagen: "/imagenes/cauchy_ayuda.png",
       resolucionImagen: "/imagenes/10.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -592,20 +592,28 @@ const ejerciciosAnalisis = {
 
   3: {
     1: {
-      titulo: "",
-      enunciado: "",
-      ayuda: "",
-
-      resolucion: `
-      
-      Solución:
-
-      `,
+      titulo: "Límites",
+      imagen: "",
+      ayudaImagen: "",
+      resolucionImagen: "",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "" ||
-          s === ""
+          s === "9"
+        );
+      },
+    },
+    2: {
+      titulo: "Asíntotas (AH y AO)",
+      imagen: "",
+      ayudaImagen: "",
+      resolucionImagen: "",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "+inf" ||
+          s === "+infinito" ||
+          s === "+∞"
         );
       },
     },
