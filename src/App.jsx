@@ -538,6 +538,18 @@ const ejerciciosAnalisis = {
         );
       },
     },
+    5: {
+      titulo: "Teorema del Sándwich",
+      imagen: "/imagenes/teorema_sandwich.png",
+      ayuda: "si las sucesiones an , bn y cn verifican an ≤ bn ≤ cn ∀ n > n0 y además lim an = lim cn = L → lim bn = L",
+      resolucionImagen: "/imagenes/7.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "0"
+        );
+      },
+    },
 
   },
 
