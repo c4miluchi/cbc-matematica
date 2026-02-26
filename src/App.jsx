@@ -720,19 +720,67 @@ const ejerciciosAnalisis = {
 
   4: {
     1: {
-      titulo: "",
-      enunciado: "",
-      ayuda: "",
-
-      resolucion: `
-      
-      Solución:
-
-      `,
+      titulo: "Razones trigonométricas",
+      imagen: "/imagenes/triangulo_1.png",
+      enunciado: "Encontrar las razones trigonométricas del triángulo",
+      ayudaImagen: "/imagenes/trangulo_1_ayuda.png",
+      resolucionImagen: "/imagenes/17.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "" ||
+          s === "..."
+        );
+      },
+    },
+    2: {
+      titulo: "Altura",
+      enunciado: "Una persona camina por la avenida Corrientes y observa la parte superior del obelisco elevando su vista 9º.\nSe acerca al mismo 250 m y para ver la parte superior debe elevar la vista 24º.\nHallar la altura del obelisco.",
+      ayudaImagen: "/imagenes/trangulo_1_ayuda.png",
+      resolucionImagen: "/imagenes/18.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "61,426m" ||
+          s === "61,426"
+        );
+      },
+    },
+    3: {
+      titulo: "Longitud",
+      imagen: "/imagenes/triangulo_1.png",
+      enunciado: "En un triangulo ABC, rectángulo en B, de área 40, calcular el largo de cada cateto, si ambos tienen igual longitud.",
+      ayuda: "Recordar que el área de un triángulo se puede calcular como la mitad del producto de 2 lados por el seno del ángulo entre ellos.",
+      resolucionImagen: "/imagenes/19.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "raiz40" ||
+          s === "√40"
+        );
+      },
+    },
+    4: {
+      titulo: "Teorema del seno",
+      imagen: "/imagenes/seno.png",
+      enunciado: "...",
+      ayuda: "...",
+      resolucionImagen: "/imagenes/20.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === ""
+        );
+      },
+    },
+    4: {
+      titulo: "Teorema del coseno",
+      imagen: "/imagenes/coseno.png",
+      enunciado: "...",
+      ayuda: "...",
+      resolucionImagen: "/imagenes/21.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
           s === ""
         );
       },
