@@ -772,7 +772,7 @@ const ejerciciosAnalisis = {
         );
       },
     },
-    4: {
+    5: {
       titulo: "Teorema del coseno",
       imagen: "/imagenes/coseno.png",
       enunciado: "...",
@@ -1252,6 +1252,52 @@ const parcialesAnalisis = {
       },
     },
   },
+  
+  2: {
+    1: {
+      1: {
+        titulo: "Intervalos",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          `,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+    },
+  },
+  3: {
+    1: {
+      1: {
+        titulo: "Intervalos",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          `,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+    },
+  },
+
 };
 
 const parcialesAlgebra = {
