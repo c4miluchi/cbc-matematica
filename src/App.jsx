@@ -762,9 +762,25 @@ const ejerciciosAnalisis = {
     4: {
       titulo: "Teorema del seno",
       imagen: "/imagenes/seno.png",
-      enunciado: "...",
-      ayuda: "...",
+      enunciado: "Cuando en la sucursal bancaria que se muestra en la siguiente figura\nsuena una alarma, la señal se recibe en las dos comisarías más cercanas. Los policías de la comisaría A acuden al banco a una velocidad de 80 kilómetros por hora, y los de la\ncomisaría B lo hacen a 120 kilómetros por hora. ¿Qué policías llegarán primero?",
+      imagen: "/imagenes/policias.png",
+      ayuda: "Dado cualquier triángulo de lados a, b y c y angulos interiores α, β y γ se verifica: (sen(α))/a = (sen(β))/b = (sen(γ))/c",
       resolucionImagen: "/imagenes/20.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "a" ||
+          s === "policiaa" ||
+          s === "políciaa"
+        );
+      },
+    },
+    5: {
+      titulo: "Teorema del coseno",
+      enunciado: "Encontrar los ángulos interiores del triángulo:",
+      imagen: "/imagenes/coseno.png",
+      ayuda: "Dado cualquier triángulo de lados a, b y c y angulos interiores α, βy γse verifica: a^2 = b^2 + c^2 – 2bc . cos(α); b^2 = a^2 + c^2 – 2ac . cos(β); c^2 = a^2 + b^2 – 2ab . cos(γ).",
+      resolucionImagen: "/imagenes/21.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
@@ -772,16 +788,67 @@ const ejerciciosAnalisis = {
         );
       },
     },
-    5: {
-      titulo: "Teorema del coseno",
-      imagen: "/imagenes/coseno.png",
-      enunciado: "...",
-      ayuda: "...",
-      resolucionImagen: "/imagenes/21.png",
+    6: {
+      titulo: "Circunferencia trigonométrica",
+      enunciado: "Hallar todos los x ∈ [0; 2π] tal que cos(x) = √3/2 → coordenada xp = √3/2",
+      ayudaImagen: "/imagenes/circunferencia_ayuda.png",
+      resolucionImagen: "/imagenes/22.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
           s === ""
+        );
+      },
+    },
+    7: {
+      titulo: "Identidades trigonométricas",
+      enunciado: "Hallar todas las soluciones de cos(2x) = sen(x)",
+      ayudaImagen: "/imagenes/identidades_ayuda.png",
+      resolucionImagen: "/imagenes/23.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "1/2,-1" ||
+          s === "1/2-1" ||
+          s === "-1,1/2" ||
+          s === "-11/2"
+        );
+      },
+    },
+    8: {
+      titulo: "Un límite importante: lim(x→0)⁡(sen(x)/x)",
+      enunciado: "Hallar algunos límites: lim(x→0)(sen(3x))/5x; lim(x→0)(sen(6x))/(tan(3x)); lim(x→0)(1 - cos⁡(2x))/(sen(10x)) y lim(x→1)sen(πx)/(x - 1)",
+      ayudaImagen: "/imagenes/limite_importante_ayuda.png",
+      resolucionImagen: "/imagenes/24.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "3/5,1,0,–π" ||
+          s === "3/510–π"
+        );
+      },
+    },
+    9: {
+      titulo: "Funciones exponenciales ",
+      enunciado: "Graficar f(x) = 5^x",
+      ayuda: "Una función exponencial f : R → R es una función de la forma f(x) = a^x, a > 0, a ≠ 1.\nEl número a se llama base y x se llama exponente.",
+      resolucionImagen: "/imagenes/25.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === ""
+        );
+      },
+    },
+    10: {
+      titulo: "Funciones logarítmicas",
+      enunciado: "Encontrar log_2(16)",
+      ayuda: "Vimos que las funciones exponenciales f : R → R, f(x) = a^x son inyectivas.\nSi en vez de considerar como codominio a R, tomamos al intervalo (0, +∞) resulta que\nf : R → (0, +∞), f(x) = a^x es biyectiva para todo a > 0, a ≠ 1.\nPor lo tanto, existe la función inversa f^−1 : (0, +∞) → R, f^−1(x) = log_a(x), llamada logaritmo en base a.",
+      resolucion: "Tenemos que log_2(16) = 4 ya que 24 = 16",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "4"
         );
       },
     },
@@ -1252,7 +1319,6 @@ const parcialesAnalisis = {
       },
     },
   },
-  
   2: {
     1: {
       1: {
@@ -1297,7 +1363,6 @@ const parcialesAnalisis = {
       },
     },
   },
-
 };
 
 const parcialesAlgebra = {
