@@ -844,7 +844,7 @@ const ejerciciosAnalisis = {
       titulo: "Funciones logarítmicas",
       enunciado: "Encontrar log_2(16)",
       ayuda: "Vimos que las funciones exponenciales f : R → R, f(x) = a^x son inyectivas.\nSi en vez de considerar como codominio a R, tomamos al intervalo (0, +∞) resulta que\nf : R → (0, +∞), f(x) = a^x es biyectiva para todo a > 0, a ≠ 1.\nPor lo tanto, existe la función inversa f^−1 : (0, +∞) → R, f^−1(x) = log_a(x), llamada logaritmo en base a.",
-      resolucion: "Tenemos que log_2(16) = 4 ya que 24 = 16",
+      resolucion: "Tenemos que log_2(16) = 4 ya que 2^4 = 16",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
