@@ -856,23 +856,130 @@ const ejerciciosAnalisis = {
 
   5: {
     1: {
-      titulo: "",
-      enunciado: "",
-      ayuda: "",
-
-      resolucion: `
-      
-      Solución:
-
-      `,
+      titulo: "Recta tangente",
+      enunciado: "Hallar la ecuación de la recta tangente a f(x) = 2x + 1",
+      ayudaImagen: "/imagenes/tangente_ayuda.png",
+      resolucionImagen: "/imagenes/26.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "" ||
+          s === "2"
+        );
+      },
+    },
+    2: {
+      titulo: "Tasa de cambio",
+      enunciado: "Una explosión de dinamita lanza verticalmente una roca\npesada que estaba originalmente en reposo sobre la suelo. La altura (en metros) de la roca\nen función del tiempo viene dada por h(t) = 160t − 16t^2.\nHallar la velocidad promedio de la roca entre los instantes t0 = 0, t1 = 2, t2 = 4, y\ncalcule las velocidades instantáneas en cada uno de esos momentos.",
+      ayuda: "El cociente incremental de f entre x0 y x0 + h da la tasa promedio de cambio\nde la función en ese intervalo mientras que f'(x0) es la tasa instantánea de cambio enese punto.",
+      resolucionImagen: "/imagenes/27.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
           s === ""
         );
       },
     },
+    3: {
+      titulo: "Derivada por definición",
+      enunciado: "Calcular por definición la derivada de f(x) = sen(x)",
+      ayudaImagen: "/imagenes/tangente_ayuda.png",
+      resolucionImagen: "/imagenes/28.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "cos(x)"
+        );
+      },
+    },
+    4: {
+      titulo: "Reglas de derivación",
+      enunciado: "Calcular la derivada de f(x) = 4 + 5x + 6x^3",
+      ayudaImagen: "/imagenes/reglas_ayuda.png",
+      resolucionImagen: "/imagenes/29.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "5+18x^2"
+        );
+      },
+    },
+    5: {
+      titulo: "Continuidad y derivabilidad para funciones partidas",
+      imagen: "/imagenes/continuidad_y_derivabilidad.png",
+      resolucionImagen: "/imagenes/30.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === ""
+        );
+      },
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    6: {
+      titulo: "Regla de la cadena",
+      imagen: "/imagenes/....png",
+      resolucionImagen: "/imagenes/31.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === ""
+        );
+      },
+    },
+    7: {
+      titulo: "Recta tangente 2",
+      imagen: "/imagenes/continuidad_y_derivabilidad.png",
+      resolucionImagen: "/imagenes/32.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === ""
+        );
+      },
+    },
+    8: {
+      titulo: "Recta tangente 3",
+      imagen: "/imagenes/continuidad_y_derivabilidad.png",
+      resolucionImagen: "/imagenes/33.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === ""
+        );
+      },
+    },
+    9: {
+      titulo: "Recta tangente 4",
+      imagen: "/imagenes/continuidad_y_derivabilidad.png",
+      resolucionImagen: "/imagenes/34.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === ""
+        );
+      },
+    },
+
+
+
+
   },
 
   6: {
