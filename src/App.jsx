@@ -917,7 +917,7 @@ const ejerciciosAnalisis = {
     6: {
       titulo: "Regla de la cadena",
       imagen: "/imagenes/cadena.png",
-      ayuda: "Si h(x) = (f o g)(f) = f(g(x)), entonces la derivada de h(x) resulta h’(x) = f’(g(x)) . g’(x)"
+      ayuda: "Si h(x) = (f o g)(f) = f(g(x)), entonces la derivada de h(x) resulta h’(x) = f’(g(x)) . g’(x)",
       resolucionImagen: "/imagenes/31.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -929,7 +929,7 @@ const ejerciciosAnalisis = {
     7: {
       titulo: "Regla de la cadena",
       imagen: "/imagenes/cadena_2.png",
-      ayuda: "Si h(x) = (f o g)(f) = f(g(x)), entonces la derivada de h(x) resulta h’(x) = f’(g(x)) . g’(x)"
+      ayuda: "Si h(x) = (f o g)(f) = f(g(x)), entonces la derivada de h(x) resulta h’(x) = f’(g(x)) . g’(x)",
       resolucionImagen: "/imagenes/32.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -1094,14 +1094,9 @@ const ejerciciosAnalisis = {
   7: {
     1: {
       titulo: "Polinomio de Taylor",
-      enunciado: "",
-      ayuda: "",
-
-      resolucion: `
-      
-      Solución:
-
-      `,
+      imagen: "/imagenes/polinomio_taylor_enunciado.png",
+      ayuda: "/imagenes/polinomio_taylor_ayuda.png",
+      resolucionImagen: "/imagenes/44.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
@@ -1110,25 +1105,7 @@ const ejerciciosAnalisis = {
         );
       },
     },
-    2: {
-      titulo: "Polinomio de Taylor 2",
-      enunciado: "",
-      ayuda: "",
-
-      resolucion: `
-      
-      Solución:
-
-      `,
-      verificar: (r) => {
-        const s = r.replace(/\s/g, "").toLowerCase();
-        return (
-          s === "" ||
-          s === ""
-        );
-      },
-    },
-    3: {
+    /*2: {
       titulo: "Error en Aproximación Polinomial",
       enunciado: "",
       ayuda: "",
@@ -1145,7 +1122,8 @@ const ejerciciosAnalisis = {
           s === ""
         );
       },
-    },
+    },*/
+    /*usar la teoria de la pagina 14 y por ejemplo el ejercicio 2 de la pagina 15 solo el item a */
   },
 
   8: {
