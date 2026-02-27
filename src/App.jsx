@@ -964,7 +964,7 @@ const ejerciciosAnalisis = {
     },
     10: {
       titulo: "Linealización",
-      enunciado: "Hallar la linealización de f(x) = √(1 + x) alrededor de x0 = 3."
+      enunciado: "Hallar la linealización de f(x) = √(1 + x) alrededor de x0 = 3.",
       ayudaImagen: "/imagenes/linealizacion_ayuda.png",
       resolucionImagen: "/imagenes/35.png",
       verificar: (r) => {
@@ -987,31 +987,6 @@ const ejerciciosAnalisis = {
       },
     },
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   6: {
     1: {
       titulo: "Teorema de Fermat",
@@ -1118,7 +1093,43 @@ const ejerciciosAnalisis = {
 
   7: {
     1: {
-      titulo: "",
+      titulo: "Polinomio de Taylor",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+    2: {
+      titulo: "Polinomio de Taylor 2",
+      enunciado: "",
+      ayuda: "",
+
+      resolucion: `
+      
+      Solución:
+
+      `,
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+    3: {
+      titulo: "Error en Aproximación Polinomial",
       enunciado: "",
       ayuda: "",
 
