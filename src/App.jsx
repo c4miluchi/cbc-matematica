@@ -938,22 +938,6 @@ const ejerciciosAnalisis = {
         );
       },
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     8: {
       titulo: "Recta tangente 2",
       enunciado: "Hallar el punto donde las rectas tangentes a f(x) = 3x^2 + x y g(x) = 5x + 2 resultan paralelas",
@@ -978,21 +962,10 @@ const ejerciciosAnalisis = {
         );
       },
     },
-
-
-
-
-
-
-
-
-
-
-
-
     10: {
       titulo: "Linealización",
-      imagen: "/imagenes/linealizacion.png",
+      enunciado: "Hallar la linealización de f(x) = √(1 + x) alrededor de x0 = 3."
+      ayudaImagen: "/imagenes/linealizacion_ayuda.png",
       resolucionImagen: "/imagenes/35.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -1003,7 +976,8 @@ const ejerciciosAnalisis = {
     },
     11: {
       titulo: "Estimación de cambio",
-      imagen: "/imagenes/estimacion_cambio.png",
+      enunciado: "El radio de un círculo pasa de 10 metros a 10 metros y 10 centímetros.\nEstime el cambio en el área del círculo utilizando una aproximación lineal y luego compare\nla estimación con el cambio verdadero en dicha área.",
+      ayuda: "Sea f es derivable en x0, entonces el cambio aproximado de f cuando la variable independiente para de x0 a x0 + ∆x viene dado por ∆f ≈ ∆L = f’(x0)∆x.\nCuando estos incrementos son pequeños, tradicionalmente se suele utilizar “diferenciales”, es decir, ponemos ∆x = dx, ∆L = df con lo cual una aproximación a la variación de f cuando la variable pasa de x0 a x0 + dx es df = f’(x0)dx",
       resolucionImagen: "/imagenes/36.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -1012,23 +986,126 @@ const ejerciciosAnalisis = {
         );
       },
     },
-
-
-
-
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   6: {
     1: {
-      titulo: "",
-      enunciado: "",
-      ayuda: "",
-
-      resolucion: `
-      
-      Solución:
-
-      `,
+      titulo: "Teorema de Fermat",
+      enunciado: "Dada f(x) = x^2 - 4x + 1, hallar los puntos críticos usando el Teorema de Fermat y determinar si son máximos o mínimos.",
+      ayuda: "Sea f(x) definida en el intervalo (a; b) y que alcanza un extremo local en x0 ∈ (a; b), si f(x) es derivable en x0, ocurre: f’(x0) = 0.\nSi f(x) es continua en [a; b], es acotada en [a; b], existe M y m ∈ R tales que m ≤ f(x) ≤ M → f(x) seguro tiene máximo y mínimo en [a; b]",
+      resolucionImagen: "/imagenes/37.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "x=2,maximo" ||
+          s === "x=2maximo" ||
+          s === "x=2,máximo" ||
+          s === "x=2máximo" ||
+          s === "2,maximo" ||
+          s === "2maximo" ||
+          s === "2,máximo" ||
+          s === "2máximo" ||
+          s === "2,max" ||
+          s === "2max" ||
+          s === "2,máx" ||
+          s === "2máx"
+        );
+      },
+    },
+    2: {
+      titulo: "Teorema de Rolle",
+      enunciado: "Sea. f(x)=x^2 − 4x + 3, verificar que se cumplen las hipótesis del Teorema de Rolle en el intervalo [1,3] y hallar el valor c.",
+      ayuda: "Sea f(x) : [a; b] → R, continua en [a; b] y derivable en (a; b), si f(a) = f(b), existe al menos un c ∈ (a; b) tal que f’(c) = 0.",
+      resolucionImagen: "/imagenes/38.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+    3: {
+      titulo: "Teorema de Lagrange",
+      enunciado: "Sea f(x) = x^2 en el intervalo [1,3], verificar que se cumplen las hipótesis y hallar el valor de c que garantiza el Teorema de Lagrange.",
+      ayudaImagen: "/imagenes/lagrange_ayuda.png",
+      resolucionImagen: "/imagenes/39.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+    4: {
+      titulo: "Teorema de Cauchy",
+      imagen: "/imagenes/cauchy_enunciado.png",
+      ayudaImagen: "/imagenes/cauchy_ayuda_6.png",
+      resolucionImagen: "/imagenes/40.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+    5: {
+      titulo: "Regla de L'Hôpital",
+      imagen: "/imagenes/l_hopital_enunciado.png",
+      ayudaImagen: "/imagenes/l_hopital_ayuda.png",
+      resolucionImagen: "/imagenes/41.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+    6: {
+      titulo: "Estudio completo de funciones",
+      enunciado: "Completar...", /*va a ser una imagen completar cpn p. 27 del libro*/
+      ayudaImagen: "",
+      resolucionImagen: "/imagenes/42.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "" ||
+          s === ""
+        );
+      },
+    },
+    7: {
+      titulo: "Máximos y mínimos absolutos",
+      enunciado: "Hallar los máximos y mínimos absolutos de f(x) = 3 + 2sen^2(2x) en el intervalo [0, π].",
+      ayuda: "f alcanza un máximo global o absoluto en x = x0 si f(x0) ≥ f(x) para todo x ∈ Dom(f)\ny f alcanza un m ́ınimo global o absoluto en x = x0 si f(x0) ≤ f(x) para todo x ∈ Dom(f)",
+      resolucionImagen: "/imagenes/43.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
