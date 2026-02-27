@@ -914,27 +914,10 @@ const ejerciciosAnalisis = {
         );
       },
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     6: {
       titulo: "Regla de la cadena",
-      imagen: "/imagenes/....png",
+      imagen: "/imagenes/cadena.png",
+      ayuda: "Si h(x) = (f o g)(f) = f(g(x)), entonces la derivada de h(x) resulta h’(x) = f’(g(x)) . g’(x)"
       resolucionImagen: "/imagenes/31.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -944,19 +927,37 @@ const ejerciciosAnalisis = {
       },
     },
     7: {
-      titulo: "Recta tangente 2",
-      imagen: "/imagenes/continuidad_y_derivabilidad.png",
+      titulo: "Regla de la cadena",
+      imagen: "/imagenes/cadena_2.png",
+      ayuda: "Si h(x) = (f o g)(f) = f(g(x)), entonces la derivada de h(x) resulta h’(x) = f’(g(x)) . g’(x)"
       resolucionImagen: "/imagenes/32.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === ""
+          s === "-1/x"
         );
       },
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     8: {
-      titulo: "Recta tangente 3",
-      imagen: "/imagenes/continuidad_y_derivabilidad.png",
+      titulo: "Recta tangente 2",
+      enunciado: "Hallar el punto donde las rectas tangentes a f(x) = 3x^2 + x y g(x) = 5x + 2 resultan paralelas",
+      ayudaImagen: "/imagenes/tangente_2.png",
       resolucionImagen: "/imagenes/33.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
@@ -966,9 +967,44 @@ const ejerciciosAnalisis = {
       },
     },
     9: {
-      titulo: "Recta tangente 4",
-      imagen: "/imagenes/continuidad_y_derivabilidad.png",
+      titulo: "Recta tangente 3",
+      enunciado: "Hallar los puntos de f(x) = 2x^3 + 3x^2 – 36x + 1 donde la recta tangente es horizontal",
+      ayudaImagen: "/imagenes/tangente_2.png",
       resolucionImagen: "/imagenes/34.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === ""
+        );
+      },
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+    10: {
+      titulo: "Linealización",
+      imagen: "/imagenes/linealizacion.png",
+      resolucionImagen: "/imagenes/35.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === ""
+        );
+      },
+    },
+    11: {
+      titulo: "Estimación de cambio",
+      imagen: "/imagenes/estimacion_cambio.png",
+      resolucionImagen: "/imagenes/36.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
