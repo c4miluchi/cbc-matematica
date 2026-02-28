@@ -1749,36 +1749,29 @@ const parcialesAnalisis = {
         },
       },
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /*modelo 2*/
     2: {
       1: {
         titulo: "Cambio Porcentual",
         imagen: "/imagenes/analisis_modelo_2_ejercicio_1_parcial_2.png",
         ayuda: `
-          
+          1) Volumen de un cubo:
+          El volumen de un cubo de lado ℓ es: V(ℓ) = ℓ³
+          Por lo tanto, el problema se reduce a estudiar cómo cambia esta función.
+
+          2) Aproximación lineal:
+          Si una función es derivable en ℓ₀, el cambio en la función puede estimarse por:
+          ΔV ≈ V'(ℓ₀) · Δℓ donde: Δℓ = ℓ − ℓ₀
+
+          3) Cambio porcentual (aproximación):
+          El cambio porcentual se estima mediante: ( V'(ℓ₀) · Δℓ / V(ℓ₀) ) · 100
+
+          4) Estrategia:
+          - Definir V(ℓ) = ℓ³.
+          - Calcular la derivada V'(ℓ).
+          - Evaluar en ℓ₀.
+          - Calcular Δℓ.
+          - Aplicar la fórmula del cambio porcentual.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_1_parcial_2_resolucion.png",
 
@@ -1794,7 +1787,35 @@ const parcialesAnalisis = {
         titulo: "Análisis función",
         imagen: "/imagenes/analisis_modelo_2_ejercicio_2_parcial_2.png",
         ayuda: `
-          
+          1) Dominio de la función:
+          Antes de estudiar crecimiento, se debe analizar el dominio.
+          Si la función es un cociente: f(x) = numerador / denominador
+          se debe exigir: denominador ≠ 0
+
+          Es importante tener en cuenta que los puntos fuera del dominio no pueden ser extremos.
+
+          2) Crecimiento y decrecimiento:
+          Para estudiar si una función crece o decrece,  se analiza el signo de la primera derivada.
+          - Si f'(x) > 0 → f es creciente.
+          - Si f'(x) < 0 → f es decreciente.
+
+          Procedimiento:
+          - Calcular f'(x).
+          - Resolver f'(x) = 0.
+          - Analizar el signo en los intervalos del dominio.
+
+          3) Derivada de un cociente:
+          Si f(x) = u(x) / v(x), entonces: f'(x) = (u'v − uv') / v² (regla del cociente).
+
+          4) Función exponencial: (e^g(x))' = e^g(x) · g'(x)
+          La exponencial es siempre positiva, lo cual ayuda al analizar el signo de la derivada.
+
+          5) Extremos locales:
+          Un punto x = c es extremo local si: f'(c) = 0 y f' cambia de signo al pasar por c.
+
+          Clasificación:
+          - De + a − → máximo local.
+          - De − a + → mínimo local.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_2_parcial_2_resolucion.png",
 
@@ -1809,7 +1830,29 @@ const parcialesAnalisis = {
         titulo: "Máximos y mínimos absolutos",
         imagen: "/imagenes/analisis_modelo_2_ejercicio_3_parcial_2.png",
         ayuda: `
-          
+          1) Máximos y mínimos absolutos en intervalo cerrado:
+          Si una función es continua en un intervalo cerrado [a, b], entonces alcanza máximo y mínimo absolutos.
+          Para hallarlos se debe:
+          - Calcular f'(x).
+          - Hallar los puntos críticos (f'(x) = 0).
+          - Evaluar la función en:
+              • los puntos críticos del intervalo
+              • los extremos del intervalo (a y b)
+          - Comparar los valores obtenidos.
+
+          2) Derivadas trigonométricas:
+          Recordar que:
+          - (cos x)' = −sen x
+          - (sen x)' = cos x
+          Si aparece sen²(x), se aplica regla de la cadena: (sen²(x))' = 2 sen(x) cos(x)
+
+          3) Puntos críticos:
+          Un punto crítico es aquel donde: f'(x) = 0 o f'(x) no existe (y pertenece al intervalo).
+          En este tipo de funciones trigonométricas, los puntos críticos suelen aparecer al resolver ecuaciones trigonométricas.
+
+          4) Importancia del intervalo cerrado:
+          Para extremos absolutos, no basta estudiar el signo de la derivada.
+          Es obligatorio evaluar también los extremos del intervalo.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_3_parcial_2_resolucion.png",
 
@@ -1831,7 +1874,34 @@ const parcialesAnalisis = {
         titulo: "Dimensiones",
         enunciado: "Felipe el ganadero se dispone a instalar un bebedero para sus vacas.\nEl bebedero es de fondo cuadrado y debe ser capaz de contener 4000 litros de agua y debe estar confeccionado en una sola pieza de metal\n(se recortan pequeños cuadrados de las esquinas de la plancha de metal y se doblan hacia arriba las solapas resultantes)\n¿Qué dimensiones debe tener de forma tal que se minimice la cantidad de chapa utilizada?\nRecordemos que un litro de agua equivale a 0.001 metros cúbicos.",
         ayuda: `
-          
+          1) Conversión de unidades:
+          Se debe trabajar en unidades coherentes.
+          Recordar que: 1 litro = 0,001 m³
+          Por lo tanto, 4000 litros deben convertirse a metros cúbicos para usar la fórmula del volumen.
+
+          2) Modelo geométrico:
+          El bebedero se construye recortando cuadrados de lado x en las esquinas de una chapa cuadrada y doblando las solapas.
+          Si el lado original de la chapa es L, entonces:
+          - Altura del recipiente: x
+          - Lado de la base: L − 2x
+
+          3) Volumen del recipiente:
+          El volumen de una caja sin tapa es: V = (lado de la base)² · altura
+          En este caso: V = (L − 2x)² · x
+
+          4) Función a minimizar:
+          Se quiere minimizar la cantidad de chapa utilizada.
+          Como se parte de una chapa cuadrada de lado L, el área utilizada es: A = L²
+
+          Por lo tanto, usando la ecuación del volumen, se debe expresar L en función de x
+          y reemplazar en A para obtener una función de una sola variable.
+
+
+          5) Optimización:
+          - Reducir la función a una variable.
+          - Calcular la derivada.
+          - Resolver A'(x) = 0.
+          - Verificar que se trata de un mínimo.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_4_parcial_2_resolucion.png",
 
@@ -1851,7 +1921,25 @@ const parcialesAnalisis = {
         titulo: "Polinomio de Taylor",
         imagen: "/imagenes/analisis_modelo_2_ejercicio_5_parcial_2.png",
         ayuda: `
-          
+          1) Polinomio de Taylor de orden n en x₀ = 0 (Maclaurin):
+          El polinomio de Taylor de orden 4 es: P₄(x) = f(0) + f'(0)x + f''(0)/2! x² + f'''(0)/3! x³ + f⁽⁴⁾(0)/4! x⁴
+
+          2) Derivadas de eˣ:
+          Para f(x) = eˣ, todas las derivadas son iguales a eˣ.
+          Por lo tanto, en x = 0: f(0) = f'(0) = f''(0) = ... = 1
+
+          3) Aproximación:
+          Una vez obtenido P₄(x), para aproximar e^(−0,2) se reemplaza: e^(−0,2) ≈ P₄(−0,2)
+
+          La aproximación es buena porque −0,2 está cerca de 0.
+
+          4) Error (resto de Taylor):
+          El error al usar un polinomio de orden n está dado por el resto de Lagrange:
+          Rₙ(x) = f⁽ⁿ⁺¹⁾(ξ) / (n+1)! · xⁿ⁺¹ para algún ξ entre 0 y x.
+
+          Para acotar el error máximo:
+          - Se busca un valor M tal que |f⁽ⁿ⁺¹⁾(ξ)| ≤ M en el intervalo considerado.
+          - Luego: |Rₙ(x)| ≤ M / (n+1)! · |x|ⁿ⁺¹
           `,
         resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_5_parcial_2_resolucion.png",
 
@@ -1869,7 +1957,28 @@ const parcialesAnalisis = {
         titulo: "Recta Tangente",
         imagen: "/imagenes/analisis_modelo_3_ejercicio_1_parcial_2.png",
         ayuda: `
-          
+          1) Recta tangente:
+          La ecuación de la recta tangente a una función f en el punto x₀ es: y = f(x₀) + f'(x₀)(x − x₀)
+          Por lo tanto, se necesita:
+          - El valor de la función en el punto.
+          - El valor de la derivada en el punto.
+
+          2) Derivada de un cociente:
+          Si la función es un cociente: f(x) = u(x) / v(x) se aplica la regla del cociente: f'(x) = (u'v − uv') / v²
+
+          3) Procedimiento general:
+          - Calcular f(3).
+          - Calcular f'(x) usando la regla del cociente.
+          - Evaluar f'(3).
+          - Reemplazar en la fórmula de la recta tangente.
+
+          4) Interpretación geométrica:
+          La pendiente de la recta tangente es la derivada evaluada en el punto.
+          La recta tangente aproxima la función cerca de ese punto.
+
+          5) Dominio:
+          Antes de derivar, recordar que el denominador no puede anularse.
+          Es importante verificar que el punto dado pertenece al dominio de la función.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_1_parcial_2_resolucion.png",
 
@@ -1884,7 +1993,29 @@ const parcialesAnalisis = {
         titulo: "Máximos y mínimos absolutos",
         imagen: "/imagenes/analisis_modelo_3_ejercicio_2_parcial_2.png",
         ayuda: `
-          
+          1) Extremos absolutos en intervalo cerrado:
+          Si una función es continua en un intervalo cerrado [a, b], alcanza máximo y mínimo absolutos
+
+          Para hallarlos se debe:
+          - Calcular la derivada.
+          - Hallar los puntos críticos (f'(x) = 0).
+          - Evaluar la función en:
+              • los puntos críticos que pertenezcan al intervalo
+              • los extremos del intervalo.
+          - Comparar los valores obtenidos.
+
+          2) Derivada de un producto:
+          Si f(x) = u(x) · v(x), entonces: f'(x) = u'v + uv'
+
+
+          3) Derivada de la exponencial:
+          Recordar que: (e^(g(x)))' = e^(g(x)) · g'(x)
+          En particular: (e^(−x))' = −e^(−x)
+
+          4) Puntos críticos:
+          Se obtienen resolviendo: f'(x) = 0
+
+          En funciones con exponencial, es útil notar que e^(−x) nunca es cero.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_2_parcial_2_resolucion.png",
 
@@ -1899,7 +2030,27 @@ const parcialesAnalisis = {
         titulo: "Números",
         enunciado: "Lionel el Grande está buscando dos números positivos tales que su suma sea 20 y su producto sea lo más grande posible. ¿Podés ayudarlo?",
         ayuda: `
-          
+          1) Problema de optimización con restricción:
+          Se buscan dos números positivos cuya suma es fija (20) y cuyo producto sea máximo.
+
+          2) Planteo de variables:
+          Sea:
+          x = primer número
+          y = segundo número
+
+          Condición (restricción): x + y = 20
+
+          Función a maximizar: P = x · y
+
+          3) Reducción a una variable:
+          Usando la restricción: y = 20 − x
+          Se reemplaza en el producto: P(x) = x(20 − x)
+          Así se obtiene una función de una sola variable.
+
+          4) Condición de máximo:
+          - Calcular P'(x).
+          - Resolver P'(x) = 0.
+          - Verificar que se trate de un máximo (por ejemplo, usando la segunda derivada o analizando el signo de P').
           `,
         resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_3_parcial_2_resolucion.png",
 
@@ -1915,7 +2066,22 @@ const parcialesAnalisis = {
         imagen: "/imagenes/analisis_modelo_3_ejercicio_4_parcial_2.png",
 
         ayuda: `
-          
+          1) Polinomio de Taylor alrededor de x₀:
+          El polinomio de Taylor de orden 2 alrededor de x₀ es: P₂(x) = f(x₀) + f'(x₀)(x − x₀) + f''(x₀)/2 · (x − x₀)²
+
+          2) Uso del dato dado:
+          Se conoce el polinomio de Taylor de orden 2 de f.
+          Eso significa que, cerca de x = 2: f(x) ≈ P(x)
+
+          Por lo tanto, para calcular el Taylor de h(x), se puede reemplazar f(x) por su polinomio y trabajar con esa aproximación.
+
+          3) Desarrollo de ln(3 − x):
+          Para desarrollar ln(3 − x) alrededor de x = 2, es útil reescribir: 3 − x = 1 − (x − 2)
+          Luego se puede usar el desarrollo conocido: ln(1 + u) ≈ u − u²/2   (hasta orden 2) donde u es pequeño.
+
+          4) Producto de desarrollos:
+          Si: h(x) = f(x) · ln(3 − x) y ambos factores se desarrollan hasta orden 2,
+          se multiplican los polinomios y se conservan términos hasta (x − 2)².
           `,
         resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_4_parcial_2_resolucion.png",
 
@@ -1928,30 +2094,6 @@ const parcialesAnalisis = {
       },
     },
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   /*parcial 3*/
   3: {
     1: {
