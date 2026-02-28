@@ -1607,7 +1607,6 @@ const parcialesAnalisis = {
       3: {
         titulo: "Análisis función",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_3_parcial_2.png",
-
         ayuda: `
           1) Intervalos de crecimiento y decrecimiento:
           Para estudiar si una función crece o decrece se analiza el signo de la primera derivada.
@@ -1710,9 +1709,7 @@ const parcialesAnalisis = {
       },
       5: {
         titulo: "Polinomio de Taylor",
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_5_parcial_2.png",
-
         ayuda: `
           1) Polinomio de Taylor de orden 2:
           El polinomio de Taylor de orden 2 de una función f alrededor de x₀ es:
@@ -1752,95 +1749,116 @@ const parcialesAnalisis = {
         },
       },
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*modelo 2*/
     2: {
       1: {
         titulo: "Cambio Porcentual",
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
-
+        imagen: "/imagenes/analisis_modelo_2_ejercicio_1_parcial_2.png",
         ayuda: `
+          
           `,
-
-        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
-        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+        resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_1_parcial_2_resolucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "..."
+            s === "10%" ||
+            s === "10"
           );
         },
       },
       2: {
-        titulo: "Análisis de Función",
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
-
+        titulo: "Análisis función",
+        imagen: "/imagenes/analisis_modelo_2_ejercicio_2_parcial_2.png",
         ayuda: `
+          
           `,
-
-        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
-        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+        resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_2_parcial_2_resolucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "..."
+            s === ""
           );
         },
       },
       3: {
         titulo: "Máximos y mínimos absolutos",
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
-
+        imagen: "/imagenes/analisis_modelo_2_ejercicio_3_parcial_2.png",
         ayuda: `
+          
           `,
-
-        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
-        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+        resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_3_parcial_2_resolucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "..."
+            s === "max:x=2,min:x=-2" ||
+            s === "máx:x=2,mín:x=-2" ||
+            s === "maximo:x=2,minimo:x=-2" ||
+            s === "máximo:x=2,mínimo:x=-2" ||
+            s === "maximox=2,minimox=-2" ||
+            s === "maximox=2minimox=-2" ||
+            s === "x=2,x=-2" ||
+            s === "x=2x=-2"
           );
         },
       },
       4: {
         titulo: "Dimensiones",
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
-
+        enunciado: "Felipe el ganadero se dispone a instalar un bebedero para sus vacas.\nEl bebedero es de fondo cuadrado y debe ser capaz de contener 4000 litros de agua y debe estar confeccionado en una sola pieza de metal\n(se recortan pequeños cuadrados de las esquinas de la plancha de metal y se doblan hacia arriba las solapas resultantes)\n¿Qué dimensiones debe tener de forma tal que se minimice la cantidad de chapa utilizada?\nRecordemos que un litro de agua equivale a 0.001 metros cúbicos.",
         ayuda: `
+          
           `,
-
-        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
-        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+        resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_4_parcial_2_resolucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "..."
+            s === "x=2yh=1" ||
+            s === "x=2h=1" ||
+            s === "x=2,h=1" ||
+            s === "2y1" ||
+            s === "2,1" ||
+            s === "21"
           );
         },
       },
       5: {
         titulo: "Polinomio de Taylor",
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
-
+        imagen: "/imagenes/analisis_modelo_2_ejercicio_5_parcial_2.png",
         ayuda: `
+          
           `,
-
-        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
-        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+        resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_5_parcial_2_resolucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "..."
+            s === ""
           );
         },
       },
@@ -1848,69 +1866,58 @@ const parcialesAnalisis = {
     /*modelo 3*/
     3: {
       1: {
-        titulo: "Ecuación de la recta tangente",
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
-
+        titulo: "Recta Tangente",
+        imagen: "/imagenes/analisis_modelo_3_ejercicio_1_parcial_2.png",
         ayuda: `
+          
           `,
-
-        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
-        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+        resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_1_parcial_2_resolucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "..."
+            s === "32x−83"
           );
         },
       },
       2: {
         titulo: "Máximos y mínimos absolutos",
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
-
+        imagen: "/imagenes/analisis_modelo_3_ejercicio_2_parcial_2.png",
         ayuda: `
+          
           `,
-
-        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
-        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+        resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_2_parcial_2_resolucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "..."
+            s === ""
           );
         },
       },
       3: {
         titulo: "Números",
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
-
+        enunciado: "Lionel el Grande está buscando dos números positivos tales que su suma sea 20 y su producto sea lo más grande posible. ¿Podés ayudarlo?",
         ayuda: `
+          
           `,
-
-        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
-        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+        resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_3_parcial_2_resolucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "..."
+            s === "10y10"
           );
         },
       },
       4: {
         titulo: "Polinomio de Taylor",
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+        imagen: "/imagenes/analisis_modelo_3_ejercicio_4_parcial_2.png",
 
         ayuda: `
+          
           `,
-
-        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
-        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+        resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_4_parcial_2_resolucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
@@ -1921,6 +1928,30 @@ const parcialesAnalisis = {
       },
     },
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /*parcial 3*/
   3: {
     1: {
