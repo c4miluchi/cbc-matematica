@@ -864,7 +864,7 @@ const ejerciciosAnalisis = {
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "2"
+          s === "y=2x+1"
         );
       },
     },
