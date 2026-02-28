@@ -59,8 +59,9 @@ const linksParcialesAnalisis = {
     4: "https://drive.google.com/file/d/17xQG2Vy3pDD4oBlvWi9qFRWGA3QfgpI2/view?usp=share_link",
   },
   2: {
-    1: "PEGÁ_A==",
-    2: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO2",
+    1: "https://drive.google.com/file/d/1hR0X1K-p3Whu38z9P37Rl_PEMxlYlPRB/view?usp=share_link",
+    2: "https://drive.google.com/file/d/15Ua9Xu3E7e-5iU98Yf3TeJYov__NoGTW/view?usp=share_link",
+    3: "https://drive.google.com/file/d/1BQf0ge19WTn_DWmclKXhDI9VM67k-D_X/view?usp=share_link",
   },
   3: {
     1: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO1",
@@ -1337,9 +1338,10 @@ const ejerciciosAlgebra = {
 
 };
 
-
 const parcialesAnalisis = {
+  /*parcial 1*/
   1: {
+    /*modelo 1*/
     1: {
       1: {
         titulo: "Intervalos",
@@ -1528,10 +1530,378 @@ const parcialesAnalisis = {
       },
     },
   },
+  /*parcial 2*/
   2: {
+    /*modelo 1*/
     1: {
       1: {
-        titulo: "Intervalos",
+        titulo: "Estimación del cambio",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1_parcial_2.png",
+        ayuda: `
+          1) Aproximación lineal (diferencial):
+          Cuando el cambio en la variable independiente es pequeño, el cambio en la función puede aproximarse por:
+          Δh ≈ h'(x₀) · Δx donde: Δx = x₁ − x₀ (linealización de la función alrededor del punto x₀).
+
+          2) Derivada de un producto:
+          Si h(x) = f(x) · g(x), entonces: h'(x) = f'(x)g(x) + f(x)g'(x) (regla del producto).
+
+          3) Recta tangente y derivada:
+          La ecuación de la recta tangente en x₀ es: y = f(x₀) + f'(x₀)(x − x₀)
+          La pendiente de la recta tangente es f'(x₀).
+          Además, el valor de la función en ese punto es f(x₀).
+
+          Por lo tanto, si se conoce la recta tangente, se pueden obtener directamente:
+          - El valor de la función en el punto.
+          - El valor de la derivada en el punto.
+
+          4) Estrategia para el ejercicio:
+          - Calcular Δx.
+          - Hallar h'(x) usando la regla del producto.
+          - Evaluar h'(x₀).
+          - Aplicar: Δh ≈ h'(x₀) · Δx
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_parcial_2_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      2: {
+        titulo: "Límites",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_2_parcial_2.png",
+        ayuda: `
+          1) Definición de derivada en un punto:
+          Si f es derivable en x = a, entonces: f'(a) = lim (h → 0) [f(a + h) − f(a)] / h
+
+          2) Cambio de variable:
+          Cuando aparece f(2 + 3x) o f(2 + 5x), se puede pensar que: h = 3x   o   h = 5x
+          y notar que cuando x → 0, también h → 0.
+          Esto permite relacionar la expresión con la definición de derivada.
+
+          3) Linealización (aproximación para x pequeño):
+          Si f es derivable en 2, entonces: f(2 + h) ≈ f(2) + f'(2)·h (para h pequeño)
+
+          4) Uso del dato f(2) = 0:
+          Si f(2) = 0, entonces la aproximación queda: f(2 + h) ≈ f'(2)·h
+
+          5) Estrategia general:
+          - Reescribir cada término como f(2 + h).
+          - Usar la aproximación lineal o la definición de derivada.
+          - Factorizar x si es posible.
+          - Aplicar el límite cuando x → 0.
+          - Reemplazar usando el valor de f'(2).
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_2_parcial_2_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      3: {
+        titulo: "Análisis función",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_3_parcial_2.png",
+
+        ayuda: `
+          1) Intervalos de crecimiento y decrecimiento:
+          Para estudiar si una función crece o decrece se analiza el signo de la primera derivada.
+          - Si f'(x) > 0  →  f es creciente.
+          - If f'(x) < 0  →  f es decreciente.
+
+          Procedimiento:
+          - Calcular f'(x).
+          - Hallar los puntos críticos resolviendo f'(x) = 0.
+          - Analizar el signo de f'(x) en cada intervalo determinado.
+
+          2) Extremos locales:
+          Un punto x = c es extremo local si: f'(c) = 0  o  f'(c) no existe.
+
+          Luego se clasifica según el cambio de signo:
+          - Si f' pasa de + a − → máximo local.
+          - Si f' pasa de − a + → mínimo local.
+
+          También puede usarse el criterio de la segunda derivada:
+          Si f'(c) = 0 y
+          - f''(c) > 0 → mínimo local.
+          - f''(c) < 0 → máximo local.
+
+          3) Concavidad:
+          La concavidad se estudia con la segunda derivada.
+          - Si f''(x) > 0 → función cóncava hacia arriba.
+          - Si f''(x) < 0 → función cóncava hacia abajo.
+
+          Procedimiento:
+          - Calcular f''(x).
+          - Resolver f''(x) = 0 para hallar posibles puntos de inflexión.
+          - Analizar el signo de f'' en los intervalos.
+
+          4) Punto de inflexión:
+          Existe punto de inflexión en x = c si: f''(c) = 0 (o no existe) y f'' cambia de signo al pasar por c.
+
+          5) Estrategia general:
+          - Calcular f'(x) y estudiar su signo.
+          - Determinar puntos críticos.
+          - Calcular f''(x) y estudiar su signo.
+          - Concluir crecimiento, extremos y concavidad.
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_3_parcial_2_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      4: {
+        titulo: "Minimizar costo",
+        enunciado: "Una caja con base rectangular tiene un volumen de 5 metros cúbicos.\nEl costo por metro cuadrado de la base es de 15 dólares, el costo de la tapa es de 10 dólares por metro cuadrado\ny el costo de los lados del costado es de 2,5 dólares por metro cuadrado.\n¿Cuáles deben ser las dimensiones de la caja para que el costo sea mínimo?",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_4_parcial_2.png",
+
+        ayuda: `
+          1) Problemas de optimización:
+          En problemas de mínimo o máximo se sigue este esquema:
+          - Definir variables.
+          - Plantear la función que se quiere optimizar.
+          - Usar las condiciones del problema (restricciones).
+          - Reducir la función a una sola variable.
+          - Derivar e igualar a cero.
+          - Verificar que sea mínimo.
+
+          2) Restricción (condición del volumen):
+          El volumen de una caja rectangular es: V = largo · ancho · altura
+          Si el volumen es fijo, esa ecuación permite despejar una variable en función de las otras.
+          Esa ecuación se usa para eliminar una variable en la función de costo.
+
+          3) Función de costo:
+          El costo total es la suma de:
+          - Costo de la base (área de la base × precio por m²).
+          - Costo de la tapa (área de la tapa × precio por m²).
+          - Costo de los lados (área lateral × precio por m²).
+
+          Es importante calcular correctamente el área de cada parte.
+
+          4) Reducción a una variable:
+          Usando la restricción del volumen, se expresa una variable en función de otra.
+          Luego se reemplaza en la función de costo, obteniendo una función de una sola variable.
+
+          5) Condición de mínimo:
+          - Calcular la derivada del costo.
+          - Resolver C'(x) = 0.
+          - Verificar que sea mínimo usando: cambio de signo de C' o segunda derivada: C''(x) > 0.
+
+          6) Interpretación final:
+          Las dimensiones que anulan la derivada y cumplen la condición de mínimo son las que minimizan el costo.
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_4_parcial_2_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      5: {
+        titulo: "Polinomio de Taylor",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_5_parcial_2.png",
+
+        ayuda: `
+          1) Polinomio de Taylor de orden 2:
+          El polinomio de Taylor de orden 2 de una función f alrededor de x₀ es:
+          P₂(x) = f(x₀) + f'(x₀)(x − x₀) + f''(x₀)/2 · (x − x₀)²
+
+          Si x₀ = 0, queda: P₂(x) = f(0) + f'(0)x + f''(0)/2 · x²
+
+          2) Derivada de arccos(t):
+          Se sabe que: (arccos(t))' = −1 / √(1 − t²)
+          Si el argumento es una función (por ejemplo arccos(2x)), se aplica la regla de la cadena:
+
+          d/dx [arccos(g(x))] = − g'(x) / √(1 − (g(x))²)
+
+          3) Estrategia para el ejercicio:
+          - Calcular f(0).
+          - Calcular f'(x) usando regla de la cadena.
+          - Evaluar f'(0).
+          - Calcular f''(x).
+          - Evaluar f''(0).
+          - Construir P₂(x).
+
+          4) Aproximación numérica:
+          Una vez obtenido el polinomio de Taylor P₂(x), para aproximar f(0,2) se reemplaza: f(0,2) ≈ P₂(0,2)
+          Esto es válido cuando el valor está cerca el punto alrededor del cual se desarrolló (x₀ = 0).
+
+          5) Idea teórica:
+          El polinomio de Taylor aproxima la función mediante un polinomio que tiene el mismo valor,
+          misma pendiente y misma curvatura en el punto de desarrollo.
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_5_parcial_2_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+    },
+    /*modelo 2*/
+    2: {
+      1: {
+        titulo: "Cambio Porcentual",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          `,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      2: {
+        titulo: "Análisis de Función",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          `,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      3: {
+        titulo: "Máximos y mínimos absolutos",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          `,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      4: {
+        titulo: "Dimensiones",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          `,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      5: {
+        titulo: "Polinomio de Taylor",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          `,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+    },
+    /*modelo 3*/
+    3: {
+      1: {
+        titulo: "Ecuación de la recta tangente",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          `,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      2: {
+        titulo: "Máximos y mínimos absolutos",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          `,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      3: {
+        titulo: "Números",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          `,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      4: {
+        titulo: "Polinomio de Taylor",
         enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
 
@@ -1550,6 +1920,7 @@ const parcialesAnalisis = {
       },
     },
   },
+  /*parcial 3*/
   3: {
     1: {
       1: {
