@@ -1866,7 +1866,9 @@ const parcialesAnalisis = {
             s === "maximox=2,minimox=-2" ||
             s === "maximox=2minimox=-2" ||
             s === "x=2,x=-2" ||
-            s === "x=2x=-2"
+            s === "x=2x=-2"||
+            s === "2,-2" ||
+            s === "2-2"
           );
         },
       },
