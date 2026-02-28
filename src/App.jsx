@@ -1565,7 +1565,8 @@ const parcialesAnalisis = {
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "..."
+            s === "0,15" ||
+            s === "-0,15"
           );
         },
       },
@@ -1599,7 +1600,7 @@ const parcialesAnalisis = {
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "..."
+            s === "-24"
           );
         },
       },
@@ -1746,7 +1747,7 @@ const parcialesAnalisis = {
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "..."
+            s === "0,9708"
           );
         },
       },
