@@ -2101,7 +2101,7 @@ const parcialesAnalisis = {
     /*modelo 1*/
     1: {
       1: {
-        titulo: "...",
+        titulo: "Integral definida",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_1_parcial_3.png",
         ayuda: `
           1) Primitivas (integral indefinida):
@@ -2131,7 +2131,7 @@ const parcialesAnalisis = {
         },
       },
       2: {
-        titulo: "...",
+        titulo: "Volumen de sólidos de revolución",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_2_parcial_3.png",
         ayuda: `
           1) Volumen de sólidos de revolución (método de discos/anillos):
@@ -2169,7 +2169,7 @@ const parcialesAnalisis = {
         },
       },
       3: {
-        titulo: "...",
+        titulo: "Crecimiento y decrecimiento de una función",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_3_parcial_3.png",
         ayuda: `
           1) Crecimiento y decrecimiento de una función:
@@ -2203,7 +2203,7 @@ const parcialesAnalisis = {
         },
       },
       4: {
-        titulo: "...",
+        titulo: "Serie numérica",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_4_parcial_3.png",
         ayuda: `
           1) Definición de serie numérica:
@@ -2242,10 +2242,25 @@ const parcialesAnalisis = {
     /*modelo 2*/
     2: {
       1: {
-        titulo: "...",
+        titulo: "Primitivas",
         imagen: "/imagenes/analisis_modelo_2_ejercicio_1_parcial_3.png",
         ayuda: `
-          
+          1) Primitivas (integral indefinida):
+          Hallar todas las primitivas de una función f(x) significa encontrar una función F(x) tal que: F'(x) = f(x)
+          El conjunto de todas las primitivas se escribe: ∫ f(x) dx = F(x) + C  donde C es una constante arbitraria.
+
+          2) Reescritura de expresiones con raíces:
+          Las raíces pueden escribirse como potencias: ³√(1 + x³) = (1 + x³)^(1/3)
+          Esto permite trabajar más fácilmente con reglas de derivación e integración.
+
+          3) Método de sustitución:
+          Si una integral tiene la forma: ∫ f(g(x)) · g'(x) dx se puede realizar el cambio de variable:
+          u = g(x) du = g'(x) dx transformando la integral en: ∫ f(u) du.
+
+          4) Identificación de derivadas dentro del integrando:
+          Muchas integrales se resuelven observando que una parte del integrando es la derivada de otra.
+          En particular, si aparece una expresión del tipo: (1 + x³) es útil recordar que:
+          (1 + x³)' = 3x² lo que puede sugerir un cambio de variable con esa expresión.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_1_parcial_3_resolucion.png",
 
@@ -2257,10 +2272,24 @@ const parcialesAnalisis = {
         },
       },
       2: {
-        titulo: "...",
+        titulo: "Área",
         imagen: "/imagenes/analisis_modelo_2_ejercicio_2_parcial_3.png",
         ayuda: `
-          
+          1) Área entre una curva y el eje x:
+          El área de la región limitada por el gráfico de una función f(x) y el eje x entre x = a y x = b se calcula mediante:
+          A = ∫[a,b] |f(x)| dx
+          Si la función es positiva en el intervalo: A = ∫[a,b] f(x) dx
+          Si la función es negativa: A = −∫[a,b] f(x) dx.
+
+          2) Determinación de los límites de integración:
+          Para encontrar el intervalo donde se calcula el área, se deben hallar los puntos donde la función corta al eje x.
+          Esto se obtiene resolviendo: f(x) = 0
+
+          3) Análisis del signo de la función:
+          Es importante analizar en qué partes del intervalo la función es positiva o negativa, ya que el área siempre debe resultar positiva.
+
+          4) Integración de productos:
+          Si aparece un producto de funciones, por ejemplo: (polinomio) · e^x puede ser necesario usar el método de integración por partes.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_2_parcial_3_resolucion.png",
 
@@ -2272,9 +2301,27 @@ const parcialesAnalisis = {
         },
       },
       3: {
-        titulo: "...",
+        titulo: "Integral definida",
         imagen: "/imagenes/analisis_modelo_2_ejercicio_3_parcial_3.png",
         ayuda: `
+          1) Interpretación de la integral definida:
+          La integral definida ∫[a,b] f(x) dx representa el área algebraica entre el gráfico de f(x) y el eje x entre a y b.
+          - Las zonas donde f(x) > 0 aportan área positiva.
+          - Las zonas donde f(x) < 0 aportan área negativa. :contentReference[oaicite:0]{index=0}
+
+          2) Integral del valor absoluto:
+          La integral ∫[a,b] |f(x)| dx representa el área geométrica total entre la curva y el eje x.
+          En este caso todas las áreas se consideran positivas.
+
+          3) Descomposición según el signo de la función:
+          Si la función cambia de signo en un punto c del intervalo, la integral se separa:
+          ∫[a,b] f(x) dx = ∫[a,c] f(x) dx + ∫[c,b] f(x) dx
+          En los intervalos donde f(x) < 0 se cumple: ∫ f(x) dx = − área geométrica.
+
+          4) Conjunto donde la función es negativa:
+          La notación C⁻(f) indica el conjunto de puntos donde la función es negativa:
+          C⁻(f) = { x : f(x) < 0 }
+          Esto permite identificar en qué parte del intervalo la integral aporta área negativa.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_3_parcial_3_resolucion.png",
 
@@ -2286,9 +2333,24 @@ const parcialesAnalisis = {
         },
       },
       4: {
-        titulo: "...",
+        titulo: "Series",
         imagen: "/imagenes/analisis_modelo_2_ejercicio_4_parcial_3.png",
         ayuda: `
+          1) Convergencia de series numéricas:
+          Una serie ∑ aₙ es convergente si la sucesión de sumas parciales tiende a un número finito.  
+          Si no tiene límite finito, la serie es divergente.
+
+          2) Criterio de D'Alembert (criterio del cociente):
+          Para series con términos positivos, se puede estudiar la convergencia mediante el límite:
+          L = lim (n→∞) |aₙ₊₁ / aₙ|
+          Entonces:
+          - Si L < 1 → la serie converge.
+          - Si L > 1 → la serie diverge.
+          - Si L = 1 → el criterio no concluye. :contentReference[oaicite:1]{index=1}
+
+          3) Manipulación de factoriales:
+          Recordar la propiedad: (n+1)! = (n+1) · n!
+          Esta relación es útil cuando se calcula el cociente aₙ₊₁ / aₙ.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_4_parcial_3_resolucion.png",
 
