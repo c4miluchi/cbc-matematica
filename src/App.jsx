@@ -2104,7 +2104,22 @@ const parcialesAnalisis = {
         titulo: "...",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_1_parcial_3.png",
         ayuda: `
-          
+          1) Primitivas (integral indefinida):
+          Una primitiva de una función f(x) es una función g(x) tal que: g'(x) = f(x)
+          El conjunto de todas las primitivas se llama integral indefinida y se escribe: ∫ f(x) dx = g(x) + C
+          donde C es una constante.
+
+          2) Propiedades de la integral:
+          La integral es lineal, por lo tanto: ∫ (f(x) + g(x)) dx = ∫ f(x) dx + ∫ g(x) dx
+          Esto permite separar la integral de una suma en la suma de integrales.
+
+          3) Método de sustitución:
+          Si una integral tiene la forma: ∫ f(g(x)) · g'(x) dx se puede hacer el cambio de variable:
+          u = g(x) du = g'(x) dx lo que transforma la integral en: ∫ f(u) du.
+
+          4) Integrales que involucran logaritmos:
+          Recordar que: (ln(x))' = 1/x y que muchas integrales con potencias de ln(x) pueden resolverse usando
+          sustitución con: u = ln(x)
           `,
         resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_parcial_3_resolucion.png",
 
@@ -2119,7 +2134,25 @@ const parcialesAnalisis = {
         titulo: "...",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_2_parcial_3.png",
         ayuda: `
-          
+          1) Volumen de sólidos de revolución (método de discos/anillos):
+          Si una región plana está delimitada entre x = a y x = b y al girarla alrededor del eje x queda entre dos curvas y = f(x) ≥ g(x),
+          el volumen del sólido generado se calcula mediante: V = ∫[a,b] π (f²(x) − g²(x)) dx
+
+          Esta fórmula surge de considerar secciones circulares perpendiculares al eje de rotación.
+
+          2) Región limitada por una función y el eje x:
+          Cuando la región está delimitada por:
+          - una función y = f(x)
+          - el eje x (y = 0)
+          entonces la fórmula se simplifica a: V = ∫[a,b] π (f(x))² dx porque g(x) = 0.
+
+          3) Determinación de los límites de integración:
+          Los valores de a y b se obtienen encontrando los puntos donde la curva corta al eje x.
+          Para eso se resuelve: f(x) = 0
+
+          4) Interpretación geométrica:
+          El volumen se obtiene sumando infinitos discos de radio f(x) y espesor dx.
+          Cada disco tiene volumen aproximado: dV = π (f(x))² dx
           `,
         resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_2_parcial_3_resolucion.png",
 
@@ -2139,7 +2172,26 @@ const parcialesAnalisis = {
         titulo: "...",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_3_parcial_3.png",
         ayuda: `
-          
+          1) Crecimiento y decrecimiento de una función:
+          Para estudiar los intervalos donde una función crece o decrece se analiza el signo de su derivada.
+          - Si f'(x) > 0 → la función es creciente.
+          - Si f'(x) < 0 → la función es decreciente.
+          Los posibles extremos locales se encuentran en los puntos donde f'(x) = 0 o donde la derivada no existe.
+
+          2) Extremos locales:
+          Un punto x = c es un extremo local si: f'(c) = 0
+          Luego se analiza el cambio de signo de la derivada:
+          - Si f' pasa de positivo a negativo → máximo local.
+          - Si f' pasa de negativo a positivo → mínimo local.
+
+          3) Teorema Fundamental del Cálculo:
+          Si una función está definida como F(x) = ∫[a,x] f(t) dt entonces: F'(x) = f(x)
+          Es decir, derivar una integral con límite superior variable devuelve el integrando evaluado en ese límite.
+
+          4) Regla de la cadena:
+          Si el límite superior de la integral es una función g(x): F(x) = ∫[a,g(x)] f(t) dt
+          entonces: F'(x) = f(g(x)) · g'(x)
+          Esto combina el teorema fundamental del cálculo con la regla de la cadena.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_3_parcial_3_resolucion.png",
 
@@ -2154,7 +2206,24 @@ const parcialesAnalisis = {
         titulo: "...",
         imagen: "/imagenes/analisis_modelo_1_ejercicio_4_parcial_3.png",
         ayuda: `
-          
+          1) Definición de serie numérica:
+          Dada una sucesión (aₙ), la serie ∑ aₙ se define como el límite de sus sumas parciales.  
+          Si ese límite existe y es finito, la serie es convergente.
+
+          2) Linealidad de las series:
+          Si dos series convergen, entonces: ∑ (aₙ + bₙ) = ∑ aₙ + ∑ bₙ
+          Esto permite separar una serie en la suma de dos series más simples.
+
+          3) Serie geométrica:
+          Una serie de la forma ∑ rⁿ se llama serie geométrica.
+          Esta serie:
+          - converge si |r| < 1
+          - diverge si |r| ≥ 1
+          y en caso de converger su suma es: ∑_{n=0}^{∞} rⁿ = 1 / (1 − r).
+
+          4) Series geométricas que comienzan en otro índice:
+          Si la serie comienza en n = k en lugar de n = 0, se puede escribir como: ∑_{n=k}^{∞} rⁿ
+          y calcular su suma restando los primeros términos de la serie geométrica completa.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_4_parcial_3_resolucion.png",
 
