@@ -2098,22 +2098,198 @@ const parcialesAnalisis = {
   },
   /*parcial 3*/
   3: {
+    /*modelo 1*/
     1: {
       1: {
-        titulo: "Intervalos",
-        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
-        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
-
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1_parcial_3.png",
         ayuda: `
+          
           `,
-
-        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
-        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_parcial_3_resolucion.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
             s === "..."
+          );
+        },
+      },
+      2: {
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_2_parcial_3.png",
+        ayuda: `
+          
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_2_parcial_3_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "1458pi/35" ||
+            s === "1458π/35" ||
+            s === "130,869" ||
+            s === "130,87" ||
+            s === "130.869" ||
+            s === "130.87"
+          );
+        },
+      },
+      3: {
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_3_parcial_3.png",
+        ayuda: `
+          
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_3_parcial_3_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      4: {
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_4_parcial_3.png",
+        ayuda: `
+          
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_4_parcial_3_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "103/240" ||
+            s === "0,429" ||
+            s === "0,43" ||
+            s === "0.429" ||
+            s === "0.43"
+          );
+        },
+      },
+    },
+    /*modelo 2*/
+    2: {
+      1: {
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_2_ejercicio_1_parcial_3.png",
+        ayuda: `
+          
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_1_parcial_3_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      2: {
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_2_ejercicio_2_parcial_3.png",
+        ayuda: `
+          
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_2_parcial_3_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      3: {
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_2_ejercicio_3_parcial_3.png",
+        ayuda: `
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_3_parcial_3_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "-3"
+          );
+        },
+      },
+      4: {
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_2_ejercicio_4_parcial_3.png",
+        ayuda: `
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_4_parcial_3_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "no" ||
+            s === "diverge"
+          );
+        },
+      },
+    },
+    /*modelo 3*/
+    3: {
+      1: {
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_3_ejercicio_1_parcial_3.png",
+        ayuda: `
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_1_parcial_3_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      2: {
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_3_ejercicio_2_parcial_3.png",
+        ayuda: `
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_2_parcial_3_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "32"
+          );
+        },
+      },
+      3: {
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_3_ejercicio_3_parcial_3.png",
+        ayuda: `
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_3_parcial_3_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "..."
+          );
+        },
+      },
+      4: {
+        titulo: "...",
+        imagen: "/imagenes/analisis_modelo_3_ejercicio_4_parcial_3.png",
+
+        ayuda: `
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_4_parcial_3_resolucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "si" ||
+            s === "sí" ||
+            s === "converge"
           );
         },
       },
