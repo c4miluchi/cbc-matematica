@@ -1129,7 +1129,7 @@ const ejerciciosAnalisis = {
   },
 
   8: {
-    : {
+    1: {
       titulo: "Primitivas",
       enunciado: "Hallar todas las primitivas de f(x) = x^4",
       ayuda: "Sea f(x) una función, llamaremos primitivas o antiderivadas de F(x) a funciones g(x) tales que f(x) = g’(x), ∀ x ∈ Dom(f)",
