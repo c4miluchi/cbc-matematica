@@ -1207,20 +1207,85 @@ const ejerciciosAnalisis = {
 
   9: {
     1: {
-      titulo: "",
-      enunciado: "",
-      ayuda: "",
+      titulo: "Notación sigma",
+      enunciado: "Escribir en forma desarrollada la siguiente sumatoria: ∑ k desde k = 1 hasta 5",
+      ayuda: "La notación sigma representa una suma. El índice indica desde qué valor empieza y hasta cuál termina.\nPor ejemplo: ∑ k desde k = 1 hasta 3 = 1 + 2 + 3",
 
       resolucion: `
-      
-      Solución:
+      ∑ k desde k = 1 hasta 5
+      Reemplazamos k por los valores desde 1 hasta 5:
+      1 + 2 + 3 + 4 + 5
 
+      Solución: 1 + 2 + 3 + 4 + 5
       `,
+
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "");
+        return (
+          s === "1+2+3+4+5"
+        );
+      },
+    },
+    2: {
+      titulo: "Series geométricas",
+      enunciado: "Determinar si la serie geométrica ∑ (1/2)^n desde n = 0 hasta ∞ converge o diverge",
+      ayuda: "Una serie geométrica es de la forma ∑ r^n.\nSi |r| < 1 la serie converge.\nSi |r| ≥ 1 la serie diverge.",
+
+      resolucion: `
+      ∑ (1/2)^n
+      La razón de la serie es r = 1/2
+      |1/2| < 1
+      Entonces la serie converge.
+
+      Solución: Converge
+      `,
+
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "" ||
-          s === ""
+          s === "converge"
+        );
+      },
+    },
+    3: {
+      titulo: "Series tipo p",
+      enunciado: "Determinar si la serie ∑ 1/n² desde n = 1 hasta ∞ converge o diverge",
+      ayuda: "Las series tipo p tienen la forma ∑ 1/n^p.\nSi p > 1 la serie converge.\nSi p ≤ 1 la serie diverge.",
+
+      resolucion: `
+      ∑ 1/n²
+      En este caso p = 2
+      Como 2 > 1
+      La serie converge.
+
+      Solución: Converge
+      `,
+
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "converge"
+        );
+      },
+    },
+    4: {
+      titulo: "Condición necesaria de convergencia",
+      enunciado: "Decidir si la serie ∑ 5 converge o diverge",
+      ayuda: "Una condición necesaria para que una serie converja es que lim an = 0.\nSi el término general no tiende a 0, la serie diverge.",
+
+      resolucion: `
+      ∑ 5
+      El término general es a_n = 5
+      lim a_n = 5
+      Como el límite no es 0, la serie no puede converger.
+
+      Solución: Diverge
+      `,
+
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "diverge"
         );
       },
     },
