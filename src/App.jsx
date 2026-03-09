@@ -1129,24 +1129,80 @@ const ejerciciosAnalisis = {
   },
 
   8: {
-    1: {
-      titulo: "",
-      enunciado: "",
-      ayuda: "",
-
-      resolucion: `
-      
-      Solución:
-
-      `,
+    : {
+      titulo: "Primitivas",
+      enunciado: "Hallar todas las primitivas de f(x) = x^4",
+      ayuda: "Sea f(x) una función, llamaremos primitivas o antiderivadas de F(x) a funciones g(x) tales que f(x) = g’(x), ∀ x ∈ Dom(f)",
+      resolucionImagen: "/imagenes/45.png",
       verificar: (r) => {
         const s = r.replace(/\s/g, "").toLowerCase();
         return (
-          s === "" ||
+          s === "1/5x^5+c"
+        );
+      },
+    },
+    2: {
+      titulo: "Integral definida 1",
+      enunciado: "Calcular ∫x^4dx",
+      ayudaImagen: "/imagenes/integral_definida_ayuda.png",
+      resolucionImagen: "/imagenes/46.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "x^5/5+c"
+        );
+      },
+    },
+    3: {
+      titulo: "Integral definida 2",
+      enunciado: "Calcular ∫cos(x)dx",
+      ayudaImagen: "/imagenes/integral_definida_ayuda.png",
+      resolucionImagen: "/imagenes/47.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "sen(x)+c"
+        );
+      },
+    },
+    4: {
+      titulo: "Propiedades de integrales",
+      imagen: "/imagenes/propiedades_integrales_enunciado.png",
+      ayudaImagen: "/imagenes/propiedades_integrales_ayuda.png",
+      resolucionImagen: "/imagenes/48.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "5/4x^4+4/3x^3-7/2x^2+2x+c" ||
+          s === "5x^4/4+4x^3/3-7x^2/2+2x+c"
+        );
+      },
+    },
+    5: {
+      titulo: "Método de sustitución",
+      imagen: "/imagenes/sustitucion_enunciado.png",
+      ayuda: "  Si f(x) es derivable en x y g(x) es derivable en f(x) → (g o f)’(x) = g’(f(x)) . f’(x)\nluego ∫(g o f)dx = ∫g’(f(x)).f’(x)dx → f(x) = t → f’(x) dx = 1 dt → sustituimos y queda:\n∫g’(f(x)).f’(x) dx = ∫g’(t)  dt = g(t) + c = g(f(x)) + c",
+      resolucionImagen: "/imagenes/49.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
+          s === "sen(x^6-x)+c"
+        );
+      },
+    },
+    6: {
+      titulo: "Integración por partes",
+      imagen: "/imagenes/partes.png",
+      ayuda: "(f(x) g(x))’ = f’(x) g(x) + f(x) g’(x) → ∫(f(x)g(x))' dx =  ∫(f^' (x)g(x)+f(x)g'(x)) dx\n→ ∫(f(x)g(x))  dx = ∫f'(x)g(x) dx + ∫f(x)g'(x) dx\ncomo ∫(f(x)g(x))' dx = f(x) g(x), f(x). g(x) = ∫(f^'(x)g(x)+f(x)g'(x)) dx\n→ ∫f(x)g'(x)  dx = f(x) g(x) – ∫f^'(x)g(x) dx",
+      resolucionImagen: "/imagenes/50.png",
+      verificar: (r) => {
+        const s = r.replace(/\s/g, "").toLowerCase();
+        return (
           s === ""
         );
       },
     },
+    /*podriamos agregar uno de ecuaciones diferenciales y otros temas de la guia 8 que no quedan del todo cubiertos*/
   },
 
   9: {
