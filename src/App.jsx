@@ -64,8 +64,9 @@ const linksParcialesAnalisis = {
     3: "https://drive.google.com/file/d/1BQf0ge19WTn_DWmclKXhDI9VM67k-D_X/view?usp=share_link",
   },
   3: {
-    1: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO1",
-    2: "PEGÁ_ACÁ_LINK_PARCIAL1_MODELO2",
+    1: "https://drive.google.com/file/d/1kxvi9F4qZxdjWSLXAv45W9Kp5dqF5OJc/view?usp=share_link",
+    2: "https://drive.google.com/file/d/1W3FSL1q4ECAJ4N_TrFAh0AWjGekxu-YT/view?usp=share_link",
+    3: "https://drive.google.com/file/d/1CyrthDE5D9ZmADukN_KC4SVuUsS9PiID/view?usp=share_link",
   },
 };
 
@@ -2333,7 +2334,7 @@ const parcialesAnalisis = {
         },
       },
       4: {
-        titulo: "Series",
+        titulo: "Series numéricas",
         imagen: "/imagenes/analisis_modelo_2_ejercicio_4_parcial_3.png",
         ayuda: `
           1) Convergencia de series numéricas:
@@ -2366,9 +2367,24 @@ const parcialesAnalisis = {
     /*modelo 3*/
     3: {
       1: {
-        titulo: "...",
+        titulo: "Primitiva",
         imagen: "/imagenes/analisis_modelo_3_ejercicio_1_parcial_3.png",
         ayuda: `
+          1) Primitiva de una función:
+          Encontrar una primitiva F de f significa hallar una función tal que: F'(x) = f(x)
+          El conjunto de todas las primitivas se expresa como: ∫ f(x) dx = F(x) + C donde C es una constante arbitraria.
+
+          2) Integrales de funciones racionales:
+          Cuando la función es un cociente de polinomios, conviene analizar si el numerador está relacionado con la derivada del denominador.
+          Si aparece una expresión del tipo: g'(x) / g(x) entonces se usa la fórmula: ∫ g'(x) / g(x) dx = ln|g(x)| + C
+
+          3) Derivada del logaritmo:
+          Recordar que: (ln|g(x)|)' = g'(x) / g(x)
+          Esto permite reconocer integrales que se resuelven directamente con logaritmos.
+
+          4) Determinación de la constante:
+          Si se pide una primitiva que verifique una condición, por ejemplo: F(a) = b
+          primero se obtiene la familia de primitivas F(x) + C y luego se reemplaza el valor dado para determinar C.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_1_parcial_3_resolucion.png",
 
@@ -2380,9 +2396,25 @@ const parcialesAnalisis = {
         },
       },
       2: {
-        titulo: "...",
+        titulo: "Área",
         imagen: "/imagenes/analisis_modelo_3_ejercicio_2_parcial_3.png",
         ayuda: `
+          1) Área entre una función y el eje x:
+          El área de la región limitada por el gráfico de una función f(x) y el eje x entre x = a y x = b se calcula mediante:
+          A = ∫[a,b] |f(x)| dx
+          Esto se debe a que la integral definida representa el área algebraica entre la curva y el eje x.
+
+          2) Interpretación del signo de la función:
+          - Si f(x) > 0 en un intervalo → el área es ∫ f(x) dx.
+          - Si f(x) < 0 en un intervalo → el área es −∫ f(x) dx.
+          Por eso, cuando la función cambia de signo, el área total se obtiene sumando las áreas positivas de cada subintervalo.
+
+          3) Determinación de los puntos donde cambia el signo:
+          Para saber dónde la función cambia de signo, se deben hallar los puntos donde: f(x) = 0
+          Estos puntos dividen el intervalo en subintervalos donde la función mantiene signo constante.
+
+          4) Uso de rectas verticales como límites:
+          Las rectas verticales x = a y x = b determinan directamente los límites de integración del área.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_2_parcial_3_resolucion.png",
 
@@ -2394,9 +2426,25 @@ const parcialesAnalisis = {
         },
       },
       3: {
-        titulo: "...",
+        titulo: "Ecuaciones diferenciales",
         imagen: "/imagenes/analisis_modelo_3_ejercicio_3_parcial_3.png",
         ayuda: `
+          1) Ecuaciones diferenciales lineales de primer orden:
+          Una ecuación diferencial de la forma y'(x) + p(x)y(x) = q(x) se llama ecuación diferencial lineal de primer orden.
+          Estas ecuaciones pueden resolverse utilizando el método del factor integrante.
+
+          2) Factor integrante:
+          Se define una función μ(x) = e^{P(x)} donde P(x) es una primitiva de p(x): P(x) = ∫ p(x) dx
+          Al multiplicar la ecuación por μ(x), el lado izquierdo se transforma en la derivada de un producto.
+
+          3) Fórmula general de la solución:
+          La solución general de y'(x) + p(x)y(x) = q(x) es y(x) = e^{-P(x)} ∫ e^{P(x)} q(x) dx donde P(x) es una primitiva de p(x).
+
+          4) Integración de productos con exponenciales:
+          En la integral que aparece en la fórmula puede aparecer un producto entre:
+          - un polinomio
+          - una función exponencial
+          Este tipo de integrales suele resolverse mediante el método de integración por partes.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_3_parcial_3_resolucion.png",
 
@@ -2408,10 +2456,27 @@ const parcialesAnalisis = {
         },
       },
       4: {
-        titulo: "...",
+        titulo: "Series numéricas",
         imagen: "/imagenes/analisis_modelo_3_ejercicio_4_parcial_3.png",
 
         ayuda: `
+          1) Series numéricas:
+          Una serie ∑ aₙ es convergente si la sucesión de sus sumas parciales tiende a un número finito.  
+          Si el límite no existe o es infinito, la serie es divergente.
+
+          2) Series p: las series de la forma ∑ 1 / n^p se llaman series p.
+          Se cumple que:
+          - Si p > 1 → la serie converge.
+          - Si p ≤ 1 → la serie diverge. :contentReference[oaicite:1]{index=1}
+
+          3) Propiedades trigonométricas:
+          Recordar que: cos(nπ) = (−1)^n
+          Por lo tanto: cos²(nπ) = 1
+          Esto permite simplificar el término general de la serie.
+
+          4) Criterio de comparación:
+          Si una serie tiene términos positivos y su término general se comporta como el de una serie conocida
+          (convergente o divergente), se puede comparar para estudiar su convergencia.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_4_parcial_3_resolucion.png",
 
