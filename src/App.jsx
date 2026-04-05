@@ -1657,7 +1657,6 @@ const parcialesAnalisis = {
         titulo: "Asíntotas verticales",
         enunciado: "Sea f(x) una función lineal cuyo gráfico pasa por los puntos (1, 3) y (3, −1).\nHallar las asíntotas verticales de",
         imagen: "/imagenes/analisis_modelo_2_ejercicio_1_parcial_1.png",
-
         ayuda: `
           Para hallar asíntotas verticales de una función:
 
@@ -1726,7 +1725,6 @@ const parcialesAnalisis = {
       2: {
         titulo: "Problema de optimización",
         enunciado: "Un equipo de béisbol juega en un estadio con capacidad para 55000 espectadores.\nCon el precio de la entrada en 10 dólares, el promedio de asistencia en partidos recientes ha sido de 27000 espectadores.\nUn estudio de mercado indica que por cada dólar que baje el precio de la entrada, la asistencia aumenta en 3000.\nEncuentre el precio que lleve al máximo los ingresos por venta de entradas.\n¿Qué precio de la entrada es tan alto como para no generar ingresos?",
-
         ayuda: `
           Para resolver problemas de optimización de ingresos:
 
@@ -1778,7 +1776,6 @@ const parcialesAnalisis = {
           8) Restricciones importantes:
           - La asistencia no puede superar 55000
           - El precio no puede ser negativo`,
-
         resolucion: "Solución final: ",
         resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_2_solucion_parcial_1.png",
 
@@ -2087,13 +2084,6 @@ const parcialesAnalisis = {
           - Concluir crecimiento, extremos y concavidad.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_3_parcial_2_resolucion.png",
-
-        verificar: (r) => {
-          const s = r.replace(/\s/g, "").toLowerCase();
-          return (
-            s === "..."
-          );
-        },
       },
       4: {
         titulo: "Minimizar costo",
@@ -2136,13 +2126,6 @@ const parcialesAnalisis = {
           Las dimensiones que anulan la derivada y cumplen la condición de mínimo son las que minimizan el costo.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_4_parcial_2_resolucion.png",
-
-        verificar: (r) => {
-          const s = r.replace(/\s/g, "").toLowerCase();
-          return (
-            s === "..."
-          );
-        },
       },
       5: {
         titulo: "Polinomio de Taylor",
@@ -2883,13 +2866,6 @@ const parcialesAnalisis = {
           Este tipo de integrales suele resolverse mediante el método de integración por partes.
           `,
         resolucionImagen: "/imagenes/analisis_modelo_3_ejercicio_3_parcial_3_resolucion.png",
-
-        verificar: (r) => {
-          const s = r.replace(/\s/g, "").toLowerCase();
-          return (
-            s === "..."
-          );
-        },
       },
       4: {
         titulo: "Series numéricas",
