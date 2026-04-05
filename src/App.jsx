@@ -1652,7 +1652,7 @@ const parcialesAnalisis = {
       },
     },
     /*modelo 2*/
-    1: {
+    2: {
       1: {
         titulo: "Asíntotas verticales",
         enunciado: "Sea f(x) una función lineal cuyo gráfico pasa por los puntos (1, 3) y (3, −1).\nHallar las asíntotas verticales de",
