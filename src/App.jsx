@@ -1657,7 +1657,6 @@ const parcialesAnalisis = {
         titulo: "Asíntotas verticales",
         enunciado: "Sea f(x) una función lineal cuyo gráfico pasa por los puntos (1, 3) y (3, −1).\nHallar las asíntotas verticales de",
         imagen: "/imagenes/analisis_modelo_2_ejercicio_1_parcial_1.png",
-
         ayuda: `
           Para hallar asíntotas verticales de una función:
 
@@ -1707,18 +1706,18 @@ const parcialesAnalisis = {
 
           Esto puede restringir los valores de x.`,
 
-        resolucion: "Solución final: AV en x = 2",
+        resolucion: "Solución final: AV en x = 1",
         resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_1_solucion_parcial_1.png",
 
         verificar: (r) => {
           const s = r.replace(/\s/g, "").toLowerCase();
           return (
-            s === "x=2" ||
-            s === "2" ||
-            s === "avx=2" ||
-            s === "av:x=2" ||
-            s === "av2" ||
-            s === "avx=2"
+            s === "x=1" ||
+            s === "1" ||
+            s === "avx=1" ||
+            s === "av:x=1" ||
+            s === "av1" ||
+            s === "avx=1"
           );
         },
       },
