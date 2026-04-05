@@ -1779,7 +1779,7 @@ const parcialesAnalisis = {
           - El precio no puede ser negativo
           `,
 
-        resolucion: "Solución final:",
+        resolucion: "",
         resolucionImagen: "/imagenes/analisis_modelo_2_ejercicio_2_solucion_parcial_1.png",
 
         verificar: (r) => {
