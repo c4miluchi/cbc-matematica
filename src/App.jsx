@@ -1651,7 +1651,385 @@ const parcialesAnalisis = {
         },
       },
     },
+    /*modelo 2*/
+    2: {
+      1: {
+        titulo: "Intervalos",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          1) Valor absoluto:
+          Recordar que |x - a| ≥ k significa que la distancia entre x y a es mayor o igual que k.
+          Equivale a:
+          |x - a| ≥ k ⇔ x - a ≥ k  ó  x - a ≤ -k.
+
+          2) Inecuaciones racionales:
+          Cuando aparece una fracción:
+            f(x) / g(x) < 0  ó  < 1
+          se debe:
+          - Llevar todo a un mismo miembro.
+          - Unificar en una sola fracción.
+          - Analizar el signo del numerador y del denominador.
+          - Tener en cuenta que el denominador no puede ser cero.
+
+          3) Conjunto intersección:
+          A ∩ B significa:
+          Los valores de x que pertenecen a A y también pertenecen a B.
+          Gráficamente es la parte común en la recta real.
+
+          4) Para graficar intervalos:
+          - Paréntesis → extremo no incluido.
+          - Corchetes → extremo incluido.
+          - Punto abierto/cerrado según corresponda.`,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "(-inf,-5)u(-3,-1]u(3,+inf)" ||
+            s === "(-inf,-5)∪(-3,-1]∪(3,+inf)" ||
+            s === "(-infinito,-5)u(-3,-1]u(3,+infinito)" ||
+            s === "(-infinito,-5)∪(-3,-1]∪(3,+infinito)" ||
+            s === "(-∞,-5)u(-3,-1]u(3,+∞)" ||
+            s === "(-∞,-5)∪(-3,-1]∪(3,+∞)"
+          );
+        },
+      },
+
+      2: {
+        titulo: "Monotonía",
+        enunciado: "Decida si es monótona la sucesión",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_2.png",
+
+        ayuda: `
+          Para estudiar si una sucesión es monótona:
+
+          1) Definición:
+          Una sucesión {aₙ} es:
+          - Creciente si: aₙ₊₁ ≥ aₙ
+          - Decreciente si: aₙ₊₁ ≤ aₙ
+          - Monótona si cumple una de las dos.
+
+          2) Método habitual:
+          Se compara aₙ₊₁ − aₙ o el cociente aₙ₊₁ / aₙ.
+
+          3) Atención al término (−1)ⁿ:
+          Este factor alterna signo:
+          - si n es par → (−1)ⁿ = 1  
+          - si n es impar → (−1)ⁿ = −1  
+
+          Por lo tanto puede generar oscilaciones en la sucesión.
+
+          4) Idea clave:
+          Si la sucesión cambia de comportamiento entre n par e impar,
+          probablemente no sea monótona.
+
+          Sugerencia:
+          Calcular algunos primeros términos para observar el comportamiento.
+          `,
+
+        resolucion: "Solución final: La sucesión no es monótona",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_2_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "no" ||
+            s === "noesmonotona" ||
+            s === "noesmonótona"
+          );
+        },
+      },
+
+      3: {
+        titulo: "Bolzano",
+        enunciado: "Explicar por qué la función f es continua en R y probar utilizando el teorema de Bolzano que existe c ∈ [0, π/2] tal que f(c) = 0.",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_3.png",
+        ayuda: `
+          Para estudiar si una sucesión es monótona:
+
+          1) Continuidad de funciones:
+          - cos(x) y sen(x) son funciones continuas en ℝ.
+          - √(x² + 1) es continua porque x² + 1 > 0 para todo x ∈ ℝ.
+          - La suma, resta y producto de funciones continuas es continua.
+          - El cociente de funciones continuas es continuo siempre que el denominador no sea cero.
+
+          En este ejercicio:
+          3 − sen(x) ≠ 0 para todo x ∈ ℝ porque −1 ≤ sen(x) ≤ 1 ⇒ 3 − sen(x) ≥ 2 > 0.
+          Por lo tanto, f es continua en ℝ.
+
+          2) Teorema de Bolzano: sea f continua en [a, b], si f(a) · f(b) < 0 (entonces f cambia de signo en el intervalo)
+          ⇒ Existe al menos un c ∈ (a, b) tal que f(c) = 0.
+
+          3) Cómo aplicar Bolzano (pasos prácticos):
+          Paso 1: Verificar que f sea continua en [a, b].
+          Paso 2: Calcular f(a) y f(b).
+          Paso 3: Verificar cambio de signo:
+          - si f(a) > 0 y f(b) < 0 (o al revés)
+            ⇒ se puede aplicar Bolzano.
+          Paso 4: Concluir:
+          ∃ c ∈ (a, b) tal que f(c) = 0.
+
+          4) Sugerencia para este ejercicio:
+          Evaluar f(0) y f(π/2) y verificar que tengan signos opuestos.
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_3_solucion.png",
+      },
+
+      4: {
+        titulo: "Trigonometría",
+        enunciado: "El ojo humano puede distinguir entre dos puntos distantes P y Q siempre que el\nángulo de resolución θ no sea muy pequeño.\nSuponga que P y Q están a x unidades entre sí\ny a d unidades del ojo, como se ilustra en la figura.\nExprese x en términos de θ y d y decida para qué valores de d será distinguinble\nuna pluma de 6 pulgadas de alto vista desde d pies si el\nángulo de resolución es de θ = 0,0005 radianes.",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_4.png",
+        resolucion: "",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_4_solucion.png",
+      },
+
+      5: {
+        titulo: "Dominio y asíntotas",
+        enunciado: "Calcule dominio y asíntotas de f(x) = ln(2x − 4) − ln(x − 1)\ny encuentre la cantidad de soluciones de la ecuación f(x) = k para todo k ∈ R.",
+        ayuda: `
+          1) Dominio de funciones logarítmicas:
+          ln(u) está definido ⇔ u > 0, por lo tanto, para hallar el dominio se debe exigir:
+          - 2x − 4 > 0
+          - x − 1 > 0
+          El dominio será la intersección de ambas condiciones.
+
+          2) Propiedad de logaritmos:
+          Si u > 0 y v > 0:
+          ln(u) − ln(v) = ln(u/v)
+
+          3) Asíntotas verticales:
+          Una recta x = a es asíntota vertical si: lim (x → a⁺ o a⁻) f(x) = ±∞.
+
+          En funciones logarítmicas, las asíntotas verticales aparecen
+          cuando el argumento del logaritmo tiende a 0⁺.
+
+          Sugerencia:
+          Buscar los puntos donde:
+
+          - 2x − 4 = 0
+          - x − 1 = 0
+
+          y verificar si pertenecen al borde del dominio.
+
+          4) Asíntota horizontal (idea general):
+          Se estudia calculando: lim (x → +∞) f(x)
+
+          Si el límite es un número real L,
+          entonces y = L es asíntota horizontal.
+
+          Sugerencia:
+          Usar la propiedad del logaritmo para simplificar antes de hacer el límite.
+          `,
+        resolucion: "",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_5_solucion.png",
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "dominio=(2; +inf)ah:y=ln(2)av:x=2" ||
+            s === "dom=(2; +inf)ah:y=ln(2)av:x=2" ||
+            s === "dominio=(2; +infinito)ah:y=ln(2)av:x=2" ||
+            s === "dom=(2; +infinito)ah:y=ln(2)av:x=2" ||
+            s === "dominio=(2; +∞)ah:y=ln(2)av:x=2" ||
+            s === "dom=(2; +∞)ah:y=ln(2)av:x=2"
+          );
+        },
+      },
+    },
+    /*modelo 3*/
+    3: {
+      1: {
+        titulo: "Intervalos",
+        enunciado: "Escribir al conjunto A ∩ B como intervalo o unión de intervalos y graficarlo en la recta real para",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_1.png",
+
+        ayuda: `
+          1) Valor absoluto:
+          Recordar que |x - a| ≥ k significa que la distancia entre x y a es mayor o igual que k.
+          Equivale a:
+          |x - a| ≥ k ⇔ x - a ≥ k  ó  x - a ≤ -k.
+
+          2) Inecuaciones racionales:
+          Cuando aparece una fracción:
+            f(x) / g(x) < 0  ó  < 1
+          se debe:
+          - Llevar todo a un mismo miembro.
+          - Unificar en una sola fracción.
+          - Analizar el signo del numerador y del denominador.
+          - Tener en cuenta que el denominador no puede ser cero.
+
+          3) Conjunto intersección:
+          A ∩ B significa:
+          Los valores de x que pertenecen a A y también pertenecen a B.
+          Gráficamente es la parte común en la recta real.
+
+          4) Para graficar intervalos:
+          - Paréntesis → extremo no incluido.
+          - Corchetes → extremo incluido.
+          - Punto abierto/cerrado según corresponda.`,
+
+        resolucion: "Solución final: (-∞, -5) ∪ (-3, -1] ∪ (3, +∞)",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_1_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "(-inf,-5)u(-3,-1]u(3,+inf)" ||
+            s === "(-inf,-5)∪(-3,-1]∪(3,+inf)" ||
+            s === "(-infinito,-5)u(-3,-1]u(3,+infinito)" ||
+            s === "(-infinito,-5)∪(-3,-1]∪(3,+infinito)" ||
+            s === "(-∞,-5)u(-3,-1]u(3,+∞)" ||
+            s === "(-∞,-5)∪(-3,-1]∪(3,+∞)"
+          );
+        },
+      },
+
+      2: {
+        titulo: "Monotonía",
+        enunciado: "Decida si es monótona la sucesión",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_2.png",
+
+        ayuda: `
+          Para estudiar si una sucesión es monótona:
+
+          1) Definición:
+          Una sucesión {aₙ} es:
+          - Creciente si: aₙ₊₁ ≥ aₙ
+          - Decreciente si: aₙ₊₁ ≤ aₙ
+          - Monótona si cumple una de las dos.
+
+          2) Método habitual:
+          Se compara aₙ₊₁ − aₙ o el cociente aₙ₊₁ / aₙ.
+
+          3) Atención al término (−1)ⁿ:
+          Este factor alterna signo:
+          - si n es par → (−1)ⁿ = 1  
+          - si n es impar → (−1)ⁿ = −1  
+
+          Por lo tanto puede generar oscilaciones en la sucesión.
+
+          4) Idea clave:
+          Si la sucesión cambia de comportamiento entre n par e impar,
+          probablemente no sea monótona.
+
+          Sugerencia:
+          Calcular algunos primeros términos para observar el comportamiento.
+          `,
+
+        resolucion: "Solución final: La sucesión no es monótona",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_2_solucion.png",
+
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "no" ||
+            s === "noesmonotona" ||
+            s === "noesmonótona"
+          );
+        },
+      },
+
+      3: {
+        titulo: "Bolzano",
+        enunciado: "Explicar por qué la función f es continua en R y probar utilizando el teorema de Bolzano que existe c ∈ [0, π/2] tal que f(c) = 0.",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_3.png",
+        ayuda: `
+          Para estudiar si una sucesión es monótona:
+
+          1) Continuidad de funciones:
+          - cos(x) y sen(x) son funciones continuas en ℝ.
+          - √(x² + 1) es continua porque x² + 1 > 0 para todo x ∈ ℝ.
+          - La suma, resta y producto de funciones continuas es continua.
+          - El cociente de funciones continuas es continuo siempre que el denominador no sea cero.
+
+          En este ejercicio:
+          3 − sen(x) ≠ 0 para todo x ∈ ℝ porque −1 ≤ sen(x) ≤ 1 ⇒ 3 − sen(x) ≥ 2 > 0.
+          Por lo tanto, f es continua en ℝ.
+
+          2) Teorema de Bolzano: sea f continua en [a, b], si f(a) · f(b) < 0 (entonces f cambia de signo en el intervalo)
+          ⇒ Existe al menos un c ∈ (a, b) tal que f(c) = 0.
+
+          3) Cómo aplicar Bolzano (pasos prácticos):
+          Paso 1: Verificar que f sea continua en [a, b].
+          Paso 2: Calcular f(a) y f(b).
+          Paso 3: Verificar cambio de signo:
+          - si f(a) > 0 y f(b) < 0 (o al revés)
+            ⇒ se puede aplicar Bolzano.
+          Paso 4: Concluir:
+          ∃ c ∈ (a, b) tal que f(c) = 0.
+
+          4) Sugerencia para este ejercicio:
+          Evaluar f(0) y f(π/2) y verificar que tengan signos opuestos.
+          `,
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_3_solucion.png",
+      },
+
+      4: {
+        titulo: "Trigonometría",
+        enunciado: "El ojo humano puede distinguir entre dos puntos distantes P y Q siempre que el\nángulo de resolución θ no sea muy pequeño.\nSuponga que P y Q están a x unidades entre sí\ny a d unidades del ojo, como se ilustra en la figura.\nExprese x en términos de θ y d y decida para qué valores de d será distinguinble\nuna pluma de 6 pulgadas de alto vista desde d pies si el\nángulo de resolución es de θ = 0,0005 radianes.",
+        imagen: "/imagenes/analisis_modelo_1_ejercicio_4.png",
+        resolucion: "",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_4_solucion.png",
+      },
+
+      5: {
+        titulo: "Dominio y asíntotas",
+        enunciado: "Calcule dominio y asíntotas de f(x) = ln(2x − 4) − ln(x − 1)\ny encuentre la cantidad de soluciones de la ecuación f(x) = k para todo k ∈ R.",
+        ayuda: `
+          1) Dominio de funciones logarítmicas:
+          ln(u) está definido ⇔ u > 0, por lo tanto, para hallar el dominio se debe exigir:
+          - 2x − 4 > 0
+          - x − 1 > 0
+          El dominio será la intersección de ambas condiciones.
+
+          2) Propiedad de logaritmos:
+          Si u > 0 y v > 0:
+          ln(u) − ln(v) = ln(u/v)
+
+          3) Asíntotas verticales:
+          Una recta x = a es asíntota vertical si: lim (x → a⁺ o a⁻) f(x) = ±∞.
+
+          En funciones logarítmicas, las asíntotas verticales aparecen
+          cuando el argumento del logaritmo tiende a 0⁺.
+
+          Sugerencia:
+          Buscar los puntos donde:
+
+          - 2x − 4 = 0
+          - x − 1 = 0
+
+          y verificar si pertenecen al borde del dominio.
+
+          4) Asíntota horizontal (idea general):
+          Se estudia calculando: lim (x → +∞) f(x)
+
+          Si el límite es un número real L,
+          entonces y = L es asíntota horizontal.
+
+          Sugerencia:
+          Usar la propiedad del logaritmo para simplificar antes de hacer el límite.
+          `,
+        resolucion: "",
+        resolucionImagen: "/imagenes/analisis_modelo_1_ejercicio_5_solucion.png",
+        verificar: (r) => {
+          const s = r.replace(/\s/g, "").toLowerCase();
+          return (
+            s === "dominio=(2; +inf)ah:y=ln(2)av:x=2" ||
+            s === "dom=(2; +inf)ah:y=ln(2)av:x=2" ||
+            s === "dominio=(2; +infinito)ah:y=ln(2)av:x=2" ||
+            s === "dom=(2; +infinito)ah:y=ln(2)av:x=2" ||
+            s === "dominio=(2; +∞)ah:y=ln(2)av:x=2" ||
+            s === "dom=(2; +∞)ah:y=ln(2)av:x=2"
+          );
+        },
+      },
+    },
   },
+
+
   /*parcial 2*/
   2: {
     /*modelo 1*/
